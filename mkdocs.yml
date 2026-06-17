@@ -1,0 +1,178 @@
+site_name: BioRemPP Documentation
+site_description: >-
+  BioRemPPDBX documentation for the database explorer, generated source reference,
+  and internal implementation guidance.
+docs_dir: docs
+site_dir: site
+repo_url: https://github.com/DougFelipe/biorempp_database_explorer
+repo_name: DougFelipe/biorempp_database_explorer
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: green
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - toc.follow
+plugins:
+  - search:
+      lang: en
+not_in_nav: |
+  /deployment/*
+  /guided-analysis.md
+  /includes/*
+  /reference/source/generated/README.md
+  /reference/source/generated/**/functions/*
+  /reference/source/generated/**/interfaces/*
+  /reference/source/generated/**/type-aliases/*
+  /reference/source/generated/**/variables/*
+  /reference/source/generated/**/classes/*
+  /reference/source/generated/**/enumerations/*
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      title: On this page
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+nav:
+  - Home:
+      - Overview: index.md
+      - Scientific Scope: about/scientific-scope.md
+      - How to Cite: about/how-to-cite.md
+      - Data and Software Availability: about/data-software-availability.md
+      - Terms of Use: about/terms-of-use.md
+      - License: about/license.md
+      - Changelog: about/changelog.md
+      - Contact: about/contact.md
+  - Getting Started:
+      - Overview: getting-started/index.md
+      - Quickstart: getting-started/quickstart.md
+      - Database Access: getting-started/database-access.md
+      - Search and Filtering: getting-started/search-and-filtering.md
+      - Example Queries: getting-started/example-queries.md
+      - FAQ: getting-started/faq.md
+  - User Guide:
+      - Overview: user-guide/index.md
+      - Database Navigation: user-guide/database-navigation.md
+      - Explorer Pages: user-guide/explorer-pages.md
+      - Entity Detail Pages: user-guide/entity-detail-pages.md
+      - Downloads: user-guide/downloads.md
+      - Interpretation Guide: user-guide/interpretation-guide.md
+      - Troubleshooting: user-guide/troubleshooting.md
+  - Explorers:
+      - Overview: explorers/index.md
+      - Compounds Explorer: explorers/compounds.md
+      - Genes and KEGG Orthologs Explorer: explorers/genes-kos.md
+      - Pathways Explorer: explorers/pathways.md
+      - Toxicity Explorer: explorers/toxicity.md
+      - Compound Classes Explorer: explorers/compound-classes.md
+  - Guided Analysis:
+      - Overview: guided-analysis/index.md
+      - Query Recipes: guided-analysis/query-recipes.md
+      - Filters and Parameters: guided-analysis/filters-and-parameters.md
+      - Output Interpretation: guided-analysis/output-interpretation.md
+      - UC1 - Top Bioremediation-Linked Compounds: guided-analysis/uc1-top-bioremediation-linked-compounds.md
+      - UC2 - Most Toxic Compounds: guided-analysis/uc2-most-toxic-compounds.md
+      - UC3 - Risk versus Bioremediation Potential: guided-analysis/uc3-risk-vs-bioremediation-potential.md
+      - UC4 - Compounds Regulated by Agency: guided-analysis/uc4-regulated-by-agency.md
+      - UC5 - Pathway Functional Coverage: guided-analysis/uc5-pathway-functional-coverage.md
+      - UC6 - Pathways Linked to Toxic Compounds: guided-analysis/uc6-pathways-linked-toxic-compounds.md
+      - UC7 - Most Connected Genes: guided-analysis/uc7-most-connected-genes.md
+      - UC8 - Genes Linked to Toxic Compounds: guided-analysis/uc8-genes-linked-toxic-compounds.md
+  - Visualizations:
+      - Overview: visualizations/index.md
+      - Heatmaps: visualizations/heatmaps.md
+      - Scatterplots: visualizations/scatterplots.md
+      - Rankings and Bar Charts: visualizations/rankings-bar-charts.md
+      - Distribution Plots: visualizations/distribution-plots.md
+      - Legends and Tooltips: visualizations/legends-tooltips.md
+      - Interpretation Boundaries: visualizations/interpretation-boundaries.md
+  - Database Schemas:
+      - Overview: database-schemas/index.md
+      - BioRemPP Integrated Database: database-schemas/biorempp-integrated-database.md
+      - Compound-Centric Model: database-schemas/compound-centric-model.md
+      - Entity Relationships: database-schemas/entity-relationships.md
+      - Field Dictionary: database-schemas/field-dictionary.md
+      - HADEG Schema: database-schemas/hadeg-schema.md
+      - KEGG Degradation Schema: database-schemas/kegg-degradation-schema.md
+      - ToxCSM Schema: database-schemas/toxcsm-schema.md
+  - Configuration:
+      - Overview: configuration/index.md
+      - Environment Variables: configuration/environment-variables.md
+      - YAML Content Configuration: configuration/yaml-content-configuration.md
+      - Frontend Build Configuration: configuration/frontend-build-configuration.md
+      - Base Path and Subpath Deployment: configuration/base-path-subpath-deployment.md
+      - API Endpoint Configuration: configuration/api-endpoint-configuration.md
+      - Nginx Integration: configuration/nginx-integration.md
+      - Docker Integration: configuration/docker-integration.md
+      - Institutional Ingress Handoff: configuration/institutional-ingress-handoff.md
+  - API Reference:
+      - Overview: api/index.md
+      - Generation Notes: reference/source/index.md
+      - Core Runtime:
+          - Shared API Client: reference/source/generated/shared/api/client/README.md
+          - Shared Types: reference/source/generated/shared/types/README.md
+          - Base Path Utilities: reference/source/generated/utils/basePath/README.md
+          - App Routes: reference/source/generated/app/routes/README.md
+          - App Navigation: reference/source/generated/app/navigation/README.md
+      - Feature API Wrappers:
+          - Compounds API: reference/source/generated/features/compounds/api/README.md
+          - Genes API: reference/source/generated/features/genes/api/README.md
+          - Pathways API: reference/source/generated/features/pathways/api/README.md
+          - Toxicity API: reference/source/generated/features/toxicity/api/README.md
+          - Compound Classes API: reference/source/generated/features/compound-classes/api/README.md
+          - Guided Analysis API: reference/source/generated/features/guided-analysis/api/README.md
+          - Metadata API: reference/source/generated/features/meta/api/README.md
+      - Feature Type Contracts:
+          - Compounds Types: reference/source/generated/features/compounds/types/README.md
+          - Genes Types: reference/source/generated/features/genes/types/README.md
+          - Pathways Types: reference/source/generated/features/pathways/types/README.md
+          - Toxicity Types: reference/source/generated/features/toxicity/types/README.md
+          - Compound Classes Types: reference/source/generated/features/compound-classes/types/README.md
+          - Guided Analysis Types: reference/source/generated/features/guided-analysis/types/README.md
+          - Metadata Types: reference/source/generated/features/meta/types/README.md
+      - Supporting API Semantics:
+          - Guided Analysis Utilities: reference/source/generated/features/guided-analysis/utils/README.md
+          - Guided Query Recipes: reference/source/generated/features/guided-analysis/recipes/guidedQueryRecipes/README.md
+          - Toxicity Endpoint Groups: reference/source/generated/features/toxicity/utils/endpointGroups/README.md
+          - Compound Filter Utilities: reference/source/generated/features/compounds/utils/compoundFilters/README.md
+          - Compound Overview Adapters: reference/source/generated/features/compounds/utils/overviewAdapters/README.md
+          - Pathway Overview Adapters: reference/source/generated/features/pathways/utils/overviewAdapters/README.md

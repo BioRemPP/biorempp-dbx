@@ -1,0 +1,128 @@
+version: v1
+
+header:
+  title: BioRemPP Terms of Use
+  subtitle: Access, reuse, interpretation, and attribution guidance for the BioRemPP DBX Service
+
+notice:
+  title: Important Notice
+  body: >
+    By using the BioRemPP DBX Service, you acknowledge that this resource is intended for open,
+    exploratory scientific use and that downstream interpretation remains the responsibility of the user.
+
+sections:
+  - id: scope-and-purpose
+    title: Scope and Purpose
+    paragraphs:
+      - >
+        BioRemPP DBX Service is an open-access scientific service designed for exploratory inspection of
+        integrated bioremediation-related evidence across compounds, genes, pathways, toxicity
+        predictions, and regulatory-priority context.
+      - >
+        The platform is provided to support hypothesis generation, comparative interpretation, and
+        data-driven prioritization in environmental bioinformatics and related research workflows.
+  - id: intended-use
+    title: Intended Use
+    paragraphs:
+      - >
+        BioRemPP may be used for academic research, teaching, methodological development, and
+        exploratory analysis of curated database content.
+    bullets:
+      - Scientific hypothesis generation and prioritization
+      - Cross-database interpretation of compounds, pathways, genes, and toxicity signals
+      - Reproducible inspection of versioned database releases and guided analytical workflows
+  - id: non-validated-uses
+    title: Prohibited or Non-validated Uses
+    tone: warning
+    paragraphs:
+      - >
+        BioRemPP outputs must not be treated as confirmatory evidence or used as the sole basis for
+        high-stakes decisions without independent external validation.
+    bullets:
+      - Clinical, diagnostic, or medical decision-making
+      - Regulatory submissions or formal compliance determinations
+      - Environmental remediation actions without external technical validation
+      - Commercial claims that imply experimentally confirmed performance
+  - id: user-responsibilities
+    title: User Responsibilities
+    paragraphs:
+      - >
+        Users are responsible for evaluating the biological, methodological, and contextual
+        appropriateness of any interpretation derived from the platform.
+    bullets:
+      - Critically assess results within the scope of the underlying datasets and configured filters
+      - Communicate analytical uncertainty and non-confirmatory status when reporting findings
+      - Respect the licensing conditions of third-party resources integrated into BioRemPP
+  - id: data-provenance
+    title: Data Provenance and Third-Party Resources
+    tone: info
+    paragraphs:
+      - >
+        BioRemPP harmonizes curated information from resources such as KEGG, HADEG, ToxCSM, and
+        regulatory-priority compound frameworks into a unified exploratory interface.
+      - >
+        Coverage, annotation quality, and update cadence remain dependent on those upstream sources,
+        and observed associations may reflect source-specific limitations or modeling assumptions.
+  - id: licensing-and-reuse
+    title: Licensing and Reuse Conditions
+    paragraphs:
+      - >
+        Reuse of BioRemPP content must remain aligned with the applicable licensing and attribution
+        requirements of both BioRemPP and the third-party resources from which integrated records
+        are derived.
+    bullets:
+      - Consult the release metadata and referenced source documentation before redistribution
+      - Ensure that downstream reuse complies with any source-specific academic or commercial restrictions
+      - Do not assume uniform licensing across all integrated resources
+  - id: citation-and-attribution
+    title: Citation and Attribution
+    tone: success
+    paragraphs:
+      - >
+        Publications, reports, presentations, or derivative analyses that rely on BioRemPP should
+        cite both the BioRemPP DBX Service and the corresponding versioned database release used in the work.
+      - >
+        Version information should be retained whenever outputs, screenshots, downloaded tables, or
+        derived analytical summaries are disseminated.
+  - id: warranty-disclaimer
+    title: Disclaimer of Warranty
+    tone: warning
+    paragraphs:
+      - >
+        BioRemPP is provided on an "as is" and "as available" basis without warranties of accuracy,
+        completeness, fitness for a particular purpose, uninterrupted availability, or absence of
+        upstream annotation errors.
+      - >
+        The authors and contributors do not guarantee that database-derived associations or guided
+        analytical outputs are exhaustive, stable across future releases, or directly transferable
+        to operational decision contexts.
+  - id: limitation-of-liability
+    title: Limitation of Liability
+    paragraphs:
+      - >
+        The authors, contributors, and hosting institutions shall not be liable for decisions,
+        losses, interruptions, or damages arising from use of the service, its outputs, or
+        downstream interpretations based on integrated database content.
+    bullets:
+      - Service unavailability or delayed access
+      - Errors, omissions, or inconsistencies in integrated source data
+      - Decisions taken on the basis of exploratory or non-validated outputs
+  - id: modifications
+    title: Modifications to the Terms
+    paragraphs:
+      - >
+        These terms may be updated as the BioRemPP DBX Service evolves. Continued use after an
+        update constitutes acceptance of the revised version made available through the application.
+  - id: contact
+    title: Contact Information
+    paragraphs:
+      - >
+        For clarification regarding access conditions, licensing alignment, or citation practice,
+        contact the BioRemPP maintainers through the project communication channels listed in the
+        documentation and repository materials.
+
+footer:
+  text: >
+    Thank you for using BioRemPP responsibly. Careful interpretation, proper attribution, and
+    respect for source licensing help keep the BioRemPP DBX Service useful to the scientific community.
+  close_label: Close

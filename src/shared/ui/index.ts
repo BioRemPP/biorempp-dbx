@@ -1,0 +1,34 @@
+/**
+ * @packageDocumentation
+ *
+ * Barrel exports for shared UI primitives, explorer helpers, and detail view building blocks.
+ */
+export * from './accordion';
+export * from './badge';
+export * from './button';
+export * from './card';
+export * from './dialog';
+export * from './dropdown-menu';
+export * from './detail/DetailHeader';
+export * from './detail/DetailStatusPanel';
+export * from './detail/EntityStatStrip';
+export * from './detail/EntityTableSection';
+export * from './detail/EntityTabs';
+export * from './detail/LazyTabPanel';
+export * from './detail/MetadataPanelShell';
+export * from './explorer/DataTable';
+export * from './explorer/ExplorerLayout';
+export * from './explorer/FilterField';
+export * from './explorer/FilterGrid';
+export * from './explorer/FilterToolbar';
+export * from './explorer/PaginationFooter';
+export * from './explorer/ResultSummaryBar';
+export * from './explorer/RowLinkCell';
+export * from './explorer/SearchField';
+export * from './input';
+export * from './pagination';
+export * from './metric-card';
+export * from './section-header';
+export * from './select';
+export * from './table';
+export * from './tabs';

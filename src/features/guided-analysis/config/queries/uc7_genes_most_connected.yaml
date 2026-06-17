@@ -1,0 +1,131 @@
+# Guided query definition for UC-7, focused on genes or KOs with the highest compound connectivity.
+id: uc7_genes_most_connected
+category: gene_ko_analysis
+title: Most Connected Genes
+question: Which genes are associated with the largest number of compounds?
+description: Rank genes by the breadth of compound associations in the current analytical scope.
+dataset: compound_summary
+executor: uc_gene_connectivity_ranking
+
+use_case_description:
+  scientific_question: >
+    Which genes concentrate broader compound-level associations in the current
+    integrated BioRemPP scope?
+  description: >
+    This use case ranks genes by how many distinct compounds connect to each
+    gene, helping users identify annotation-central genes that may serve as
+    useful entry points for deeper compound and pathway review. It is designed
+    for exploratory prioritization of genes with broader connectivity across
+    the current analytical scope.
+  visual_elements:
+    - label: Gene Ranking Barplot
+      description: Displays top genes ordered by distinct compound count for quick connectivity comparison.
+    - label: Gene Ranking Table
+      description: Lists ranked genes with compound coverage and KO context for detailed exploratory analysis.
+  interpretation_guidelines:
+    - Higher-ranked genes indicate stronger annotation centrality across compounds in the current dataset scope.
+    - This ranking is exploratory and should be interpreted as connectivity signal, not as confirmed mechanistic dominance.
+    - Genes with high compound_count and substantial KO context may be useful entry points for deeper pathway and compound-level interpretation.
+    - Gene connectivity patterns can guide hypothesis generation and prioritization for downstream validation.
+  limitations:
+    - >
+      Compound connectivity does not directly measure gene expression,
+      catalytic activity, pathway flux, or in situ biodegradation relevance.
+    - >
+      Gene ranks reflect the current integrated annotation graph and may change
+      as mappings, curation depth, or source coverage evolve.
+    - >
+      The ranking does not distinguish whether compound associations are broad
+      because of biological centrality or because of denser cross-referencing in
+      curated sources.
+  color_scheme: primary
+
+methods_modal:
+  button_label: View Methods
+  title: "UC-7: Genes with Broader Compound Connectivity"
+  introduction: This analysis compares genes by the breadth of their compound-level annotation connectivity.
+  steps:
+    - title: Analytical Objective
+      description: Identify genes with broader compound connectivity patterns in the integrated annotation space.
+    - title: Input Data
+      description: The analysis uses deduplicated gene-compound associations and complementary KO annotation context.
+      bullets:
+        - compound_count = number of distinct compounds associated with a gene symbol.
+        - ko_count = number of distinct KEGG Orthology identifiers associated with that gene context.
+    - title: Filtering Strategy
+      description: Filters define the gene subset through text search and numeric ranges for compound connectivity and KO coverage.
+    - title: Metric Definition
+      description: Gene connectivity is represented by compound_count, with ko_count used as complementary functional context.
+    - title: Ranking or Aggregation Procedure
+      description: Genes are aggregated by symbol and ordered by compound_count in descending order for comparative exploration.
+    - title: Output Representation
+      description: Outputs include summary indicators, a ranked gene bar chart, and a detailed ranking table.
+    - title: Interpretation Scope and Limitations
+      description: Higher ranks may indicate broader annotation connectivity, but do not establish mechanistic relevance or causality.
+  footer_note: This use case supports exploratory and hypothesis-generating interpretation of gene-compound connectivity patterns.
+
+defaults:
+  page_size: 10
+  filters: {}
+
+executor_config:
+  bar_top_n: 10
+
+filters:
+  - id: search
+    type: search
+    label: Search Gene
+    placeholder: e.g. nahA or dioxygenase
+  - id: compound_count
+    type: number_range
+    label: Compound Count
+    min: 0
+    min_placeholder: e.g. 5
+    max_placeholder: e.g. 50
+  - id: ko_count
+    type: number_range
+    label: KO Count
+    min: 0
+    min_placeholder: e.g. 10
+    max_placeholder: e.g. 300
+
+summary_cards:
+  - id: genes_in_scope
+    label: Genes in Scope
+    value_key: genes_in_scope
+  - id: max_compound_count
+    label: Max Compound Count
+    value_key: max_compound_count
+  - id: ranked_metric
+    label: Ranked Metric
+    value_key: ranked_metric_label
+
+visualizations:
+  - id: uc7_bar
+    type: horizontal_bar
+    title: Most Connected Genes
+    subtitle: Top genes by distinct compound associations
+    data_key: bar_items
+
+table:
+  id: uc7_table
+  title: Ranked genes by compound connectivity
+  subtitle: Ordered by COUNT(DISTINCT cpd)
+  row_click_field: ko
+  empty_message: No genes found for selected filters.
+  columns:
+    - id: rank
+      label: Rank
+      type: number
+    - id: genesymbol
+      label: Gene Symbol
+      type: text
+    - id: gene_name
+      label: Gene Name
+      type: text
+    - id: compound_count
+      label: Compound Count
+      type: number
+    - id: ko_count
+      label: KO Count
+      type: number

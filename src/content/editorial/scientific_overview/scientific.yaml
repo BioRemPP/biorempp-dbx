@@ -1,0 +1,95 @@
+section:
+  id: scientific-foundations
+  eyebrow: Foundations
+  title: Scientific Foundations
+  description: >
+    Core metrics used to interpret functional diversity, compound coverage, and
+    bioremediation relevance across curated genomic, pathway, and toxicological data.
+  terms:
+    - id: ko-richness
+      label: KO Richness
+      summary: Distinct KEGG Orthology entries linked to a sample, genome, or curated evidence slice.
+      definition: >
+        KO richness measures how many distinct KEGG Orthology identifiers are present
+        in the evidence under analysis, providing a compact view of functional breadth.
+      application: >
+        In BioRemPP DBX, KO richness helps summarize how broadly a compound, pathway,
+        genome, or evidence profile is connected to curated biodegradation functions.
+      use_cases:
+        - Compare functional breadth across compounds or pathway groups before inspecting individual KO mappings.
+        - Identify evidence slices that combine broad KO coverage with strong pathway connectivity.
+        - Support exploratory ranking of samples or organisms when looking for diverse degradation potential.
+      references:
+        - id: ko1
+          title: Millimeter-scale patterns of phylogenetic and trait diversity in a salt marsh microbial mat
+          authors: Armitage DW et al.
+          journal: Frontiers in Microbiology
+          year: 2012
+          url: https://www.frontiersin.org/articles/10.3389/fmicb.2012.00293
+          note: Example of KO-linked functional diversity reasoning in microbial community analysis.
+        - id: ko2
+          title: Integrated metagenomics and metaproteomics reveals human host-microbial interactions in Crohn's disease
+          authors: Erickson AR et al.
+          journal: PLOS ONE
+          year: 2012
+          url: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049138
+          note: Demonstrates how KO diversity can be used as a practical summary of functional potential.
+    - id: compound-richness
+      label: Compound Richness
+      summary: Number of distinct compounds associated with a curated evidence profile.
+      definition: >
+        Compound richness summarizes how many unique compounds are covered by the
+        current evidence context, whether at the level of a class, pathway, or
+        organism-associated profile.
+      application: >
+        In BioRemPP DBX, compound richness is useful for distinguishing narrow versus
+        broad chemical coverage and for prioritizing evidence collections that span
+        multiple pollutant classes.
+      use_cases:
+        - Rank compound classes by the breadth of compounds they organize in the database.
+        - Compare regulatory, pathway, and class-oriented slices for broad versus niche coverage.
+        - Combine compound richness with toxicity or KO context to support hypothesis generation.
+      references:
+        - id: cr1
+          title: The many dimensions of phytochemical diversity
+          authors: Wetzel WC et al.
+          journal: Ecology Letters
+          year: 2020
+          url: https://onlinelibrary.wiley.com/doi/10.1111/ele.13422
+          note: Useful background for treating the count of distinct compounds as an analytical diversity signal.
+        - id: cr2
+          title: Understanding the phytochemical diversity of plants
+          authors: Petren H et al.
+          journal: Ecology Monographs
+          year: 2023
+          url: https://www.biorxiv.org/content/10.1101/2023.03.23.533415v1
+          note: Supports the conceptual use of compound richness as a comparative ecological descriptor.
+    - id: functional-guilds
+      label: Metabolic Functional Guilds
+      summary: Shared functional profiles that group evidence around similar degradation capabilities.
+      definition: >
+        Functional guilds describe sets of genes, organisms, or evidence profiles that
+        converge on related biochemical roles rather than taxonomic identity alone.
+      application: >
+        In BioRemPP DBX, this concept helps interpret repeated KO, pathway, and
+        compound associations as coordinated evidence patterns rather than isolated
+        annotations.
+      use_cases:
+        - Recognize recurring degradation signatures across pathways and compound classes.
+        - Frame complementary evidence groups when comparing compounds with overlapping biology.
+        - Support exploratory thinking about redundancy and specialization in curated degradation functions.
+      references:
+        - id: fg1
+          title: Identification of microbial metabolic functional guilds from large genomic datasets
+          authors: Reynolds R et al.
+          journal: Frontiers in Microbiology
+          year: 2023
+          url: https://www.frontiersin.org/articles/10.3389/fmicb.2023.1197329
+          note: Direct reference for defining metabolic guilds from functional evidence rather than lineage alone.
+        - id: fg2
+          title: Xenometabolomics reveals metabolic functional guilds unique to specific inulin subtypes
+          authors: Piccolo BD et al.
+          journal: mSystems
+          year: 2025
+          url: https://doi.org/10.1128/msystems.01031-25
+          note: Illustrates the broader analytical value of guild thinking for compound-focused metabolism.

@@ -1,0 +1,23 @@
+version: v1
+header:
+  eyebrow: Scientific Overview
+  title: Scientific Foundations of BioRemPP Database
+  subtitle: >
+    A structured overview of the scientific metrics, analytical framing, FAIR data
+    design, and multi-omics interoperability patterns that support compound-centric
+    interpretation in the BioRemPP DBX Service.
+home_cta:
+  title: Scientific foundations and interoperability
+  description: >
+    Open a dedicated overview of the concepts, metrics, and external integration
+    pathways that explain how BioRemPP DBX organizes evidence for exploratory
+    bioremediation analysis.
+  button_label: Understand the Full Potential of BioRemPP Database
+quick_nav:
+  title: Page Guide
+  description: Jump to the main scientific themes documented for this release.
+section_order:
+  - scientific-foundations
+  - data-science
+  - fair-principles
+  - multiomics

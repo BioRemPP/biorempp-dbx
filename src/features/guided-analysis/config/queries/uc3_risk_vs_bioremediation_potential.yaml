@@ -1,0 +1,219 @@
+# Guided query definition for UC-3, comparing toxicity risk against annotation-derived bioremediation potential.
+id: uc3_risk_vs_bioremediation_potential
+category: compound_analysis
+title: Risk vs Bioremediation Potential
+question: Which compounds show high degradation potential and high risk?
+description: Compare bioremediation coverage and predicted risk to spot compounds that deserve closer review.
+dataset: compound_summary
+executor: uc_risk_potential_scatter
+
+use_case_description:
+  scientific_question: >
+    Which compounds combine higher bioremediation potential and higher
+    predicted toxicological risk under the selected endpoint context?
+  description: >
+    This scatter view contrasts annotation-derived bioremediation coverage with
+    predicted toxicological risk so users can spot compounds that combine
+    broader functional context with stronger toxicity signals. It is intended
+    for exploratory prioritization of compounds that may deserve closer review
+    under the current endpoint and filter scope.
+  visual_elements:
+    - label: X-Axis (Bioremediation Potential)
+      description: Uses gene coverage with selectable linear or log scaling to improve readability across dense clusters and outliers.
+    - label: Y-Axis (Predicted Risk)
+      description: Uses mean toxicity risk or the selected endpoint prediction, depending on the current toxicological context.
+    - label: Quadrant Thresholds
+      description: Vertical and horizontal cut lines are computed from P75 values in the currently filtered scope, enabling context-adaptive quadrant segmentation.
+    - label: Point Encoding
+      description: Point color represents compound class and point size maps pathway annotation count, enabling multi-variable exploratory inspection.
+  interpretation_guidelines:
+    - Compounds in the top-right quadrant indicate a combination of higher predicted risk and higher annotated potential within the current filtered scope.
+    - Quadrant assignments are relative to the selected filters and percentile thresholds, so they should be interpreted as exploratory context, not fixed risk classes.
+    - Comparing quadrants can help distinguish compounds that are high-potential but lower-risk from compounds that may demand more cautious prioritization.
+    - This chart supports hypothesis generation and triage decisions, and should be complemented with domain review and experimental evidence.
+  limitations:
+    - >
+      `gene_count` is a proxy for annotation-derived potential and does not
+      directly measure biodegradation efficiency, pathway flux, or ecological
+      performance.
+    - >
+      Thresholds are percentile-based within the filtered scope, so the same
+      compound can move across quadrants when filters or endpoint context are
+      changed.
+    - >
+      The scatter plot shows relative prioritization patterns, not causal
+      toxicological mechanisms or validated remediation outcomes.
+  color_scheme: primary
+
+methods_modal:
+  button_label: View Methods
+  title: "UC-3: Predicted Risk vs Annotation-Derived Potential"
+  introduction: This analysis contrasts annotation-derived potential and predicted toxicity to support context-aware exploratory prioritization.
+  steps:
+    - title: Analytical Objective
+      description: Explore compounds that combine higher annotation-derived potential with higher predicted toxicity in the selected analytical context.
+    - title: Input Data
+      description: The analysis uses compound-level annotation metrics together with predicted toxicity values.
+      bullets:
+        - gene_count = number of distinct gene annotations associated with a compound.
+        - pathway_count = number of distinct metabolic pathways linked to a compound.
+        - Toxicity values are derived from predictive models (e.g., ToxCSM) and do not represent experimentally validated toxicity.
+    - title: Filtering Strategy
+      description: Filters define the compound subset, endpoint context, and optional numeric ranges for potential and risk dimensions.
+    - title: Metric Definition
+      description: Potential is represented by gene_count on the X-axis, while risk is represented by toxicity_risk_mean or a selected endpoint prediction on the Y-axis.
+    - title: Ranking or Aggregation Procedure
+      description: Quadrant boundaries are computed as P75 thresholds within the filtered dataset, and compounds in the high-potential/high-risk quadrant are ranked for comparison.
+      bullets:
+        - Thresholds are dataset-relative and should not be interpreted as absolute risk cutoffs.
+    - title: Output Representation
+      description: Outputs include a scatter plot with threshold lines, summary indicators, and an ordered table for compounds in the high-potential/high-risk quadrant.
+    - title: Interpretation Scope and Limitations
+      description: Quadrant membership may indicate relative prioritization opportunities, but does not confirm biological efficacy or toxicological causality.
+  footer_note: This analysis provides exploratory, context-dependent signals for hypothesis generation and downstream validation planning.
+
+defaults:
+  page_size: 10
+  x_scale: log10p1
+  filters:
+    endpoint_group: all
+    endpoint: mean
+    x_scale: log10p1
+    focus_cluster: false
+
+executor_config:
+  x_field: gene_count
+  y_field_default: toxicity_risk_mean
+  threshold_basis: p75_filtered_scope
+  top_right_sort:
+    - field: y_value
+      order: desc
+    - field: gene_count
+      order: desc
+
+filters:
+  - id: endpoint_group
+    type: select
+    label: Endpoint Group
+    provider:
+      type: static
+      options:
+        - value: all
+          label: All groups
+        - value: ecotoxicity
+          label: Ecotoxicity
+        - value: genotoxicity_carcinogenicity
+          label: Genotoxicity & Carcinogenicity
+        - value: nuclear_receptors
+          label: Nuclear Receptors (NR)
+        - value: stress_response
+          label: Stress Response (SR)
+        - value: organ_irritation
+          label: Organ / Irritation
+        - value: other
+          label: Other
+  - id: endpoint
+    type: dependent_select
+    label: Y Axis Endpoint
+    depends_on: endpoint_group
+    provider:
+      type: query_derived
+      source: toxicity_endpoints
+      include_mean_option: true
+      mean_option_label: toxicity_risk_mean (all endpoints mean)
+  - id: x_scale
+    type: select
+    label: X Axis Scale
+    provider:
+      type: static
+      options:
+        - value: log10p1
+          label: Log10 (gene_count + 1)
+        - value: linear
+          label: Linear
+  - id: compoundclass
+    type: select
+    label: Compound Class
+    provider:
+      type: meta_endpoint
+      endpoint: /api/meta/compound-classes
+  - id: gene_count
+    type: number_range
+    label: Gene Count
+    min: 0
+    min_placeholder: e.g. 10
+    max_placeholder: e.g. 250
+  - id: y_value
+    type: number_range
+    label: Risk Score (Y)
+    min: 0
+    max: 1
+    step: 0.01
+    min_placeholder: e.g. 0.50
+    max_placeholder: e.g. 0.95
+  - id: pathway_count
+    type: number_range
+    label: Pathway Annotations
+    min: 0
+    min_placeholder: e.g. 5
+    max_placeholder: e.g. 25
+  - id: focus_cluster
+    type: toggle
+    label: Focus Cluster (Gene p95)
+  - id: search
+    type: search
+    label: Search Compound
+    placeholder: e.g. Ammonia or C00014
+
+summary_cards:
+  - id: compounds_in_scope
+    label: Compounds in Scope
+    value_key: compounds_in_scope
+  - id: plotted_points
+    label: Plotted Points
+    value_key: plotted_points
+  - id: excluded_null_y
+    label: Excluded (Null Y)
+    value_key: excluded_null_y
+  - id: top_right_count
+    label: Top-right Quadrant
+    value_key: top_right_count
+  - id: p75_thresholds
+    label: P75 Thresholds
+    value_key: thresholds_label
+
+visualizations:
+  - id: uc3_scatter
+    type: scatter_quadrant
+    title: Risk vs Bioremediation Potential
+    subtitle: x = gene_count (selectable scale), y = selected risk metric, thresholds = P75 filtered scope
+    data_key: scatter_points
+
+table:
+  id: uc3_table
+  title: Top-right quadrant compounds
+  subtitle: High Risk + High Potential compounds
+  row_click_field: cpd
+  empty_message: No compounds in the top-right quadrant for current filters.
+  columns:
+    - id: rank
+      label: Rank
+      type: number
+    - id: cpd
+      label: Compound ID
+      type: compound_link
+    - id: compoundname
+      label: Name
+      type: text
+    - id: compoundclass
+      label: Class
+      type: text
+    - id: gene_count
+      label: Gene Count
+      type: number
+    - id: y_value
+      label: Y Value
+      type: number
+    - id: pathway_count
+      label: Pathway Annotations
+      type: number

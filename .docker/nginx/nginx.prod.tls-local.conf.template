@@ -1,0 +1,93 @@
+limit_req_zone $binary_remote_addr zone=bioremppdbx_api:10m rate=${NGINX_API_RATE_LIMIT};
+limit_req_zone $binary_remote_addr zone=bioremppdbx_guided_execute:10m rate=${NGINX_GUIDED_EXECUTE_RATE_LIMIT};
+
+upstream bioremppdbx_app {
+    server ${APP_UPSTREAM};
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name ${DOMAIN};
+    return 308 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name ${DOMAIN};
+
+    auth_basic ${BASIC_AUTH_DIRECTIVE};
+    auth_basic_user_file /etc/nginx/auth/.htpasswd;
+
+    ssl_certificate /etc/nginx/certs/server.crt;
+    ssl_certificate_key /etc/nginx/certs/server.key;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers off;
+
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    location = / {
+        return 302 $scheme://$http_host${BIOREMPP_URL_BASE_PATH};
+    }
+
+    location = ${BIOREMPP_URL_BASE_PATH_NO_TRAILING} {
+        return 301 $scheme://$http_host${BIOREMPP_URL_BASE_PATH};
+    }
+
+    location = /health {
+        auth_basic off;
+        proxy_pass http://bioremppdbx_app/health;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    location ~ ^${BIOREMPP_URL_BASE_PATH_NO_TRAILING}/api/guided/queries/[^/]+/execute$ {
+        limit_req zone=bioremppdbx_guided_execute burst=${NGINX_GUIDED_EXECUTE_RATE_LIMIT_BURST} nodelay;
+        limit_req_status 429;
+        proxy_pass http://bioremppdbx_app;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_read_timeout 300s;
+        proxy_send_timeout 300s;
+    }
+
+    location ${BIOREMPP_URL_BASE_PATH}api/ {
+        limit_req zone=bioremppdbx_api burst=${NGINX_API_RATE_LIMIT_BURST} nodelay;
+        limit_req_status 429;
+        proxy_pass http://bioremppdbx_app;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_read_timeout 300s;
+        proxy_send_timeout 300s;
+    }
+
+    location ${BIOREMPP_URL_BASE_PATH} {
+        proxy_pass http://bioremppdbx_app${BIOREMPP_URL_BASE_PATH};
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_read_timeout 300s;
+        proxy_send_timeout 300s;
+    }
+}

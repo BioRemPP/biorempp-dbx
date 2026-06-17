@@ -1,0 +1,75 @@
+# Reproducible static query recipes for UC-5, mirroring the pathway functional-coverage use case.
+button_label: View Queries
+title: UC-5 Query Recipes (Pathways Functional Coverage)
+introduction: Reproduce UC-5 pathway ranking by distinct KO coverage from the
+  deduplicated relation table.
+recipes:
+  - id: sqlite_query
+    label: SQLite Query
+    description: Pathway ranking by COUNT(DISTINCT ko), with optional source filter.
+    language: sql
+    runtime: sqlite
+    code: |-
+      WITH params AS (
+        -- source: 'all' | 'KEGG' | 'HADEG' | 'COMPOUND_PATHWAY'
+        SELECT 'all' AS source
+      ),
+      grouped AS (
+        SELECT
+          rel.pathway,
+          COUNT(DISTINCT rel.ko) AS ko_count,
+          COUNT(DISTINCT rel.cpd) AS compound_count
+        FROM compound_ko_pathway_rel rel
+        WHERE (SELECT source FROM params) = 'all'
+           OR rel.source = (SELECT source FROM params)
+        GROUP BY rel.pathway
+      )
+      SELECT
+        pathway,
+        ko_count,
+        compound_count
+      FROM grouped
+      ORDER BY ko_count DESC, pathway ASC
+      ;
+  - id: python_sqlite
+    label: Python + SQLite
+    description: Python sqlite3 script for UC-5 pathway KO coverage ranking.
+    language: python
+    runtime: sqlite
+    code: |-
+      import json
+      import sqlite3
+
+      db_path = "data/biorempp.sqlite"
+      query = """
+      WITH params AS (
+        -- source: 'all' | 'KEGG' | 'HADEG' | 'COMPOUND_PATHWAY'
+        SELECT 'all' AS source
+      ),
+      grouped AS (
+        SELECT
+          rel.pathway,
+          COUNT(DISTINCT rel.ko) AS ko_count,
+          COUNT(DISTINCT rel.cpd) AS compound_count
+        FROM compound_ko_pathway_rel rel
+        WHERE (SELECT source FROM params) = 'all'
+           OR rel.source = (SELECT source FROM params)
+        GROUP BY rel.pathway
+      )
+      SELECT
+        pathway,
+        ko_count,
+        compound_count
+      FROM grouped
+      ORDER BY ko_count DESC, pathway ASC
+      ;
+      """
+
+      with sqlite3.connect(db_path) as conn:
+        conn.row_factory = sqlite3.Row
+        rows = [dict(row) for row in conn.execute(query).fetchall()]
+
+      print(json.dumps({"rows": rows}, ensure_ascii=False, sort_keys=True))
+notes:
+  - Functional coverage in this UC is defined as distinct KO count by pathway.
+  - Results are exploratory and sensitive to selected source scope.

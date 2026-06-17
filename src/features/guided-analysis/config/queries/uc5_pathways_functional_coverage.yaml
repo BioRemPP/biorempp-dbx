@@ -1,0 +1,146 @@
+# Guided query definition for UC-5, focused on pathways with broader KO-based functional coverage.
+id: uc5_pathways_functional_coverage
+category: pathway_analysis
+title: Pathways with Highest Functional Coverage
+question: Which pathways have the highest number of associated KOs?
+description: Rank pathways by functional coverage to identify broader KO-linked pathway contexts.
+dataset: compound_summary
+executor: uc_pathway_functional_coverage
+
+use_case_description:
+  scientific_question: >
+    Which pathways concentrate broader functional annotation coverage based on
+    distinct KO associations?
+  description: >
+    This use case ranks pathways by distinct KO coverage, helping users
+    identify which pathway contexts gather broader functional annotation under
+    the selected source and numeric filters. It is useful for comparing pathway
+    breadth before drilling down into more specific detail views.
+  visual_elements:
+    - label: Pathway Barplot
+      description: Displays top pathways ordered by distinct KO count in the active source/filter scope.
+    - label: Pathway Ranking Table
+      description: Lists pathway, source context, KO count, and compound count for detailed comparison.
+  interpretation_guidelines:
+    - Higher KO coverage suggests broader annotated functional diversity for the pathway in the current scope.
+    - This ranking is exploratory and should be interpreted as annotation-based signal rather than confirmed mechanistic dominance.
+    - Source selection changes pathway ordering and should be treated as contextual view of available annotations.
+    - Pathways with high compound_count but moderate KO count may still be relevant when comparing breadth versus redundancy of functional coverage.
+  limitations:
+    - >
+      Distinct KO count reflects annotation coverage, not pathway flux,
+      pathway completeness under real conditions, or experimentally validated
+      biodegradation performance.
+    - >
+      Pathway ranks depend on the selected source and on the normalization of
+      deduplicated mappings in the integrated dataset.
+    - >
+      The ranking does not show which specific compounds or KO modules drive a
+      pathway's position unless the user drills down through tables and detail
+      views.
+  color_scheme: primary
+
+methods_modal:
+  button_label: View Methods
+  title: "UC-5: Pathways with Higher Functional Annotation Coverage"
+  introduction: This analysis compares pathways by annotation-derived functional coverage under the selected source context.
+  steps:
+    - title: Analytical Objective
+      description: Identify pathways with broader functional annotation coverage for exploratory pathway prioritization.
+    - title: Input Data
+      description: The analysis uses deduplicated pathway-compound-function associations with source labels.
+      bullets:
+        - ko_count = number of distinct KEGG Orthology identifiers associated with a pathway.
+        - compound_count = number of distinct compounds linked to a pathway.
+    - title: Filtering Strategy
+      description: Filters define source and pathway subset selection, with optional numeric constraints on functional and compound coverage.
+    - title: Metric Definition
+      description: Functional coverage is represented by ko_count, interpreted as pathway-level annotation breadth in the selected scope.
+    - title: Ranking or Aggregation Procedure
+      description: Pathways are aggregated and ordered by ko_count in descending order for comparative analysis.
+    - title: Output Representation
+      description: Outputs include summary indicators, a ranked pathway bar chart, and a tabular ranking for detailed inspection.
+    - title: Interpretation Scope and Limitations
+      description: Higher ranks may suggest broader annotation-derived pathway relevance, but do not establish mechanistic dominance or causal contribution.
+  footer_note: This use case provides exploratory, annotation-centered evidence to support hypothesis generation.
+
+defaults:
+  page_size: 10
+  filters:
+    source: all
+
+executor_config:
+  bar_top_n: 10
+
+filters:
+  - id: source
+    type: select
+    label: Source
+    provider:
+      type: static
+      options:
+        - value: all
+          label: All sources
+        - value: KEGG
+          label: KEGG
+        - value: HADEG
+          label: HADEG
+        - value: COMPOUND_PATHWAY
+          label: COMPOUND_PATHWAY
+  - id: pathway
+    type: search
+    label: Search Pathway
+    placeholder: e.g. Benzoate degradation
+  - id: ko_count
+    type: number_range
+    label: KO Count
+    min: 0
+    min_placeholder: e.g. 10
+    max_placeholder: e.g. 300
+  - id: compound_count
+    type: number_range
+    label: Compound Count
+    min: 0
+    min_placeholder: e.g. 5
+    max_placeholder: e.g. 50
+
+summary_cards:
+  - id: pathways_in_scope
+    label: Pathways in Scope
+    value_key: pathways_in_scope
+  - id: max_ko_count
+    label: Max KO Count
+    value_key: max_ko_count
+  - id: selected_source
+    label: Selected Source
+    value_key: selected_source
+
+visualizations:
+  - id: uc5_bar
+    type: horizontal_bar
+    title: Pathways by Functional Coverage (KO)
+    subtitle: Top pathways by distinct KO count
+    data_key: bar_items
+
+table:
+  id: uc5_table
+  title: Pathway functional coverage ranking
+  subtitle: Ranked by distinct KO count
+  row_click_field: pathway
+  empty_message: No pathways found for selected filters.
+  columns:
+    - id: rank
+      label: Rank
+      type: number
+    - id: pathway
+      label: Pathway
+      type: text
+    - id: source
+      label: Source
+      type: text
+    - id: ko_count
+      label: KO Count
+      type: number
+    - id: compound_count
+      label: Compound Count
+      type: number

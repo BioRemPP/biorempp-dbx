@@ -1,0 +1,290 @@
+version: v1
+language: en
+
+header:
+  eyebrow: Technical Reference
+  title: Technical Information
+  subtitle: >
+    How the current BioRemPP database snapshot is assembled, quality-tracked,
+    and framed for exploratory bioremediation research use.
+  intro_note: >
+    This page documents the bundled BioRemPP snapshot shipped with the current
+    application build. Release-sensitive facts shown here are sourced from the
+    local analysis artifacts included in the app
+
+intro:
+  title: Why This Page Exists
+  paragraphs:
+    - >
+      This page explains what the current bundled
+      snapshot contains, which quality indicators accompany it, and where its
+      interpretive limits begin
+    - >
+      The current app bundles a release-oriented snapshot together with schema summaries, completeness
+      measures, and link-coverage metadata so that users can inspect the
+      database as a technical artifact as well as a scientific resource
+
+runtime_delivery:
+  title: Why the App Uses SQLite at Runtime
+  intro: >
+    The application does not query the distributed release CSV files directly
+    on every request. Instead, it ships a lean read-only SQLite runtime so the
+    explorer can serve stable, indexed, application-oriented queries 
+  bullets:
+    - id: query-performance
+      label: Query performance
+      description: >
+        SQLite gives the app a compact indexed runtime that can answer
+        explorer, detail, and guided-analysis requests without reparsing wide
+        CSV files or rebuilding joins per interaction
+    - id: stack-integration
+      label: Stack integration
+      description: >
+        A single read-only SQLite artifact is straightforward to ship, validate,
+        and mount in the existing Node/Express deployment model, which keeps the
+        runtime aligned with the built frontend and bundled API
+    - id: read-model-shaping
+      label: Explorer-oriented read models
+      description: >
+        The runtime is organized around summary and mapping tables tuned for UI
+        access patterns, especially compound-centric exploration through
+        `compound_summary` and related lookup tables, rather than raw flat-file
+        traversal on every request
+    - id: immutable-snapshot
+      label: Immutable release snapshot
+      description: >
+        Shipping a bundled SQLite file makes the published release easier to pin
+        as an immutable application snapshot with explicit version metadata,
+        consistent results, and simpler operational reproducibility
+  recommendation_title: Use the distributed CSV files for practical downstream analysis
+  recommendation: >
+    For notebooks, bulk filtering, machine-readable reuse, custom joins, or
+    external analytical workflows, prefer the release CSV files distributed by
+    the project. They are the most practical artifacts for R, Python, pandas,
+    SQL import, and Snakemake-oriented analysis outside the application
+  closing: >
+    In short, SQLite is the delivery format that powers the live application,
+    while CSV should be treated as the primary exchange format for practical
+    downstream analysis and reuse
+
+build_overview:
+  title: How the Database Is Built
+  intro: >
+    The bundled BioRemPP snapshot is presented as the output of an automated,
+    versioned Snakemake workflow rather than as a manually assembled
+    spreadsheet. Curated inputs, KEGG-derived relationships, analysis
+    artifacts, and export logic are all coordinated through that
+    release pipeline
+  bullets:
+    - id: curated-inputs
+      label: Curated inputs
+      description: >
+        Local curation contributes compound classes, reference-agency mappings,
+        and normalization choices that define the scope of the published
+        snapshot
+    - id: kegg-derived-links
+      label: KEGG-derived links
+      description: >
+        Compound, KO, EC, reaction, and reaction-description relationships are
+        organized from KEGG-oriented source metadata and then reconciled into a
+        single integrated schema
+    - id: analysis-artifacts
+      label: Analysis artifacts
+      description: >
+        The app bundles summary JSON artifacts that expose counts,
+        completeness, link coverage, and release metadata alongside the
+        published snapshot
+    - id: snakemake-orchestration
+      label: Snakemake orchestration
+      description: >
+        Workflow execution is organized through Snakemake so that data
+        retrieval, integration, analysis, and reporting steps follow an
+        explicit dependency graph instead of monolithic scripts or manual manipulation
+    - id: export-boundary
+      label: Export boundary
+      description: >
+        The final dataset is intentionally framed as a versioned snapshot that
+        can be inspected, loaded, and compared against future releases without
+        rewriting its editorial interpretation each time
+  closing: >
+    The key point for users is that BioRemPP should be read as a versioned data
+    product assembled by a documented Snakemake pipeline with explicit
+    metadata, not as a one-off table with undocumented provenance
+
+schema_quality:
+  title: Schema, Link Coverage, and Missing-Data Handling
+  intro: >
+    The current bundled snapshot exposes an 11-column integrated schema. Empty
+    values are tracked explicitly, and the snapshot ships with row-shape,
+    link-coverage, and completeness summaries that help users understand where
+    the data is dense and where it remains partial
+  quality_points:
+    - >
+      The published schema is explicit: the current snapshot ships with 11
+      ordered columns, not an inferred or hidden structure
+    - >
+      Nullable fields such as `ec`, `reaction`, and `reaction_description` are
+      preserved honestly instead of being silently backfilled
+    - >
+      Completeness percentages are bundled per column, allowing users to judge
+      where the snapshot is fully populated and where missingness remains
+    - >
+      Link-coverage summaries are published for KO and compound identifiers so
+      that matching scope can be interpreted directly from the bundled
+      metadata
+  coverage_note: >
+    Row-shape counts and reaction-description coverage provide a compact view
+    of structural density across the current release snapshot
+
+validation:
+  title: Quality and Validation
+  intro: >
+    The current snapshot is accompanied by schema-level quality indicators,
+    completeness tracking, and link-coverage summaries. These signals help
+    users audit the published data structure, and the broader project uses
+    automated Great Expectations validation as part of its release-oriented
+    quality workflow even when those full external reports are not bundled
+    into the current app snapshot
+  bullets:
+    - >
+      Structural expectations are made visible through the published column
+      list, completeness metrics, and row-shape summaries
+    - >
+      Great Expectations is used in the project as an automated validation
+      layer to check release integrity, schema consistency, and unexpected
+      drift outside the generation pipeline itself
+    - >
+      KO and compound matching coverage are exposed numerically so users can
+      see how much of the current identifier space aligns with the bundled
+      link metadata
+    - >
+      Reaction-description coverage is reported separately, allowing users to
+      distinguish between reaction identifiers and the availability of their
+      textual interpretation
+    - >
+      Database-derived quality summaries should be understood as release
+      metadata, not as experimental confirmation of biodegradation mechanisms
+      or environmental outcomes
+  closing: >
+    This page intentionally avoids publishing validation counters that are not
+    present in the current bundled app snapshot, but it does make explicit
+    that automated Great Expectations checks are part of the project-level
+    validation stack. If future artifacts are added to the repository, this
+    section can be expanded without changing the page architecture
+
+provenance:
+  title: Reproducibility and Provenance
+  intro: >
+    The bundled app includes release-specific metadata that helps users
+    distinguish what snapshot they are looking at and which KEGG release
+    context it reflects
+  bullets:
+    - >
+      Database name, version, generation date, and KEGG release are bundled
+      with the current snapshot and can be surfaced directly in the interface
+    - >
+      Summary JSON artifacts provide a machine-readable basis for counts,
+      completeness, and coverage claims shown on this page
+    - >
+      The runtime SQLite file supports application reproducibility, while the
+      distributed CSV files remain the practical release artifacts for external
+      analytical reuse and pipeline reconstruction
+    - >
+      Because the snapshot is versioned, future releases can be compared
+      against the current one without treating every database view as an
+      undocumented moving target
+  closing: >
+    In practice, provenance here means that the app can point to explicit local
+    artifacts for its technical claims and that future releases can be framed as new snapshots with their own metadata rather than as a single evolving dataset with shifting interpretive boundaries
+
+limitations:
+  title: Interpretation Boundaries
+  intro: >
+    BioRemPP supports exploratory analysis, prioritization, and hypothesis
+    generation. It should not be framed as direct experimental validation or as
+    a regulatory decision engine
+  safe_claims_title: Safe claims for the current snapshot
+  safe_claims:
+    - The bundled database snapshot is versioned and accompanied by release metadata
+    - The current schema, missingness, and link-coverage characteristics are inspectable
+    - The resource supports exploratory analysis of database-derived relationships
+    - Reaction and EC coverage can be interpreted from bundled completeness summaries
+    - The SQLite runtime and CSV release artifacts serve different practical roles and should be cited accordingly
+  avoid_claims_title: Claims to avoid
+  avoid_claims:
+    - Experimental confirmation of biodegradation activity
+    - Guaranteed remediation efficacy in real environments
+    - Full coverage of all contaminants or all pathway evidence
+    - Regulatory compliance decisions without downstream review
+  closing: >
+    The safest framing is that BioRemPP publishes a transparent, database-
+    derived snapshot with strong technical visibility, while downstream
+    biological and environmental claims still require external validation
+
+faq:
+  title: Technical FAQ
+  intro: >
+    Short answers to questions that most directly affect interpretation of the
+    current bundled snapshot
+  items:
+    - id: regenerated-snapshot
+      question: Is this a static spreadsheet or a regenerated release snapshot?
+      answer: >
+        It should be understood as a release snapshot distributed with the app.
+        The bundled metadata shows when that snapshot was generated and which
+        KEGG release context it reflects
+    - id: why-sqlite-runtime
+      question: Why does the app use SQLite instead of reading the CSV files directly?
+      answer: >
+        SQLite is used as the live runtime because it supports indexed
+        read-only queries, compact deployment, application-aligned read models,
+        and stable integration with the current frontend plus Node/Express
+        stack. The app therefore serves curated explorer requests from SQLite
+        instead of rebuilding joins from raw CSV files on every interaction
+    - id: when-to-use-csv
+      question: When should I use the CSV files instead of the bundled SQLite runtime?
+      answer: >
+        Prefer the distributed CSV files for practical downstream analysis,
+        notebooks, bulk filtering, custom joins, external pipelines, and
+        machine-readable reuse outside the application. The SQLite file is best
+        understood as the delivery layer for the live explorer, not as the only
+        analytical artifact worth reusing
+    - id: empty-ec-reaction
+      question: What do empty `ec` or `reaction` values mean?
+      answer: >
+        Empty values are preserved as explicit missing data in the bundled
+        schema. They should be interpreted as part of the published data
+        profile, not as silently hidden or auto-filled fields
+    - id: database-derived-evidence
+      question: How should database-derived relationships be interpreted?
+      answer: >
+        They are useful for exploratory navigation, prioritization, and
+        hypothesis generation. They do not, by themselves, constitute
+        organism-specific or experimentally validated biodegradation evidence
+    - id: release-scope
+      question: What is the scope of the current release?
+      answer: >
+        The current bundled snapshot reflects the rows, columns, identifiers,
+        and KEGG release metadata packaged in the app. It should be interpreted
+        as a defined technical snapshot rather than as a claim of universal or
+        exhaustive pollutant coverage
+
+footer:
+  title: Provenance Note
+  note: >
+    This page describes the BioRemPP database snapshot bundled with the current
+    application build. Release-sensitive facts are sourced from local analysis
+    artifacts included in the repository; future technical claims should only
+    be promoted when the corresponding artifacts are added to the app and
+    validated against the same snapshot
+
+sidebar:
+  snapshot_title: Release Snapshot
+  snapshot_intro: >
+    These values come directly from the current bundled data artifacts shipped
+    with the app.
+  quick_nav_title: On This Page
+  quick_nav_description: Jump between the major technical sections.
+  actions_title: Continue Exploring
+  databases_label: Open Databases
+  documentation_label: Open Documentation

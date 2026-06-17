@@ -1,0 +1,93 @@
+# Database Schemas Index Page Configuration
+# Used by schema_renderer.py to generate the schemas index page
+
+page_id: "database-schemas-index"
+title: "Database Schemas"
+subtitle: "Formal specifications of all databases integrated into BioRemPP"
+icon: "fa-database"
+
+# Navigation table data
+databases:
+  - id: "biorempp"
+    name: "BioRemPP"
+    rows: 123762
+    columns: 11
+    focus: "Integrated compound-gene-enzyme-agency relationships with EC and KEGG reaction annotations"
+    route: "/databases/biorempp"
+    color: "success"
+    join_key: "ko"
+    file: "biorempp_database_v1.1.0.csv"
+    
+  - id: "hadeg"
+    name: "HADEG"
+    rows: 867
+    columns: 4
+    focus: "Hydrocarbon Aerobic Degradation Enzymes and Genes"
+    route: "/databases/hadeg"
+    color: "info"
+    join_key: "ko"
+    file: "hadeg_db.csv"
+    
+  - id: "kegg"
+    name: "KEGG"
+    rows: 855
+    columns: 3
+    focus: "Xenobiotic/pollutant degradation pathways"
+    route: "/databases/kegg"
+    color: "warning"
+    join_key: "ko"
+    file: "kegg_degradation_db.csv"
+    
+  - id: "toxcsm"
+    name: "ToxCSM"
+    rows: 370
+    columns: 66
+    focus: "Toxicological predictions (31 endpoints)"
+    route: "/databases/toxcsm"
+    color: "danger"
+    join_key: "cpd"
+    file: "toxcsm_db.csv"
+
+# Common file format specification
+file_format:
+  format: "CSV (Comma-Separated Values)"
+  delimiter: "Semicolon (;)"
+  encoding: "UTF-8"
+  header: true
+  text_qualifier: 'Double quote (")'
+  completeness: "Schema-specific completeness; nullable or sentinel-backed fields are documented per source dataset"
+
+# Overview content
+overview:
+  formal_specs: "Column types, formats, patterns, and controlled vocabularies"
+  validation_rules: "Regex patterns, cardinality constraints, completeness requirements"
+  cross_references: "Foreign key relationships and integration points between databases"
+  usage_examples: "Code snippets for loading and querying each database"
+
+# Integration architecture
+integration:
+  description: >
+    The four databases are linked through two shared join keys.
+    BioRemPP, HADEG, and KEGG connect via the ko column (KEGG Orthology ID).
+    ToxCSM connects via the cpd column (KEGG Compound ID) sourced from BioRemPP.
+  join_points:
+    - databases: ["BioRemPP", "HADEG", "KEGG"]
+      key: "ko"
+      description: "KEGG Orthology ID — links gene-level records across the three molecular databases."
+    - databases: ["ToxCSM"]
+      key: "cpd"
+      description: "KEGG Compound ID — bridges toxicological predictions to BioRemPP compound records."
+
+# Related documentation links
+related_docs:
+  - title: "Data Sources"
+    url: "https://biorempp-web.readthedocs.io/en/stable/"
+  - title: "Mapping Strategy"
+    url: "https://biorempp-web.readthedocs.io/en/stable/"
+  - title: "GitHub Repository"
+    url: "https://github.com/BioRemPP/biorempp_web"
+
+# Contact info
+contact:
+  github_issues: "https://github.com/BioRemPP/biorempp_db/issues"
+  email: "biorempp@gmail.com"

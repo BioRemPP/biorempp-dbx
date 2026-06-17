@@ -1,0 +1,354 @@
+version: v2
+language: en
+title: Frequently Asked Questions
+intro: Find practical guidance for navigating BioRemPP DBX Service, interpreting outputs responsibly, and locating the right companion pages for downloads, schema inspection, and technical context.
+header_actions:
+  - label: Open User Guide
+    view: user-guide
+  - label: Open Scientific Overview
+    view: scientific-overview
+  - label: Open Databases
+    view: databases
+  - label: Open Technical Information
+    view: technical-information
+sections:
+  - id: getting-started
+    title: Getting Started
+    description: Start here if you are new to the explorer and need quick orientation on what DBX is and how to approach it.
+    items:
+      - id: what-is-biorempp-dbx-service
+        question: What is BioRemPP DBX Service?
+        answer: BioRemPP DBX Service is an open-access database explorer for integrated bioremediation, pathway, gene, compound-class, and toxicology evidence organized around a compound-centric analytical model.
+        bullets:
+          - The interface title BioRemPP Database Explorer refers to the DBX application surface.
+          - The service is designed for exploratory interpretation, hypothesis generation, and evidence-guided prioritization.
+          - It exposes curated runtime views, schema documentation, guided workflows, and downloadable release artifacts.
+        tags: [overview, platform, dbx]
+      - id: do-i-need-login-or-authentication
+        question: Do I need login or authentication?
+        answer: No. BioRemPP DBX Service is currently public, read-only, and does not require account creation, login, or token-based authentication for normal browsing.
+        note:
+          type: success
+          text: The current DBX release is intended to be accessible without account setup.
+        tags: [access, authentication]
+      - id: dbx-vs-biorempp-web-service
+        question: How is DBX different from the BioRemPP Web Service?
+        answer: DBX focuses on read-only exploration of curated release snapshots, while the BioRemPP Web Service covers a separate analytical experience centered on user-driven workflows outside the DBX runtime explorer.
+        bullets:
+          - DBX emphasizes integrated entity browsing, guided read-only use cases, schema transparency, and versioned release artifacts.
+          - The Web Service should be treated as a separate application surface even when both belong to the broader BioRemPP framework.
+        links:
+          - label: Open BioRemPP Web Service
+            url: https://bioinfo.imd.ufrn.br/biorempp/
+        tags: [dbx, web-service, scope]
+      - id: which-page-should-i-start-with
+        question: Which page should I start with first?
+        answer: Start from Home for high-level orientation, then move to User Guide for page-by-page usage advice or Guided Analysis if you already want a predefined exploratory workflow.
+        links:
+          - label: Open Home
+            view: home
+          - label: Open User Guide
+            view: user-guide
+          - label: Open Guided Analysis
+            view: guided-analysis
+        tags: [navigation, onboarding]
+
+  - id: navigation-and-support-pages
+    title: Navigation and Support Pages
+    description: These questions explain which companion pages exist and when each one is the right destination.
+    items:
+      - id: support-pages-difference
+        question: What is the difference between User Guide, Scientific Overview, Technical Information, Databases, Documentation, and Contact?
+        answer: Each support page serves a different purpose so the FAQ can stay focused on end-user questions instead of absorbing all supporting material.
+        bullets:
+          - User Guide explains how to use each explorer and the guided-analysis module.
+          - Scientific Overview expands the scientific rationale, metrics, FAIR framing, and interoperability concepts behind DBX.
+          - Technical Information explains runtime architecture, SQLite delivery, processing pipeline, and practical release details.
+          - Databases exposes schema-level descriptions, field purpose, validation notes, and integrated table structure.
+          - Documentation points to framework-level references and companion resources.
+          - Contact is the direct support surface for team communication.
+        links:
+          - label: Open User Guide
+            view: user-guide
+          - label: Open Scientific Overview
+            view: scientific-overview
+          - label: Open Technical Information
+            view: technical-information
+          - label: Open Databases
+            view: databases
+        tags: [navigation, support-pages]
+      - id: where-find-scientific-foundations
+        question: Where do I find the scientific foundations of the platform?
+        answer: Use the Scientific Overview page when you want the longer explanation of compound-centric framing, FAIR principles, identifier interoperability, feature engineering, and multi-omics compatibility.
+        links:
+          - label: Open Scientific Overview
+            view: scientific-overview
+        tags: [scientific-overview, foundations]
+      - id: where-inspect-schema-and-fields
+        question: Where do I inspect schema and field definitions?
+        answer: Use the Databases page and the database-specific detail pages to inspect table structure, field descriptions, validation rules, and release-specific schema notes.
+        links:
+          - label: Open Databases
+            view: databases
+          - label: Open Technical Information
+            view: technical-information
+        tags: [schema, fields, databases]
+
+  - id: explorers-and-detail-pages
+    title: Explorers and Detail Pages
+    description: These answers clarify how the explorer tables relate to entity detail pages and cross-domain navigation.
+    items:
+      - id: what-explorer-pages-show
+        question: What do the explorer pages show?
+        answer: Explorer pages provide searchable, filterable, paginated tables for compounds, compound classes, genes / KO entries, pathways, and toxicity records.
+        bullets:
+          - They are optimized for breadth-first inspection across many records.
+          - Filters help narrow the dataset before you open specific detail pages.
+          - Export actions are available in explorer workflows where structured table output is the primary result.
+        tags: [explorers, filters, tables]
+      - id: what-detail-pages-add
+        question: What do detail pages add beyond the explorer tables?
+        answer: Detail pages add focused context for a single entity, including overview metrics, related associations, metadata blocks, and chart-oriented summaries when that domain supports them.
+        bullets:
+          - Compound and gene details expose tabbed views with overview, associations, and metadata.
+          - Pathway and compound-class details provide richer context without requiring a full table-first layout.
+        tags: [detail-pages, overview, metadata]
+      - id: cross-domain-navigation
+        question: Can I navigate across compounds, genes, pathways, and classes?
+        answer: Yes. DBX is intentionally cross-domain, so explorer tables, detail pages, and guided outputs can lead you from one entity family to another through linked identifiers and associations.
+        note:
+          type: info
+          text: Cross-domain navigation is one of the main reasons DBX is organized around a compound-centric integration model.
+        tags: [navigation, cross-domain, entities]
+      - id: explorer-export-options
+        question: What export options are available in explorer workflows?
+        answer: Explorer workflows expose table-oriented export actions such as CSV and JSON when the rendered result is meant to be reused outside the page.
+        bullets:
+          - Exports preserve the filtered view rather than the unfiltered catalog.
+          - Guided Analysis complements these exports with reproducible recipe dialogs instead of only flat downloads.
+        tags: [exports, csv, json]
+
+  - id: guided-analysis
+    title: Guided Analysis
+    description: Use this section to understand what the guided module does, how its dialogs work, and why retries can occasionally happen.
+    items:
+      - id: what-is-guided-analysis
+        question: What is Guided Analysis in this release?
+        answer: Guided Analysis is the DBX module for predefined exploratory use cases. Each use case combines declarative filters, curated analytical framing, server-side execution, and aligned tabular or visual outputs.
+        bullets:
+          - Use cases are grouped by compound analysis, pathway analysis, and gene / KO analysis.
+          - The current experience is read-only and auto-executes as filters settle.
+        links:
+          - label: Open Guided Analysis
+            view: guided-analysis
+          - label: Open User Guide
+            view: user-guide
+        tags: [guided-analysis, workflows]
+      - id: overview-methods-and-queries-meaning
+        question: What do the overview, Methods, and Queries controls mean?
+        answer: The overview card summarizes what the selected use case answers, what the analysis does, what you will see, and how to interpret it. The Methods dialog explains the analytical steps, while the Queries dialog exposes reproducible SQL or Python recipes associated with the use case.
+        bullets:
+          - The overview is for interpretation context.
+          - View Methods explains the workflow structure.
+          - View Queries exposes static reproducible recipes, not a live mirror of every active filter combination.
+        tags: [guided-analysis, methods, queries, overview]
+      - id: guided-reproducibility-outside-app
+        question: Can guided outputs be reproduced outside the app?
+        answer: Yes. Guided Analysis is designed to support reproducibility by pairing the interactive result view with documented query recipes and explicit analytical framing.
+        bullets:
+          - Recipes are surfaced as reusable SQL or Python examples.
+          - Reuse should still report version, filter context, and access date.
+        tags: [guided-analysis, reproducibility, recipes]
+      - id: guided-retry-later
+        question: Why might Guided Analysis temporarily ask me to retry later?
+        answer: Guided Analysis protects the shared execution service with rate limiting, so repeated rapid filter changes or repeated executions in a short window can trigger a temporary retry message.
+        note:
+          type: warning
+          text: Wait a few seconds and allow the filters to settle before triggering more changes.
+        tags: [guided-analysis, rate-limit, troubleshooting]
+
+  - id: data-scope-and-coverage
+    title: Data Scope and Coverage
+    description: These questions explain what the integrated signals actually represent and how to read missing or partial annotation fields.
+    items:
+      - id: compound-centric-integration-meaning
+        question: What does compound-centric integration mean?
+        answer: Compound-centric integration means DBX organizes evidence around environmentally relevant compounds and then links each compound to KO or gene mappings, pathway annotations, toxicology predictions, classes, and regulatory context.
+        bullets:
+          - This framing helps users inspect how multiple evidence layers converge around a pollutant or compound class.
+          - It does not imply that compounds are the only scientifically meaningful entry point, only that they anchor the integrated read model.
+        tags: [compound-centric, integration]
+      - id: coverage-signal-meaning
+        question: What do KO count, gene count, pathway count, and related coverage signals represent?
+        answer: These counts summarize how many linked annotations or associations are present in the integrated release snapshot for a given record.
+        bullets:
+          - They should be interpreted as coverage indicators within the curated database context.
+          - They do not independently prove pathway activity, kinetic behavior, or environmental performance.
+        tags: [coverage, counts, annotations]
+      - id: empty-ec-reaction-fields
+        question: What do empty ec, reaction, and reaction_description values mean?
+        answer: Empty values in these fields usually mean the current integrated record could not be confidently populated for that specific release snapshot, not that the entity is invalid or that the database schema is incomplete.
+        bullets:
+          - Release v1.1.0 expands the schema to include these fields where curated mappings are available.
+          - Some rows still remain blank because upstream or integrated evidence does not resolve every EC or reaction-level mapping.
+        links:
+          - label: Open Databases
+            view: databases
+        tags: [schema, ec, reaction, missing-values]
+      - id: absence-of-annotation
+        question: Does absence of annotation mean absence of function?
+        answer: No. Missing annotations often reflect database scope, linkage limits, curation boundaries, or release coverage rather than true biological absence.
+        note:
+          type: warning
+          text: Lack of annotation should not be converted into a negative biological claim without external evidence.
+        tags: [annotation, limitations, coverage]
+
+  - id: interpretation-and-limitations
+    title: Interpretation and Limitations
+    description: Read these answers before turning DBX outputs into biological, toxicological, or regulatory claims.
+    items:
+      - id: are-toxcsm-values-experimental
+        question: Are ToxCSM values experimental measurements?
+        answer: No. ToxCSM values in DBX should be treated as computational toxicity predictions suitable for screening and comparative exploratory interpretation.
+        note:
+          type: warning
+          text: Predicted toxicity values are not replacements for experimental toxicology measurements.
+        tags: [toxcsm, toxicity, predictions]
+      - id: causal-or-confirmatory-claims
+        question: Can I claim causal or confirmatory conclusions from DBX alone?
+        answer: No. DBX supports exploratory analysis, comparative inspection, and hypothesis generation. It does not convert integrated annotations into confirmatory, clinical, causal, or policy-grade evidence on its own.
+        tags: [limitations, causality, interpretation]
+      - id: regulatory-annotations-meaning
+        question: What do regulatory annotations represent?
+        answer: Regulatory annotations indicate curated reference-list associations present in the integrated release. They signal that a compound appears in a relevant agency or regulatory context, but they should not be read as a complete or always-current compliance determination.
+        bullets:
+          - Regulatory status can change outside the release cycle.
+          - Geographic and policy interpretation still depends on the original source framework.
+        tags: [regulatory, references, agencies]
+      - id: full-interpretation-boundaries-and-terms
+        question: Where can I read the full interpretation boundaries and terms?
+        answer: The Home page exposes the Scope and Limitations summary together with the detailed interpretation modal and the Terms of Use entry point.
+        links:
+          - label: Open Home
+            view: home
+          - label: Open Technical Information
+            view: technical-information
+        tags: [limitations, terms, interpretation]
+
+  - id: downloads-reproducibility-and-citation
+    title: Downloads, Reproducibility, and Citation
+    description: These answers summarize what can be downloaded now, how release artifacts are positioned, and what to report when you reuse DBX outputs.
+    items:
+      - id: what-can-i-download-today
+        question: What can I download today?
+        answer: The Home downloads area currently exposes the runtime SQLite package together with supporting CSV-based release artifacts distributed through external versioned release packages.
+        bullets:
+          - The SQLite runtime package is the lean artifact aligned with the live explorer.
+          - CSV packages remain the practical choice for downstream scripting, auditing, and custom analytical reuse.
+        links:
+          - label: Open Home
+            view: home
+          - label: Open Technical Information
+            view: technical-information
+        tags: [downloads, sqlite, csv]
+      - id: sqlite-versus-csv
+        question: When should I use SQLite versus CSV?
+        answer: Use SQLite when you want the compact runtime-style database aligned with the explorer experience. Use CSV when you want to inspect tables directly in R, Python, spreadsheets, or other data-processing pipelines.
+        bullets:
+          - SQLite is optimized for application delivery, local browsing, and lightweight reproducible querying.
+          - CSV is better for ad hoc joins, notebook workflows, and transparent table-level inspection.
+        tags: [sqlite, csv, reuse]
+      - id: current-distributed-version
+        question: Which version is currently distributed?
+        answer: The current DBX release surfaces BioRemPP v1.1.0 artifacts for the runtime SQLite package and BioRemPP source-table CSV, while some companion source exports may keep their own version tags when they reflect upstream package cadence.
+        bullets:
+          - Treat the release snapshot shown in DBX as the authoritative context for interpreting the explorer.
+          - When comparing external files, always verify the artifact label rather than assuming every package shares the same version suffix.
+        tags: [versioning, v1.1.0, releases]
+      - id: how-to-cite-dbx-outputs
+        question: How should I cite DBX outputs and release artifacts?
+        answer: Cite the DBX release context, access date, selected module or use case, filter conditions, and the specific release artifact used for reuse or reproduction.
+        bullets:
+          - Include version identifiers, relevant DOI or release landing page metadata, and enough context to re-run the same inspection.
+          - When guided outputs are reused, report the use case name and the recipe or query context that generated the result.
+        links:
+          - label: Open Documentation
+            view: documentation
+          - label: Open Technical Information
+            view: technical-information
+        tags: [citation, reproducibility, fair]
+
+  - id: technical-access-and-api
+    title: Technical Access and API
+    description: This section keeps technical answers concise and points deeper operator questions to the dedicated technical surfaces.
+    items:
+      - id: read-only-api
+        question: Is there a read-only API?
+        answer: Yes. DBX exposes read-only application endpoints for explorers, metadata, and guided-analysis execution.
+        bullets:
+          - The API is intended for inspection and integration, not for writing or mutating DBX content.
+          - Programmatic reuse should remain version-aware because contracts can evolve between releases.
+        tags: [api, read-only]
+      - id: how-data-prepared-before-runtime
+        question: How are data prepared before they reach the runtime explorer?
+        answer: DBX serves a curated runtime model derived from offline preparation and release assembly steps rather than from direct ad hoc joins against raw source tables at request time.
+        bullets:
+          - Curated identifiers and mappings are normalized before runtime delivery.
+          - The runtime SQLite layer is intentionally lean so the application can stay fast and portable.
+        tags: [etl, runtime, sqlite]
+
+  - id: privacy-terms-and-licensing
+    title: Privacy, Terms, and Licensing
+    description: These questions summarize what DBX does not collect, where Terms of Use live, and how third-party licensing should be interpreted.
+    items:
+      - id: store-uploaded-or-private-data
+        question: Does the app store uploaded or private biological data?
+        answer: No user-upload flow is active in the current DBX release, so the application is centered on prebuilt public release content rather than on storing user-supplied biological datasets.
+        note:
+          type: info
+          text: DBX should currently be understood as a read-only explorer rather than an upload service.
+        tags: [privacy, uploads, read-only]
+      - id: where-find-terms-of-use
+        question: Where do I find Terms of Use?
+        answer: Terms of Use are exposed from the Home page and from the interpretation-guidance context, where they frame responsible reuse and prohibited claim types for DBX outputs.
+        links:
+          - label: Open Home
+            view: home
+        tags: [terms, home]
+      - id: regulatory-or-commercial-claims
+        question: Can outputs be used for regulatory or commercial claims?
+        answer: Not as stand-alone evidence. DBX outputs are intended for exploratory scientific use, prioritization, and contextual interpretation, not for regulatory submissions or commercial product claims without independent validation.
+        note:
+          type: warning
+          text: Do not treat database-derived associations as a complete compliance or decision-making substitute.
+        tags: [claims, regulatory, commercial]
+      - id: third-party-licensing-handling
+        question: How should third-party licensing be handled?
+        answer: Users remain responsible for complying with the original licensing, citation, and reuse conditions of integrated resources such as KEGG, HADEG, and ToxCSM-related materials.
+        links:
+          - label: Open Documentation
+            view: documentation
+        tags: [licensing, third-party, attribution]
+
+  - id: troubleshooting-and-support
+    title: Troubleshooting and Support
+    description: This final section covers common user-facing issues and tells you where deeper institutional or deployment questions belong.
+    items:
+      - id: empty-results-or-empty-charts
+        question: Why do I see empty results or empty charts?
+        answer: Empty states usually mean the current filters leave no rows in scope, or that the selected entity has no integrated values for the requested domain, endpoint, or visualization.
+        bullets:
+          - Reset filters first.
+          - Then verify whether the entity actually has linked data for that view.
+        tags: [empty-state, filters, charts]
+      - id: limited-detail-metadata
+        question: Why might a detail page show limited metadata or associations?
+        answer: Detail pages can only display what is present in the curated release snapshot for that entity. Some records are richer than others because source linkage and curation density vary across domains.
+        tags: [detail-pages, metadata, associations]
+      - id: how-contact-team
+        question: How do I contact the team?
+        answer: Use the Contact page when you need direct communication with the maintainers for scientific clarification, support requests, or institutional follow-up.
+        links:
+          - label: Open Contact
+            view: contact
+        tags: [contact, support]

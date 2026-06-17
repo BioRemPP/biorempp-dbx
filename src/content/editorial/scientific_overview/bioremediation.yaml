@@ -1,0 +1,96 @@
+section:
+  id: fair-principles
+  eyebrow: Reproducibility
+  title: FAIR Principles & Integrated Databases
+  description: >
+    BioRemPP DBX organizes curated identifiers and release artifacts so exploratory
+    analysis can stay traceable, documented, and reusable across downstream workflows.
+  fair_principles:
+    - id: findable
+      label: Findable
+      description: Biological and chemical evidence remains discoverable through stable identifiers and searchable views.
+      implementations:
+        - Stable KEGG, KO, compound, pathway, and gene-centered lookup points
+        - Searchable explorer screens with explicit filters and route-level detail pages
+        - Release-aware documentation that clarifies what the current snapshot contains
+    - id: accessible
+      label: Accessible
+      description: The database is openly browsable through the DBX interface and release artifacts.
+      implementations:
+        - Public web access without login or registration
+        - Runtime SQLite package for local inspection
+        - CSV release artifacts for practical downstream analysis and reuse
+    - id: interoperable
+      label: Interoperable
+      description: Cross-database identifiers allow BioRemPP evidence to be linked to external tools and catalogs.
+      implementations:
+        - Shared use of KEGG Orthology, KEGG compounds, ChEBI, SMILES, and gene symbols
+        - Compound, pathway, gene, and toxicity links curated across integrated sources
+        - Table structures suitable for export into downstream analytical pipelines
+    - id: reusable
+      label: Reusable
+      description: Editorial guidance, versioned releases, and explicit scope statements support responsible reuse.
+      implementations:
+        - Versioned release packages and schema documentation
+        - Guided analysis recipes and user-facing documentation aligned to the shipped snapshot
+        - Terms of use and interpretation boundaries kept visible in the application
+  integrated_databases_title: Integrated databases
+  integrated_databases:
+    - id: biorempp
+      name: BioRemPP
+      type: Primary
+      description: Curated evidence backbone that links compounds, KO entries, pathways, genes, and release metadata.
+      data_points:
+        - Compound summaries used for runtime exploration
+        - KO and pathway associations
+        - Reference agency and toxicity-oriented linkage fields
+    - id: kegg
+      name: KEGG
+      type: Reference
+      description: Orthology, pathway, reaction, and compound context that anchors functional interpretation.
+      data_points:
+        - KEGG Orthology identifiers
+        - Pathway and reaction context
+        - Compound-level biochemical framing
+    - id: hadeg
+      name: HADEG
+      type: Specialized
+      description: Hydrocarbon degradation gene and pathway coverage used to strengthen bioremediation interpretation.
+      data_points:
+        - Degradation-associated genes
+        - Pathway associations
+        - Substrate-oriented specialization context
+    - id: toxcsm
+      name: ToxCSM
+      type: Toxicity
+      description: Endpoint-level toxicity evidence used for comparative risk framing around curated compounds.
+      data_points:
+        - Toxicity endpoints and labels
+        - Comparative risk context
+        - Structure-aware compound linkage
+  resources_title: Additional scientific resources
+  resources:
+    - id: river-metagenomics
+      title: Utility of metagenomics for bioremediation mechanisms and microbial dynamics
+      focus: River ecosystem bioremediation
+      authors: Yadav R and Dharne M
+      journal: Environmental Science and Pollution Research
+      year: 2024
+      url: https://doi.org/10.1007/s11356-024-32373-3
+      relevance: Shows how pathway and gene evidence can be interpreted in contaminated environmental systems.
+    - id: plasticdb
+      title: PlasticDB database of microorganisms and proteins linked to plastic biodegradation
+      focus: Plastic biodegradation
+      authors: Gambarini V et al.
+      journal: Database
+      year: 2022
+      url: https://doi.org/10.1093/database/baac008
+      relevance: Example of a specialized biodegradation resource that complements identifier-driven evidence integration.
+    - id: plastic-microbial-biorem
+      title: Plastic-Microbial BioRemediation database
+      focus: Curated multi-omics biodegradation resource
+      authors: Petraro S et al.
+      journal: Environmental Microbiology Reports
+      year: 2025
+      url: https://doi.org/10.1111/1758-2229.70178
+      relevance: Illustrates how curated biodegradation databases can bridge genomic evidence and applied interpretation.

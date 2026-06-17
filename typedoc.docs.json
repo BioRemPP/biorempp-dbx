@@ -1,0 +1,45 @@
+{
+  "entryPoints": [
+    "src/shared/api/client.ts",
+    "src/shared/types.ts",
+    "src/features/compound-classes/api.ts",
+    "src/features/compound-classes/types.ts",
+    "src/features/compounds/api.ts",
+    "src/features/compounds/types.ts",
+    "src/features/compounds/utils/compoundFilters.ts",
+    "src/features/compounds/utils/overviewAdapters.ts",
+    "src/features/genes/api.ts",
+    "src/features/genes/types.ts",
+    "src/features/guided-analysis/api.ts",
+    "src/features/guided-analysis/types.ts",
+    "src/features/guided-analysis/utils.ts",
+    "src/features/guided-analysis/recipes/guidedQueryRecipes.ts",
+    "src/features/meta/api.ts",
+    "src/features/meta/types.ts",
+    "src/features/pathways/api.ts",
+    "src/features/pathways/types.ts",
+    "src/features/pathways/utils/overviewAdapters.ts",
+    "src/features/toxicity/api.ts",
+    "src/features/toxicity/types.ts",
+    "src/features/toxicity/utils/endpointGroups.ts",
+    "src/app/navigation.ts",
+    "src/app/routes.ts",
+    "src/utils/basePath.ts"
+  ],
+  "name": "BioRemPPDBX Source Reference",
+  "entryPointStrategy": "expand",
+  "tsconfig": "tsconfig.app.json",
+  "plugin": [
+    "typedoc-plugin-markdown"
+  ],
+  "out": "docs/reference/source/generated",
+  "cleanOutputDir": true,
+  "readme": "none",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeInternal": true,
+  "hideGenerator": true,
+  "validation": {
+    "notExported": false
+  }
+}

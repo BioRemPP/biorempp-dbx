@@ -1,0 +1,48 @@
+version: v1
+language: en
+title: Documentation
+subtitle: Access core references for the BioRemPP framework, web service, and database explorer
+icon: book
+
+framework:
+  title: About BioRemPP Framework
+  intro: >
+    BioRemPP combines curated data resources and interactive analytical interfaces for
+    bioremediation-oriented research workflows:
+  bullets:
+    - id: database
+      label: Database
+      description: >
+        An integrated resource designed to support environmental bioremediation
+        research by systematically linking chemical compounds, genes, enzymes,
+        and regulatory references.
+    - id: webservice
+      label: Web Service
+      description: >
+        Interactive analytical environment for exploration, visualization, and
+        guided interpretation of BioRemPP workflows.
+      url: https://bioinfo.imd.ufrn.br/biorempp/
+      url_label: Open BioRemPP Web Service
+    - id: database-explorer
+      label: Database Explorer
+      description: >
+        Dedicated interface for inspecting database entities, schemas, metrics,
+        and linked cross-domain records in the BioRemPP DBX Service.
+      url: https://bioinfo.imd.ufrn.br/bioremppdbx/
+      url_label: Open BioRemPP DBX Service
+  closing: >
+    Together, these components enable researchers to explore and analyze
+    bioremediation potential through an intuitive, data-driven interface.
+
+resources_title: Documentation Resources
+
+resource_card:
+  title: Database Documentation
+  description: >
+    Complete guide to the BioRemPP Database Explorer platform. Explore the
+    available modules, database schemas, configuration references, and usage
+    guidance for reproducible bioremediation research workflows.
+  button_label: View Database Docs
+  url: https://bioremppdbx.readthedocs.io/en/stable/
+  icon: server
+  image_src: /BIOREMPP_LOGO.png

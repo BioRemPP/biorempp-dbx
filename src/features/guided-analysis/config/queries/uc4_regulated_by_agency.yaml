@@ -1,0 +1,152 @@
+# Guided query definition for UC-4, focused on compounds classified by the selected reference agency.
+id: uc4_regulated_by_agency
+category: compound_analysis
+title: Regulated Compounds by Agency
+question: Which compounds are classified by EPA, ATSDR, or IARC categories?
+description: Inspect compounds that appear in selected regulatory or curated reference lists.
+dataset: compound_summary
+executor: uc_regulated_by_agency
+
+use_case_description:
+  scientific_question: >
+    Which compounds are annotated under selected regulatory agency lists such
+    as EPA, ATSDR, IARC1, IARC2A, and IARC2B?
+  description: >
+    This use case filters compounds by agency or curated reference list
+    membership and compares them by annotation coverage. It supports
+    exploratory review of which regulated compounds appear in the selected
+    context and how much linked functional information is available for each
+    compound in the integrated dataset.
+  visual_elements:
+    - label: Ranking Table
+      description: Lists compounds matching the selected agency filter with reference counts and core annotation metrics.
+    - label: Agency Barplot
+      description: Shows distinct compound counts by agency in the active regulatory selection scope.
+  interpretation_guidelines:
+    - The output indicates regulatory annotation presence in the integrated dataset and can support exploratory prioritization.
+    - Agency labels should be interpreted as reference coverage context, not as direct evidence of hazard magnitude.
+    - Comparing annotation density across regulated compounds can help identify which entries have broader linked functional context for follow-up review.
+    - This view is intended for exploratory analysis and hypothesis generation, requiring domain validation for downstream decisions.
+  limitations:
+    - >
+      Presence in a selected agency or reference list does not by itself define
+      current jurisdictional regulatory status, exposure relevance, or hazard
+      severity.
+    - >
+      Reference counts indicate annotation density in the integrated dataset
+      and should not be interpreted as a quantitative regulatory priority
+      score.
+    - >
+      The view does not resolve temporal changes in regulatory frameworks,
+      differing curation criteria, or list-specific inclusion logic.
+  color_scheme: primary
+
+methods_modal:
+  button_label: View Methods
+  title: "UC-4: Compounds Listed in Regulatory Reference Sources"
+  introduction: This analysis profiles compounds by their presence in selected regulatory reference sources.
+  steps:
+    - title: Analytical Objective
+      description: Identify compounds listed in selected regulatory reference sources and compare their annotation coverage.
+    - title: Input Data
+      description: The analysis integrates compound annotations with reference-source mappings for agency labels.
+      bullets:
+        - reference_count = number of regulatory or database references associated with a compound.
+        - IARC categories are preserved as separate labels (IARC1, IARC2A, IARC2B).
+    - title: Filtering Strategy
+      description: Filters define the analytical scope by reference source, compound identity, class, and annotation ranges.
+    - title: Metric Definition
+      description: The primary ranking metric is reference_count, interpreted as reference-source coverage density in the selected scope.
+    - title: Ranking or Aggregation Procedure
+      description: Compounds matching the selected source criteria are ordered by reference_count in descending order, with deterministic tie handling.
+    - title: Output Representation
+      description: Outputs include summary indicators, source distribution visualization, and a ranked table of matched compounds.
+    - title: Interpretation Scope and Limitations
+      description: Listing in a reference source indicates annotation presence in curated sources, but does not by itself quantify hazard severity or regulatory status in a jurisdiction.
+  footer_note: This use case supports exploratory analysis of reference-source coverage and should be interpreted with regulatory domain context.
+
+defaults:
+  page_size: 10
+  filters: {}
+
+executor_config: {}
+
+filters:
+  - id: reference_ag
+    type: select
+    label: Regulatory Agency
+    provider:
+      type: meta_endpoint
+      endpoint: /api/meta/reference-ags
+  - id: search
+    type: search
+    label: Search Compound
+    placeholder: e.g. Ammonia or C00014
+  - id: compoundclass
+    type: select
+    label: Compound Class
+    provider:
+      type: meta_endpoint
+      endpoint: /api/meta/compound-classes
+  - id: gene_count
+    type: number_range
+    label: Gene Count
+    min: 0
+    min_placeholder: e.g. 10
+    max_placeholder: e.g. 250
+  - id: pathway_count
+    type: number_range
+    label: Pathway Annotations
+    min: 0
+    min_placeholder: e.g. 5
+    max_placeholder: e.g. 25
+
+summary_cards:
+  - id: compounds_in_scope
+    label: Compounds in Scope
+    value_key: compounds_in_scope
+  - id: regulated_compounds
+    label: Regulated Compounds
+    value_key: regulated_compounds
+  - id: selected_agency
+    label: Selected Agency
+    value_key: selected_agency
+
+visualizations:
+  - id: uc4_agency_bar
+    type: horizontal_bar
+    title: Regulatory Distribution by Agency
+    subtitle: Distinct compounds by agency in active scope
+    data_key: agency_bar
+
+table:
+  id: uc4_table
+  title: Compounds with regulatory annotations
+  subtitle: Ranked by reference count under selected agency scope
+  row_click_field: cpd
+  empty_message: No compounds found for selected regulatory filters.
+  columns:
+    - id: rank
+      label: Rank
+      type: number
+    - id: cpd
+      label: Compound ID
+      type: compound_link
+    - id: compoundname
+      label: Name
+      type: text
+    - id: compoundclass
+      label: Class
+      type: text
+    - id: matched_references
+      label: Matched References
+      type: text
+    - id: reference_count
+      label: Reference Count
+      type: number
+    - id: gene_count
+      label: Gene Count
+      type: number
+    - id: pathway_count
+      label: Pathway Annotations
+      type: number

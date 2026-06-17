@@ -1,0 +1,11 @@
+{
+  "brand": {
+    "title": "BioRemPP Database Explorer",
+    "shortTitle": "BioRemPPDBX",
+    "subtitle": "Integrated bioremediation and toxicological data exploration"
+  },
+  "release": {
+    "stage": "beta",
+    "version": "1.0.0"
+  }
+}

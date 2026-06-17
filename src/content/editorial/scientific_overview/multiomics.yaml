@@ -1,0 +1,217 @@
+section:
+  id: multiomics
+  eyebrow: Interoperability
+  title: Multi-omics Integration & Interoperability
+  description: >
+    BioRemPP DBX is currently delivered as a compound-centric database explorer, but
+    its identifier backbone is designed so external omics outputs can be aligned to
+    the same evidence model for downstream analysis.
+  framework_title: BioRemPP-compatible identifier backbone
+  framework_description: >
+    Standardized identifiers provide the practical bridge between curated database
+    content and external genomics, transcriptomics, proteomics, or metabolomics workflows.
+  core_identifiers:
+    - id: ko
+      label: KEGG Orthology
+      description: Functional gene identifiers used to organize pathway and enzymatic evidence.
+      example: K00448
+      sources:
+        - BioRemPP
+        - KEGG
+        - HADEG
+    - id: cpd
+      label: KEGG Compound
+      description: Stable compound identifiers used across curated biochemical context.
+      example: C00082
+      sources:
+        - BioRemPP
+        - KEGG
+        - ToxCSM
+    - id: chebi
+      label: ChEBI ID
+      description: Controlled vocabulary for chemical entities connected to structure-aware datasets.
+      example: CHEBI:15377
+      sources:
+        - ToxCSM
+        - external metabolomics mappings
+    - id: smiles
+      label: SMILES
+      description: Structure strings used to connect compounds to chemistry-aware downstream tools.
+      example: CC(=O)O
+      sources:
+        - ToxCSM
+        - external cheminformatics pipelines
+    - id: genesymbol
+      label: Gene Symbol
+      description: Readable gene-level identifier that helps bridge curated evidence and external annotations.
+      example: alkB
+      sources:
+        - BioRemPP
+        - KEGG
+  omics_layers:
+    - id: genomics
+      label: Genomics
+      status_label: Primary curated evidence in current DBX releases
+      status_tone: success
+      description: Genome-derived functional potential aligns naturally to KO, pathway, and gene-centered browsing.
+      key_identifiers:
+        - KEGG Orthology
+        - Gene Symbol
+      note: Best aligned to the current shipped evidence model.
+    - id: metagenomics
+      label: Metagenomics
+      status_label: Strong external alignment through KO-centric summaries
+      status_tone: success
+      description: Community-level KO and pathway profiles can be compared against the same curated compound context.
+      key_identifiers:
+        - KEGG Orthology
+        - KEGG Compound
+      note: Useful for exploratory comparison of functional breadth and compound relevance.
+    - id: transcriptomics
+      label: Transcriptomics
+      status_label: External interoperability path
+      status_tone: subtle
+      description: Expression-derived KO or gene-level outputs can be mapped onto curated pathways and compounds.
+      key_identifiers:
+        - KEGG Orthology
+        - Gene Symbol
+      note: Supports downstream activity interpretation, but is not a native DBX evidence layer.
+    - id: proteomics
+      label: Proteomics
+      status_label: External interoperability path
+      status_tone: subtle
+      description: Protein or enzyme-centric outputs can be aligned through KO and gene mappings for comparative interpretation.
+      key_identifiers:
+        - KEGG Orthology
+        - Gene Symbol
+      note: Useful for confirming whether curated functional potential is supported by measured proteins.
+    - id: metabolomics
+      label: Metabolomics
+      status_label: External interoperability path
+      status_tone: warning
+      description: Metabolite annotations can be linked to curated compounds, pathway context, and toxicity-oriented evidence.
+      key_identifiers:
+        - KEGG Compound
+        - ChEBI ID
+        - SMILES
+      note: Valuable for compound-focused follow-up analyses outside the runtime database.
+  interoperability_title: Interoperability with external tools
+  interoperability_description: >
+    The same identifiers used inside BioRemPP DBX can anchor downstream integration
+    with external multi-omics tools and analytical frameworks.
+  interoperability_groups:
+    - id: genomics-metagenomics
+      title: Genomics and metagenomics tools
+      description: Functional annotation pipelines that already emit KO-centered outputs.
+      tools:
+        - id: humann3
+          name: HUMAnN 3
+          summary: Functional profiling pipeline that produces KO and pathway-oriented abundance tables.
+          interoperable_ids:
+            - KEGG Orthology
+            - KEGG Compound through pathway joins
+          integration_example: Compare HUMAnN KO abundance tables with BioRemPP DBX compound-linked KO coverage.
+          reference_title: Integrating taxonomic, functional, and strain-level profiling with bioBakery 3
+          reference_citation: Beghini F et al. eLife (2021)
+          reference_url: https://doi.org/10.7554/eLife.65088
+        - id: dram
+          name: DRAM
+          summary: Metabolic annotation workflow for genomes and MAGs with KOfam and KEGG assignments.
+          interoperable_ids:
+            - KEGG Orthology
+            - Gene Symbol
+          integration_example: Rank genomes by KO coverage and inspect the linked compound context in BioRemPP DBX.
+          reference_title: DRAM for distilling microbial metabolism
+          reference_citation: Shaffer M et al. Nucleic Acids Research (2020)
+          reference_url: https://doi.org/10.1093/nar/gkaa621
+        - id: eggnog-mapper
+          name: eggNOG-mapper v2
+          summary: Fast functional annotation workflow that can emit KO-linked results for downstream joins.
+          interoperable_ids:
+            - KEGG Orthology
+            - Gene Symbol
+          integration_example: Annotate novel genomes, then connect the KO output to curated pathway and compound evidence.
+          reference_title: eggNOG-mapper v2
+          reference_citation: Cantalapiedra CP et al. Molecular Biology and Evolution (2021)
+          reference_url: https://doi.org/10.1093/molbev/msab293
+    - id: transcriptomics
+      title: Transcriptomics tools
+      description: Expression workflows whose KO or gene identifiers can be interpreted through the same curated backbone.
+      tools:
+        - id: rnaseq-kegg
+          name: RNA-seq to KEGG KO workflow
+          summary: A practical workflow combining aligners and KO annotation tools for expression-aware interpretation.
+          interoperable_ids:
+            - KEGG Orthology
+            - Gene Symbol
+          integration_example: Overlay KO-level expression with BioRemPP DBX evidence to compare latent versus active functions.
+          reference_title: KEGG Mapper and KEGG Orthology annotation tools
+          reference_citation: KEGG documentation and associated annotation workflows
+          reference_url: https://www.genome.jp/kegg/mapper/
+    - id: metabolomics
+      title: Metabolomics tools
+      description: Platforms that can reuse compound, ChEBI, or structure-level identifiers from the database release.
+      tools:
+        - id: metaboanalyst
+          name: MetaboAnalyst 5.0
+          summary: Multi-omics and metabolomics platform with KEGG-oriented compound interpretation.
+          interoperable_ids:
+            - KEGG Compound
+            - ChEBI ID
+            - SMILES through mapping
+          integration_example: Export BioRemPP DBX compound subsets into downstream pathway enrichment or metabolite review steps.
+          reference_title: MetaboAnalyst 5.0
+          reference_citation: Pang Z et al. Nucleic Acids Research (2021)
+          reference_url: https://doi.org/10.1093/nar/gkab382
+        - id: mbrole
+          name: MBROLE 2.0
+          summary: Metabolite set enrichment workflow with KEGG and ChEBI support.
+          interoperable_ids:
+            - KEGG Compound
+            - ChEBI ID
+          integration_example: Enrich high-priority compound subsets to inspect pathway over-representation outside the runtime app.
+          reference_title: MBROLE 2.0
+          reference_citation: Lopez-Ibanez J et al. Nucleic Acids Research (2016)
+          reference_url: https://doi.org/10.1093/nar/gkw253
+    - id: proteomics
+      title: Proteomics tools
+      description: Protein-centric workflows that can be linked back to KO and gene evidence.
+      tools:
+        - id: openms
+          name: OpenMS
+          summary: Open-source mass spectrometry platform that can feed protein- or feature-level outputs into identifier mapping workflows.
+          interoperable_ids:
+            - Gene Symbol
+            - KEGG Orthology through external mapping
+          integration_example: Use mapped proteins or enzymes to test whether curated functional potential is supported by measured abundance.
+          reference_title: OpenMS
+          reference_citation: Rost HL et al. Nature Methods (2016)
+          reference_url: https://doi.org/10.1038/nmeth.3959
+    - id: integrative-frameworks
+      title: Integrative multi-omics frameworks
+      description: Statistical toolkits for combining several evidence layers after export.
+      tools:
+        - id: mixomics
+          name: mixOmics
+          summary: Integrative framework for multi-omics feature selection and latent-variable modeling.
+          interoperable_ids:
+            - KEGG Orthology
+            - KEGG Compound
+            - Gene Symbol
+            - ChEBI ID
+          integration_example: Combine KO-level, compound-level, and transcript or metabolite features after exporting release tables.
+          reference_title: mixOmics
+          reference_citation: Rohart F et al. PLoS Computational Biology (2017)
+          reference_url: https://doi.org/10.1371/journal.pcbi.1005752
+        - id: miodin
+          name: miodin
+          summary: Workflow-oriented R package for building reproducible multi-omics analysis pipelines.
+          interoperable_ids:
+            - KEGG Orthology
+            - KEGG Compound
+            - Gene Symbol
+            - ChEBI ID
+          integration_example: Build exported CSV pipelines where each block shares identifiers already documented in BioRemPP DBX.
+          reference_title: miodin
+          reference_citation: Ulfenborg B. BMC Bioinformatics (2019)
+          reference_url: https://link.springer.com/article/10.1186/s12859-019-3224-4

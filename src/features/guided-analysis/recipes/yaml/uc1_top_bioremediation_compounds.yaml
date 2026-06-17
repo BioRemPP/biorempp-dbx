@@ -1,0 +1,51 @@
+# Reproducible static query recipes for UC-1, mirroring the ranked compound use case.
+button_label: View Queries
+title: UC-1 Query Recipes (Top Bioremediation Compounds)
+introduction: Reproduce the UC-1 ranking from the primary SQLite runtime database.
+recipes:
+  - id: sqlite_query
+    label: SQLite Query
+    description: Top compounds by KO count with deterministic tie-break.
+    language: sql
+    runtime: sqlite
+    code: |-
+      SELECT
+        cpd,
+        compoundname,
+        compoundclass,
+        ko_count,
+        gene_count,
+        pathway_count
+      FROM compound_summary
+      ORDER BY ko_count DESC, cpd ASC
+      ;
+  - id: python_sqlite
+    label: Python + SQLite
+    description: Python sqlite3 script to run the same ranking query.
+    language: python
+    runtime: sqlite
+    code: |-
+      import json
+      import sqlite3
+
+      db_path = "data/biorempp.sqlite"
+      query = """
+      SELECT
+        cpd,
+        compoundname,
+        compoundclass,
+        ko_count,
+        gene_count,
+        pathway_count
+      FROM compound_summary
+      ORDER BY ko_count DESC, cpd ASC
+      ;
+      """
+
+      with sqlite3.connect(db_path) as conn:
+        conn.row_factory = sqlite3.Row
+        rows = [dict(row) for row in conn.execute(query).fetchall()]
+
+      print(json.dumps({"rows": rows[:10], "total_rows": len(rows)}, ensure_ascii=False, sort_keys=True))
+notes:
+  - This recipe is exploratory and should be interpreted as annotation-based prioritization.

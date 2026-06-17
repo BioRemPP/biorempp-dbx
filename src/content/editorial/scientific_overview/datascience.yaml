@@ -1,0 +1,92 @@
+section:
+  id: data-science
+  eyebrow: Methods
+  title: Data Science & Feature Engineering
+  description: >
+    Analytical patterns that translate curated identifiers, counts, and cross-domain
+    mappings into interpretable exploratory views.
+  categories:
+    - id: feature-engineering
+      title: Feature engineering and ranking
+      summary: >
+        Structured counts and categorical mappings are turned into compact features
+        that support ranking, prioritization, and comparative browsing.
+      methods:
+        - KO, pathway, gene, and reference counts as compact evidence features
+        - Class-aware grouping for stable comparison across related compounds
+        - Derived summary metrics that avoid overwhelming the user with raw joins alone
+      applications:
+        - Prioritize compounds by evidence breadth before drilling into details.
+        - Compare entity families through shared count-based descriptors.
+        - Build reproducible exploratory questions on top of the same curated fields.
+      references:
+        - id: fe1
+          title: mixOmics, an R package for omics feature selection and multiple data integration
+          authors: Rohart F et al.
+          journal: PLoS Computational Biology
+          year: 2017
+          url: https://doi.org/10.1371/journal.pcbi.1005752
+          note: Strong reference for turning biological variables into structured features for exploration.
+        - id: fe2
+          title: Properties of high-dimensional data spaces
+          authors: Clarke R et al.
+          journal: Nature Reviews Cancer
+          year: 2008
+          url: https://doi.org/10.1038/nrc2294
+          note: Grounds the need for summarized features instead of exposing every raw dimension at once.
+    - id: visualization
+      title: Visualization and high-dimensional interpretation
+      summary: >
+        Visual summaries help users compare evidence slices, detect patterns, and move
+        from tabular inspection to cross-domain interpretation.
+      methods:
+        - Heatmaps, scatter views, and ranked tables for comparative inspection
+        - Linked summaries between counts, filters, and visual output states
+        - Layered views that keep pathway, gene, compound, and toxicity context aligned
+      applications:
+        - Detect broad versus focused evidence patterns without reading full raw tables first.
+        - Connect entity-level results to pathway or toxicity context during guided exploration.
+        - Preserve interpretability while browsing large joined datasets.
+      references:
+        - id: viz1
+          title: Tasks, techniques, and tools for genomic data visualization
+          authors: Nusrat S et al.
+          journal: Computer Graphics Forum
+          year: 2019
+          url: https://doi.org/10.1111/cgf.13727
+          note: Useful framing for matching visualization choices to exploratory tasks.
+        - id: viz2
+          title: Visualization of omics data for systems biology
+          authors: Gehlenborg N et al.
+          journal: Nature Methods
+          year: 2010
+          url: https://doi.org/10.1038/nmeth.1436
+          note: Explains why coordinated views are valuable when multiple biological layers must be interpreted together.
+    - id: bioremediation-datascience
+      title: Bioremediation-specific data science
+      summary: >
+        The database favors evidence-guided prioritization for environmental research
+        rather than predictive or confirmatory decision making.
+      methods:
+        - Compound-centric framing of cross-database evidence
+        - Toxicity-aware comparison of curated pollutant records
+        - Reproducible guided workflows defined through declarative query recipes
+      applications:
+        - Generate hypotheses about pollutant relevance before downstream validation.
+        - Compare breadth of evidence across compound classes and regulatory contexts.
+        - Reuse the same query framing across multiple exploratory sessions.
+      references:
+        - id: bio1
+          title: Utility of metagenomics for bioremediation
+          authors: Yadav R and Dharne M
+          journal: Environmental Science and Pollution Research
+          year: 2024
+          url: https://doi.org/10.1007/s11356-024-32373-3
+          note: Connects metagenomic evidence to practical environmental bioremediation interpretation.
+        - id: bio2
+          title: Artificial intelligence-driven bioinformatics for sustainable environmental bioremediation
+          authors: Siddique M et al.
+          journal: Computational and Structural Biotechnology Journal
+          year: 2025
+          url: https://pubs.rsc.org/en/content/articlelanding/2025/va/d5va00240k
+          note: Helpful context for positioning evidence summaries as inputs to later analytical pipelines, not as final claims.

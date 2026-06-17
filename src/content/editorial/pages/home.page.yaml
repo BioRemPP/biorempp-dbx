@@ -1,0 +1,238 @@
+# Home page editorial catalog consumed by src/content/home/catalog.ts.
+# Keep section names stable because the loader validates exact keys and CTA ordering.
+version: v1
+
+# Hero section:
+# - description must contain exactly 3 paragraphs
+# - cta_buttons must include launch-analysis, how-to-cite, and terms-of-use in that order
+hero:
+  title: BioRemPP Database Explorer
+  subtitle: >
+    Integrated bioremediation and toxicological data exploration.
+  description:
+    - >
+      BioRemPP DBX Service is an open-access and reproducible scientific service for investigating
+      bioremediation potential across genomic, metabolic, and toxicological evidence.
+    - >
+      It provides a compound-centric analytical framework linking KEGG Orthologs,
+      metabolic pathways, toxicity endpoints, and curated datasets associated
+      with environmentally relevant pollutants.
+    - >
+      The platform supports cross-domain interpretation, hypothesis generation,
+      and data-driven prioritization for environmental bioinformatics and
+      bioremediation research.
+  access_statement: Free and open access. No login or registration required.
+  notice_lines:
+    - Analyses are based on curated datasets and are intended for exploratory use, hypothesis generation, and data-driven prioritization.
+    - BioRemPP outputs should not be interpreted as confirmatory, clinical, or causal evidence without external experimental validation.
+    - See the Terms of Use for access conditions, reuse guidance, and interpretative boundaries.
+  cta_buttons:
+    - id: launch-analysis
+      label: Launch Analysis
+      variant: default
+    - id: how-to-cite
+      label: How to Cite
+      variant: success
+    - id: terms-of-use
+      label: Terms of Use
+      variant: warning
+  modals:
+    how_to_cite:
+      title: How to Cite
+      description: >
+        Citation guidance for the current BioRemPP database release, with a
+        placeholder reference for the BioRemPP DBX Service as a database web service.
+      paragraphs:
+        - >
+          When citing BioRemPP outputs, please reference both the current database release
+          and, when available, the BioRemPP DBX Service publication describing the database web service layer.
+        - |
+          Database (APA):
+          Lima Silva, D. F., & Fassarella Agnez-Lima, L. (2025–2026). BioRemPP Database:
+          A Curated Compound-Centric Resource for Bioremediation Potential Profiling (1.1.0)
+          [Data set]. Zenodo. https://doi.org/10.5281/zenodo.18905195
+        - |
+          Database (BibTeX):
+          @dataset{limasilva2025biorempp_db,
+            author    = {Lima Silva, D. F. and Fassarella Agnez-Lima, L.},
+            title     = {BioRemPP Database: A Curated Compound-Centric Resource for Bioremediation Potential Profiling},
+            year      = {2025--2026},
+            publisher = {Zenodo},
+            version   = {1.1.0},
+            doi       = {10.5281/zenodo.18905195},
+            url       = {https://doi.org/10.5281/zenodo.18905195}
+          }
+        - >
+          BioRemPP DBX Service (placeholder): a dedicated citation for the database web service
+          interface should be added alongside the Zenodo dataset reference once the service-specific
+          publication or canonical citation text is finalized.
+
+scientific_overview:
+  eyebrow: Overview
+  title: Scientific Context
+  content:
+    - >
+      Bioremediation research often requires interpreting fragmented evidence
+      distributed across functional annotations, degradation pathways,
+      contaminant records, toxicological predictions, and regulatory-priority
+      lists.
+    - >
+      BioRemPP DBX addresses this gap by organizing these complementary data
+      layers around environmentally relevant compounds, allowing users to inspect
+      how biochemical function, pathway context, and toxicological relevance
+      converge around specific contaminants or compound classes.
+    - >
+      This perspective helps researchers move from isolated database records to
+      evidence-guided prioritization, supporting exploratory interpretation and
+      downstream planning without treating database-derived associations as
+      confirmatory experimental evidence.
+data_sources:
+  eyebrow: Provenance
+  title: Data Sources
+  items:
+    - "KEGG: metabolic pathways and ortholog annotations"
+    - "HADEG: hydrocarbon degradation genes and pathway associations"
+    - "ToxCSM: computational toxicity prediction endpoints"
+    - "Regulatory priority compound lists, including ATSDR, EPA, and related frameworks"
+  footer: >
+    All sources are harmonized into a unified schema to support
+    cross-database analytical workflows.
+
+target_users:
+  eyebrow: Audience
+  title: Target Users
+  items:
+    - Bioinformaticians and computational biologists
+    - Environmental scientists and microbiologists
+    - Researchers in bioremediation and toxicology
+    - Multi-omics and data-driven research groups
+
+browse_section:
+  eyebrow: Explore
+  title: Browse by Category
+  description: >
+    Explore database entities and relationships across molecular, biochemical,
+    and toxicological dimensions.
+  items:
+    - id: compounds
+      label: Compounds
+      description: >
+        Inspect integrated compound summaries, toxicity context, and linked
+        pathway and gene associations.
+    - id: compound-classes
+      label: Compound Classes
+      description: >
+        Review class-level aggregation patterns across bioremediation coverage
+        and toxicological context.
+    - id: genes
+      label: Genes / KO
+      description: >
+        Explore KO-centric and gene-level mappings connected to compounds,
+        enzymes, and pathway evidence.
+    - id: pathways
+      label: Pathways
+      description: >
+        Examine KEGG and HADEG pathway relationships relevant to degradation
+        potential and compound context.
+    - id: toxicity
+      label: Toxicity
+      description: >
+        Navigate endpoint-level toxicity predictions and comparative risk
+        patterns derived from ToxCSM.
+    - id: guided-analysis
+      label: Guided Analysis
+      description: >
+        Run structured and reproducible analytical workflows derived from
+        predefined scientific questions.
+
+guided_analysis:
+  eyebrow: Analysis
+  title: Guided Analysis
+  description:
+    - >
+      Guided Analysis provides structured and reproducible analytical workflows
+      based on predefined scientific questions.
+    - >
+      Each use case is defined through declarative configurations with explicit
+      filtering criteria, standardized transformations, reproducible query
+      execution, and clearly delimited interpretation scope.
+  cta_label: Launch Analysis
+  panels:
+    - title: Structured workflows
+      bullets:
+        - Scientific questions are encoded as declarative YAML use cases.
+        - Filtering criteria and transformation steps are explicit and inspectable.
+        - Outputs remain aligned with the configured analytical contract.
+    - title: Reproducible execution
+      bullets:
+        - Use cases are executed through standardized SQL and Python-backed logic.
+        - Versioned inputs and stable query definitions support traceable reruns.
+        - Execution metadata are exposed together with result summaries.
+    - title: Visual outputs and metrics
+      bullets:
+        - Compound ranking and prioritization views support comparative inspection.
+        - Toxicity heatmaps, distributions, and risk versus potential mapping remain linked to tabular outputs.
+        - Summary cards and paginated tables keep analytical context visible.
+    - title: Interpretation scope
+      bullets:
+        - Results are intended for exploratory analysis and hypothesis generation.
+        - Workflow outputs should be interpreted within their declared filtering context.
+        - Downstream validation remains necessary for confirmatory claims.
+  scope_note: >
+    Guided workflows are intended for exploratory analysis and hypothesis
+    generation; they do not constitute confirmatory or causal evidence without
+    external validation.
+
+downloads:
+  eyebrow: Access
+  title: Database Downloads
+  description:
+    - >
+      All datasets are versioned and publicly distributed through Zenodo to
+      support reproducibility, transparency, and citation readiness.
+    - >
+      The primary runtime database is distributed alongside supporting source
+      tables and auxiliary datasets required for traceable analytical reuse.
+  primary_title: Primary runtime package
+  primary_description: >
+    The SQLite runtime database is kept immediately visible as the main
+    distribution artifact for reproducible local execution and inspection.
+  accordion_title: Other database packages
+  accordion_description: >
+    Expand to review the supporting source tables and external dataset packages
+    associated with the current release.
+  disclaimer_title: Download notice
+  disclaimer_paragraphs:
+    - >
+      BioRemPP distributions are versioned to support reproducibility,
+      traceability, and transparent reuse of released data assets.
+    - >
+      By continuing, you will be redirected to the Zenodo release that
+      distributes the ZIP package containing the runtime database together with
+      the supporting source tables associated with this release.
+    - >
+      The same release page also provides the deposit documentation and the
+      schema reference materials needed to inspect field definitions and reuse
+      the exported assets consistently.
+    - >
+      Users should cite the corresponding deposition associated with the
+      downloaded release whenever these artifacts are reused in downstream
+      analyses or reporting.
+  selected_release_prefix: Selected release
+  open_release_label: Open Zenodo release
+  close_label: Close
+
+snapshot:
+  eyebrow: Snapshot
+  title: Database Snapshot
+  description: >
+    Quick overview of the current BioRemPP release, including coverage metrics,
+    entity counts, and data distribution aligned with the full metrics
+    documentation.
+  action_label: View full database metrics
+
+footer:
+  content: >
+    BioRemPP Database Explorer - Integrating genomic, metabolic, and
+    toxicological data for bioremediation research. Open access | Versioned
+    datasets | Reproducible workflows

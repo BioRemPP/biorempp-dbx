@@ -1,0 +1,150 @@
+# Reproducible static query recipes for UC-4, mirroring the regulation-focused compound use case.
+button_label: View Queries
+title: UC-4 Query Recipes (Regulated Compounds by Agency)
+introduction: Reproduce UC-4 filtering and ranking by agency references from
+  compound_reference_map, keeping each IARC class independent.
+recipes:
+  - id: sqlite_query
+    label: SQLite Query
+    description: Agency-filtered ranking with dynamic agency list from the database
+      (no hardcoded subset).
+    language: sql
+    runtime: sqlite
+    code: >-
+      WITH params AS (
+        -- reference_ag: 'all' or one exact value from compound_reference_map.reference_ag
+        SELECT 'all' AS reference_ag
+      ),
+
+      agency_scope AS (
+        SELECT DISTINCT reference_ag AS agency
+        FROM compound_reference_map
+        WHERE reference_ag IS NOT NULL
+          AND (
+            (SELECT reference_ag FROM params) = 'all'
+            OR reference_ag = (SELECT reference_ag FROM params)
+          )
+      ),
+
+      matched AS (
+        SELECT
+          cs.cpd,
+          cs.compoundname,
+          cs.compoundclass,
+          cs.reference_count,
+          cs.ko_count,
+          cs.gene_count,
+          cs.pathway_count,
+          crm.reference_ag
+        FROM compound_summary cs
+        JOIN compound_reference_map crm
+          ON crm.cpd = cs.cpd
+        JOIN agency_scope ag
+          ON ag.agency = crm.reference_ag
+      )
+
+      SELECT
+        cpd,
+        compoundname,
+        compoundclass,
+        reference_count,
+        ko_count,
+        gene_count,
+        pathway_count,
+        GROUP_CONCAT(DISTINCT reference_ag) AS matched_references
+      FROM matched
+
+      GROUP BY
+        cpd,
+        compoundname,
+        compoundclass,
+        reference_count,
+        ko_count,
+        gene_count,
+        pathway_count
+      ORDER BY reference_count DESC, cpd ASC
+
+      ;
+  - id: python_sqlite
+    label: Python + SQLite
+    description: Python sqlite3 script for UC-4 with dynamic agency list and
+      independent IARC labels.
+    language: python
+    runtime: sqlite
+    code: >-
+      import json
+
+      import sqlite3
+
+
+      db_path = "data/biorempp.sqlite"
+
+      query = """
+
+      WITH params AS (
+        -- reference_ag: 'all' or one exact value from compound_reference_map.reference_ag
+        SELECT 'all' AS reference_ag
+      ),
+
+      agency_scope AS (
+        SELECT DISTINCT reference_ag AS agency
+        FROM compound_reference_map
+        WHERE reference_ag IS NOT NULL
+          AND (
+            (SELECT reference_ag FROM params) = 'all'
+            OR reference_ag = (SELECT reference_ag FROM params)
+          )
+      ),
+
+      matched AS (
+        SELECT
+          cs.cpd,
+          cs.compoundname,
+          cs.compoundclass,
+          cs.reference_count,
+          cs.ko_count,
+          cs.gene_count,
+          cs.pathway_count,
+          crm.reference_ag
+        FROM compound_summary cs
+        JOIN compound_reference_map crm
+          ON crm.cpd = cs.cpd
+        JOIN agency_scope ag
+          ON ag.agency = crm.reference_ag
+      )
+
+      SELECT
+        cpd,
+        compoundname,
+        compoundclass,
+        reference_count,
+        ko_count,
+        gene_count,
+        pathway_count,
+        GROUP_CONCAT(DISTINCT reference_ag) AS matched_references
+      FROM matched
+
+      GROUP BY
+        cpd,
+        compoundname,
+        compoundclass,
+        reference_count,
+        ko_count,
+        gene_count,
+        pathway_count
+      ORDER BY reference_count DESC, cpd ASC
+
+      ;
+
+      """
+
+
+      with sqlite3.connect(db_path) as conn:
+        conn.row_factory = sqlite3.Row
+        rows = [dict(row) for row in conn.execute(query).fetchall()]
+
+      print(json.dumps({"rows": rows}, ensure_ascii=False, sort_keys=True))
+notes:
+  - IARC labels remain separated (IARC1, IARC2A, IARC2B).
+  - This query is for exploratory regulatory relevance and not a regulatory
+    decision engine.

@@ -1,0 +1,302 @@
+version: v2
+
+home_component:
+  eyebrow: Interpretation
+  title: Scope and Limitations
+  subtitle: Interpretation guidelines for database-derived outputs
+  intro: >
+    BioRemPP DBX Service is designed for exploratory bioremediation analysis. Its
+    views, rankings, annotations, and predicted toxicity signals are best used to
+    support prioritization, comparison, and hypothesis generation rather than
+    confirmatory biological or regulatory claims.
+  summary_cards:
+    - id: exploratory-evidence
+      title: Exploratory evidence
+      body: Use outputs to prioritize compounds, pathways, and follow-up experiments, not to replace validation.
+      tone: info
+    - id: coverage-boundaries
+      title: Coverage boundaries
+      body: Missing or weak signals may reflect scope limits, incomplete annotations, or prediction availability.
+      tone: warning
+    - id: responsible-reuse
+      title: Responsible reuse
+      body: Report the release version, filters, and framing whenever results are reused in figures, tables, or manuscripts.
+      tone: success
+  cta_label: View full interpretation guidelines
+
+modal:
+  header:
+    title: Scope and Limitations
+    subtitle: Structured guidance for reading database-derived outputs in the BioRemPP DBX Service
+    notice: >
+      The safest default is to treat every BioRemPP DBX output as curated
+      evidence for exploratory interpretation. Additional experiments, contextual
+      metadata, and external validation remain necessary before biological,
+      environmental, or compliance-facing conclusions are made.
+  quick_facts:
+    - id: database-derived-evidence
+      title: Database-derived evidence
+      body: Associations shown in the explorer are curated from integrated sources rather than measured in real time.
+      tone: info
+    - id: not-proof-of-activity
+      title: Not proof of activity
+      body: Gene, pathway, and class associations indicate potential relevance, not confirmed biodegradation performance.
+      tone: warning
+    - id: predictive-toxicity-only
+      title: Predictive toxicity only
+      body: ToxCSM values are computational screening signals and should not be reported as measured endpoints.
+      tone: warning
+    - id: versioned-snapshot
+      title: Versioned snapshot
+      body: Interpret every result within the published release context, including version, filters, and source coverage.
+      tone: success
+  topics:
+    - id: scientific-boundaries
+      title: Scientific Boundaries
+      summary: >
+        BioRemPP DBX organizes genetic, pathway, and toxicological evidence into
+        an exploratory read model, but it does not resolve activity, kinetics,
+        or environmental performance.
+      cards:
+        - title: Genetic potential is not biological activity
+          body: >
+            Compound, KO, gene, and pathway associations indicate annotated
+            functional capacity. They do not confirm transcription, protein
+            abundance, catalytic activity, metabolic flux, or in situ
+            degradation under a specific environmental condition.
+          tone: info
+        - title: KO-level abstraction reduces biological resolution
+          body: >
+            Many DBX relationships are built around KEGG Orthology groups so
+            cross-database mapping stays reproducible. This preserves
+            comparability but does not capture isoform-level specificity,
+            strain-level regulation, or catalytic differences within an
+            ortholog family.
+          tone: neutral
+        - title: No kinetic, expression, or temporal modeling
+          body: >
+            The explorer does not model substrate concentration, induction time,
+            turnover rates, expression weighting, community succession, or
+            temporal response. Results should therefore be read as a structured
+            snapshot of evidence, not as a dynamic simulation.
+          tone: warning
+        - title: Pathway completeness is not proof of degradation
+          body: >
+            Broad pathway coverage suggests that multiple related functions are
+            represented in the integrated databases. It does not prove that the
+            entire pathway is active, complete in vivo, or sufficient for
+            measurable pollutant transformation.
+          tone: warning
+      comparison:
+        left_label: What DBX results represent
+        left_items:
+          - Curated links between compounds, genes, KOs, pathways, and toxicity endpoints
+          - Comparative evidence for prioritizing candidates and follow-up questions
+          - A reproducible snapshot of database-derived functional coverage
+        right_label: What DBX results do not represent
+        right_items:
+          - Direct measurements of expression, enzyme activity, or biodegradation rates
+          - Proof that a pathway operates under a specific environmental condition
+          - Causal confirmation of remediation efficacy or toxicological outcome
+    - id: database-coverage-and-prediction-scope
+      title: Database Coverage and Prediction Scope
+      summary: >
+        Coverage reflects the deliberate scope of the integrated BioRemPP DB,
+        KEGG, HADEG, ToxCSM, and regulatory sources. Empty fields and absent
+        matches should be read against those source boundaries.
+      cards:
+        - title: BioRemPP DB coverage is curated, not universal
+          body: >
+            The release prioritizes environmentally relevant and regulatory
+            compounds rather than attempting to represent all possible
+            xenobiotics or microbial functions. Absence from the database can
+            reflect curation scope rather than biological irrelevance.
+          tone: info
+        - title: KEGG and HADEG provide focused pathway context
+          body: >
+            Pathway associations are intentionally centered on degradation and
+            bioremediation-relevant evidence. They should not be interpreted as
+            exhaustive maps of all metabolism, signaling, or ecological
+            behavior connected to a compound or gene.
+          tone: neutral
+        - title: ToxCSM is a screening layer
+          body: >
+            Toxicity values in DBX come from ToxCSM predictive models. They are
+            useful for relative prioritization and pattern discovery, but they
+            do not replace measured toxicological assays or jurisdictional
+            hazard evaluation.
+          tone: warning
+        - title: Absence of annotation is not absence of function
+          body: >
+            Missing KO links, pathway memberships, toxicity values, or
+            regulatory labels may reflect incomplete source coverage, identifier
+            mismatch, or snapshot boundaries. They should not be reported as
+            evidence that a function, risk, or association does not exist.
+          tone: warning
+      comparison:
+        left_label: Source-aware reading
+        left_items:
+          - Ask which integrated source produced the visible association
+          - Interpret empty values as explicit coverage boundaries
+          - Use download files when you need broader custom filtering or joins
+        right_label: Unsupported shortcuts
+        right_items:
+          - Treating missing entries as biological negatives
+          - Assuming the explorer covers every contaminant or pathway family
+          - Treating predictive toxicity as measured hazard evidence
+    - id: common-misinterpretations
+      title: Common Misinterpretations
+      summary: >
+        The most frequent interpretation errors come from converting
+        database-derived signals into causal, quantitative, or experimentally
+        confirmed statements too early.
+      cards:
+        - title: Prefer evidence language over definitive claims
+          body: >
+            When presenting DBX outputs, describe associations, coverage, and
+            prioritization rather than stating that degradation, toxicity, or
+            remediation efficacy has been demonstrated.
+          tone: info
+        - title: Preserve the distinction between curation and validation
+          body: >
+            Agreement across BioRemPP DB, KEGG, HADEG, ToxCSM, and regulatory
+            datasets can strengthen exploratory confidence, but it still does
+            not replace laboratory, field, or compliance-facing validation.
+          tone: warning
+      examples:
+        - incorrect: >
+            “This compound is biodegradable because it has many linked KOs and
+            pathways in the explorer.”
+          correct: >
+            “This compound has broad curated degradation-related coverage in the
+            current release, making it a stronger candidate for follow-up
+            biodegradation experiments.”
+          rationale: >
+            KO and pathway counts describe the density of curated evidence, not
+            confirmed biodegradation activity.
+        - incorrect: >
+            “A high ToxCSM score means this endpoint was experimentally observed.”
+          correct: >
+            “A high ToxCSM score indicates a stronger predicted toxicity signal
+            that may justify downstream testing.”
+          rationale: >
+            ToxCSM is a computational prediction layer and should be framed as
+            screening evidence.
+        - incorrect: >
+            “This compound is an active site-specific risk because it appears in
+            multiple regulatory lists.”
+          correct: >
+            “This compound has strong regulatory relevance in the integrated
+            snapshot, which increases its priority for context-specific review.”
+          rationale: >
+            Regulatory listing provides classification context, not direct
+            exposure, concentration, or site-level risk evidence.
+        - incorrect: >
+            “No result was returned for this field, so the function or risk is absent.”
+          correct: >
+            “No result is available for this field in the current release, which
+            may reflect source scope or missing annotation.”
+          rationale: >
+            Snapshot coverage limits and identifier gaps remain visible in the
+            explorer and must be reported honestly.
+        - incorrect: >
+            “Agreement across BioRemPP DB, KEGG, and HADEG validates the mechanism.”
+          correct: >
+            “Cross-source agreement strengthens the consistency of curated
+            evidence and can guide experimental prioritization.”
+          rationale: >
+            Database agreement improves confidence in curation, not biological
+            proof.
+    - id: regulatory-and-use-restrictions
+      title: Regulatory and Use Restrictions
+      summary: >
+        DBX can support prioritization around environmentally relevant compounds,
+        but it is not a compliance engine, formal risk assessor, or substitute
+        for jurisdiction-specific review.
+      cards:
+        - title: Regulatory context is descriptive, not dispositive
+          body: >
+            Regulatory annotations in DBX show that a compound appears in one or
+            more curated frameworks. They do not determine legal compliance,
+            permitted concentration, liability, or remediation obligations in a
+            specific jurisdiction.
+          tone: info
+        - title: Regulatory labels are temporal snapshots
+          body: >
+            Agency classifications evolve across releases, years, and
+            jurisdictions. Interpret them as release-specific context rather
+            than timeless or globally complete status labels.
+          tone: warning
+        - title: Geographic and policy scope can differ across frameworks
+          body: >
+            Integrated regulatory datasets reflect different geographic and
+            policy origins. Cross-agency comparison is useful for context, but
+            it should not be collapsed into a single universal compliance
+            status.
+          tone: neutral
+        - title: Some downstream uses remain out of scope
+          body: >
+            DBX outputs should not serve as the sole basis for regulatory
+            submissions, site remediation decisions, commercial claims, or
+            causal public-health statements without independent review and
+            validation.
+          tone: warning
+      comparison:
+        left_label: Supported framing
+        left_items:
+          - Prioritize compounds that combine regulatory relevance with curated bioremediation evidence
+          - Use annotations to justify follow-up review, experimental design, and reporting context
+          - Compare how compounds are represented across integrated frameworks
+        right_label: Prohibited uses
+        right_items:
+          - Claiming regulatory compliance or exemption directly from DBX outputs
+          - Treating the explorer as a complete risk assessment or legal decision tool
+          - Publishing commercial or confirmatory claims without external evidence
+    - id: reproducibility-and-reporting
+      title: Reproducibility and Reporting
+      summary: >
+        Results stay interpretable only when the release context, filters, and
+        evidence framing are preserved in downstream reuse.
+      cards:
+        - title: Report the release context
+          body: >
+            Always record the BioRemPP DBX release version, relevant DOI or
+            download source, and any linked source-release context such as KEGG
+            when that relationship matters to the analysis.
+          tone: success
+        - title: Preserve analytical filters and selections
+          body: >
+            Query settings, endpoint selections, class filters, and page-level
+            drill-down context can materially change the visible evidence. These
+            choices should be documented whenever results are shared.
+          tone: info
+        - title: Validation remains external
+          body: >
+            DBX improves traceability and prioritization, but publication-grade
+            claims still require orthogonal evidence such as experimental assays,
+            site measurements, or additional analytical pipelines.
+          tone: warning
+        - title: Snapshots change over time
+          body: >
+            Future releases can add compounds, expand links, revise annotations,
+            and update completeness. Reproducibility requires pinning the exact
+            snapshot used for interpretation.
+          tone: neutral
+      comparison:
+        left_label: Report when reusing DBX outputs
+        left_items:
+          - Release version and access date
+          - Filters, thresholds, and selected endpoints
+          - Which integrated sources drive the conclusion
+          - Clear separation between curated evidence and validation
+        right_label: Avoid when reporting
+        right_items:
+          - Unversioned screenshots with no analytical context
+          - Statements that hide the predictive or curated nature of the evidence
+          - Reusing rankings as absolute biological truth across unrelated contexts
+  footer:
+    text: >
+      For access conditions, licensing boundaries, and reuse obligations beyond
+      interpretation guidance, review the Terms of Use before redistributing
+      results or downstream claims.
+    terms_cta_label: Terms of Use

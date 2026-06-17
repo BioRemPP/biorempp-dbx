@@ -1,0 +1,201 @@
+# User guide editorial catalog consumed by src/content/user-guide/catalog.ts.
+# Keep category ids and target_view values aligned with the supported application views.
+version: v1
+
+# Categories:
+# - must contain exactly the supported module ids
+# - must remain ordered as compounds, compound-classes, genes, pathways, toxicity, guided-analysis
+page_title: User Guide
+page_subtitle: >
+  How to use each BioRemPP module — what it answers, how to filter, and what to inspect.
+
+intro_paragraphs:
+  - >
+    BioRemPP is organized around complementary exploratory modules: compound-centric,
+    gene-centric, pathway-aware, toxicity-aware, and guided analytical workflows.
+  - >
+    Start from the module that matches your scientific entry point, apply filters,
+    and move into detail views for any record of interest.
+
+access_note: >
+  All modules are available through read-only, free and open access pages. No
+  login or registration is required to browse, inspect, or export results.
+
+workflow:
+  title: How to use BioRemPP
+  steps:
+    - >
+      Start from the module that best matches your scientific entry point:
+      compounds, classes, genes/KOs, pathways, toxicity, or guided workflows.
+    - >
+      Apply the available filters to narrow the analytical context before
+      interpreting rankings, counts, or toxicity summaries.
+    - >
+      Open detail views to inspect charts, metadata, associated entities, and
+      cross-domain summaries linked to the selected record.
+    - >
+      Use Guided Analysis when the question is already structured as a
+      reproducible workflow with explicit filtering logic, execution metadata,
+      and standardized outputs.
+
+quick_nav:
+  title: Modules covered in this guide
+  description: >
+    Jump directly to the module you want to explore.
+
+categories:
+  - id: compounds
+    label: Compounds
+    eyebrow: Compound-centric exploration
+    summary: >
+      Start here when your question begins with a compound or pollutant.
+      Browse ranked compounds by gene count, KO coverage, and toxicity risk,
+      then drill into detail views for any record.
+    capabilities:
+      - Search compounds by name or compound identifier.
+      - Rank compounds across KO count, gene count, and toxicity risk context.
+    filters:
+      - Compound class, pathway source, and pathway selectors.
+      - Gene selector and reference-agency selector.
+      - Numeric ranges for KO count and gene count.
+    outputs:
+      - Paginated table with compound ID, class, KO count, gene count, and toxicity mean.
+      - Result summary and active-filter state for transparent browsing.
+      - Exportable filtered datasets for downstream inspection.
+    when_to_use:
+      - Prioritizing environmentally relevant pollutants.
+      - Starting exploratory analysis from a known compound or identifier.
+      - Linking toxicity context to pathway and gene evidence.
+    cta_label: Open Compound Explorer
+    target_view: compounds
+
+  - id: compound-classes
+    label: Compound Classes
+    eyebrow: Class-level aggregation
+    summary: >
+      Use this module to understand whether a broader chemical class shows
+      stronger pathway coverage, gene connectivity, or toxicity representation
+      before drilling into individual compounds.
+    capabilities:
+      - Search chemical classes directly from the explorer table.
+      - Compare class-level compound, KO, gene, and pathway counts.
+      - Open class-specific detail views from result rows.
+    filters:
+      - Text search by compound class label.
+    outputs:
+      - Paginated class summary table with compound, KO, gene, and pathway counts.
+      - Class-level overview metrics for source and toxicity coverage.
+      - Aggregate distributions rather than single-compound records.
+    when_to_use:
+      - Comparing chemical families before selecting specific compounds.
+      - Identifying classes with broader bioremediation and toxicity coverage.
+      - Screening high-level chemical groups for follow-up analysis.
+    cta_label: Open Compound Class Explorer
+    target_view: compound-classes
+
+  - id: genes
+    label: Genes / KO
+    eyebrow: KO and gene inspection
+    summary: >
+      Start here when your investigation begins with a gene symbol, gene name,
+      or KO identifier. Recover linked compounds and pathway evidence from a
+      molecular entry point.
+    capabilities:
+      - Search by gene symbol, gene name, or KO identifier.
+      - Inspect compound and pathway coverage for each KO or gene row.
+      - Review enzyme activity summaries within the result grid.
+    filters:
+      - Text search across gene name, symbol, and KO.
+      - Numeric range filters for compound count.
+    outputs:
+      - Paginated table with KO, gene symbol, gene name, compound count, and pathway count.
+      - Filter-aware result summaries for KO-centric browsing.
+      - Direct navigation from ranked explorer rows into detail views.
+    when_to_use:
+      - Starting from ortholog annotations or gene hypotheses.
+      - Recovering compound context from molecular features.
+      - Inspecting gene-to-compound connectivity within the integrated schema.
+    cta_label: Open Gene / KO Explorer
+    target_view: genes
+
+  - id: pathways
+    label: Pathways
+    eyebrow: Source-aware pathway exploration
+    summary: >
+      Use this module when the question is pathway-first and requires comparing
+      gene and compound coverage inside one curated source at a time — KEGG or HADEG.
+    capabilities:
+      - Search pathway names directly from the explorer.
+      - Switch between KEGG and HADEG source scopes.
+      - Compare compound and gene coverage by pathway.
+    filters:
+      - Text search by pathway name.
+      - Explicit source selector between KEGG and HADEG.
+    outputs:
+      - Paginated table with pathway, source, compound count, and gene count.
+      - Source-aware pathway rankings for cleaner inspection.
+      - Direct navigation into pathway overviews from result rows.
+    when_to_use:
+      - Comparing degradation pathways inside one curated source at a time.
+      - Understanding pathway-level biological coverage before focusing on compounds.
+      - Inspecting pathway evidence alongside toxicity-linked summaries.
+    cta_label: Open Pathway Explorer
+    target_view: pathways
+
+  - id: toxicity
+    label: Toxicity
+    eyebrow: Endpoint-level toxicological context
+    summary: >
+      Use this module when toxicological risk context is your main entry point.
+      Compare ToxCSM-derived endpoint predictions across compounds and chemical
+      classes using dependent endpoint-to-label filtering.
+    capabilities:
+      - Search compounds by name or identifier inside the toxicity table.
+      - Inspect endpoint-level prediction values and categorical labels.
+      - Narrow the table with dependent endpoint-to-label filtering.
+    filters:
+      - Endpoint selector with dynamic label refresh.
+      - Label selector constrained by the chosen endpoint.
+      - Compound class selector and numeric range filters for toxicity values.
+    outputs:
+      - Paginated table with compound ID, name, class, endpoint, label, and numeric value.
+      - Endpoint-aware filter context and active-filter summary.
+      - Warning states for incomplete metadata or label refresh issues.
+    when_to_use:
+      - Endpoint-first inspection of predicted toxicity signals.
+      - Comparing compounds under the same toxicological endpoint.
+      - Recovering compound-level follow-up targets from toxicity rankings.
+    cta_label: Open Toxicity Explorer
+    target_view: toxicity
+
+  - id: guided-analysis
+    label: Guided Analysis
+    eyebrow: Reproducible analytical workflows
+    summary: >
+      Run a predefined analytical workflow when your question is already structured.
+      Select a query from the catalog, apply filters, and get ranked results,
+      visualizations, and reproducible recipe documentation in one view.
+    capabilities:
+      - Select queries from a categorized guided catalog.
+      - Apply query-specific filters with dependent options.
+      - Inspect summary cards, tables, heatmaps, and scatter plots in one view.
+    filters:
+      - Query-specific declarative filters exposed from the guided catalog.
+      - Dependent options refreshed from the selected workflow context.
+      - Built-in reset flow to return to the default guided state.
+    outputs:
+      - Execution metadata with timing and scope context.
+      - Paginated result tables aligned with the active workflow.
+      - Visual outputs such as toxicity heatmaps, ranked summaries, and scatter plots.
+    when_to_use:
+      - Running predefined exploratory workflows with minimal manual setup.
+      - Reproducing curated analytical questions in a stable interface.
+      - Connecting ranked outputs, visualizations, and recipe documentation in one place.
+    cta_label: Open Guided Analysis
+    target_view: guided-analysis
+
+closing_note: >
+  The modules documented here are complementary. Results from explorers,
+  detail pages, and guided workflows should be interpreted as exploratory
+  evidence for prioritization and hypothesis generation, not as confirmatory
+  conclusions without external validation.

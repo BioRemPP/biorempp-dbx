@@ -1,0 +1,203 @@
+# Guided query definition for UC-2, focused on compounds with the highest toxicity-oriented ranking.
+id: uc2_most_toxic_compounds
+category: compound_analysis
+title: Most Toxic Compounds
+question: Which compounds present the highest predicted toxicological risk?
+description: Compare compounds by predicted toxicity signals within a selected endpoint or endpoint-group context.
+dataset: compound_summary
+executor: uc_most_toxic_compounds
+
+use_case_description:
+  scientific_question: >
+    Which compounds rank higher in predicted toxicological risk when evaluated
+    by a selected endpoint context?
+  description: >
+    This use case ranks compounds by predicted toxicity under the selected
+    endpoint context. It can evaluate either a single endpoint or the strongest
+    signal inside an endpoint group, helping users inspect which compounds rise
+    to the top after combining toxicological filters with annotation-aware
+    scope selection.
+  visual_elements:
+    - label: Ranking Table
+      description: Compounds are ordered by prediction value (descending) with deterministic tie-breaks to support reproducible exploratory comparison.
+    - label: Toxicity Heatmap
+      description: The heatmap shows ranked compounds on Y-axis and endpoint columns on X-axis, preserving endpoint-level values without mean aggregation.
+    - label: Endpoint Context
+      description: Risk context is explicitly controlled by filters for endpoint group and mode (single endpoint or group peak).
+  interpretation_guidelines:
+    - Higher positions indicate stronger predicted toxicity under the selected endpoint context, and should be interpreted as exploratory prioritization signals.
+    - Group-peak mode highlights compounds with stronger endpoint-specific alerts inside a domain, but does not establish causal toxicity mechanisms.
+    - Endpoint-group comparisons can help identify compounds with broader or more concentrated alert patterns across toxicological domains.
+    - This output is suitable for hypothesis generation and triage, and should be complemented with domain review and experimental validation.
+  limitations:
+    - >
+      Toxicity values are model-derived predictions and do not represent
+      experimentally confirmed toxicological outcomes.
+    - >
+      Ranking positions are sensitive to endpoint selection, group-peak mode,
+      and threshold filters, so they should not be interpreted as absolute
+      hazard classes.
+    - >
+      The heatmap preserves prediction values but does not encode exposure
+      context, dose-response behavior, or mechanistic causality.
+  color_scheme: primary
+
+methods_modal:
+  button_label: View Methods
+  title: "UC-2: Compounds with Highest Predicted Toxicity Scores"
+  introduction: This analysis ranks compounds by predicted toxicity values under a user-defined endpoint context.
+  steps:
+    - title: Analytical Objective
+      description: Identify compounds with higher predicted toxicity scores in a selected endpoint or endpoint-group context.
+    - title: Input Data
+      description: The analysis combines compound-level annotations with endpoint-level prediction values.
+      bullets:
+        - Toxicity values are derived from predictive models (e.g., ToxCSM) and do not represent experimentally validated toxicity.
+        - gene_count = number of distinct gene annotations associated with a compound.
+        - pathway_count = number of distinct metabolic pathways linked to a compound.
+    - title: Filtering Strategy
+      description: The selected filters define endpoint context, compound subgroup, and optional numeric windows for predicted values and annotation counts.
+    - title: Metric Definition
+      description: The primary metric is the predicted endpoint value, obtained either from a single endpoint or from the maximum predicted value within the selected endpoint group.
+    - title: Ranking or Aggregation Procedure
+      description: Compounds with available predicted values are ranked in descending order of predicted toxicity, with deterministic tie handling for reproducibility.
+    - title: Output Representation
+      description: Outputs include summary indicators, an endpoint-context heatmap, and a ranked results table for exploratory comparison.
+    - title: Interpretation Scope and Limitations
+      description: Higher ranks suggest stronger predicted toxicity signals under the selected context, but do not establish causal mechanisms or confirmed hazard.
+  footer_note: This use case is intended for exploratory prioritization and should be interpreted together with domain review and external validation.
+
+defaults:
+  page_size: 10
+  filters:
+    risk_mode: endpoint
+    endpoint_group: all
+    endpoint: avian
+
+executor_config:
+  heatmap_top_n: 30
+
+filters:
+  - id: risk_mode
+    type: select
+    label: Risk Mode
+    provider:
+      type: static
+      options:
+        - value: endpoint
+          label: Single Endpoint
+        - value: group_peak
+          label: Endpoint Group Peak (MAX)
+  - id: endpoint_group
+    type: select
+    label: Endpoint Group
+    provider:
+      type: static
+      options:
+        - value: all
+          label: All groups
+        - value: ecotoxicity
+          label: Ecotoxicity
+        - value: genotoxicity_carcinogenicity
+          label: Genotoxicity & Carcinogenicity
+        - value: nuclear_receptors
+          label: Nuclear Receptors (NR)
+        - value: stress_response
+          label: Stress Response (SR)
+        - value: organ_irritation
+          label: Organ / Irritation
+        - value: other
+          label: Other
+  - id: endpoint
+    type: dependent_select
+    label: Endpoint
+    depends_on: endpoint_group
+    provider:
+      type: query_derived
+      source: toxicity_endpoints
+  - id: compoundclass
+    type: select
+    label: Compound Class
+    provider:
+      type: meta_endpoint
+      endpoint: /api/meta/compound-classes
+  - id: y_value
+    type: number_range
+    label: Prediction Value
+    min: 0
+    max: 1
+    step: 0.01
+    min_placeholder: e.g. 0.50
+    max_placeholder: e.g. 0.95
+  - id: gene_count
+    type: number_range
+    label: Gene Count
+    min: 0
+    min_placeholder: e.g. 10
+    max_placeholder: e.g. 250
+  - id: pathway_count
+    type: number_range
+    label: Pathway Annotations
+    min: 0
+    min_placeholder: e.g. 5
+    max_placeholder: e.g. 25
+  - id: search
+    type: search
+    label: Search Compound
+    placeholder: e.g. Ammonia or C00014
+
+summary_cards:
+  - id: compounds_in_scope
+    label: Compounds in Scope
+    value_key: compounds_in_scope
+  - id: ranked_points
+    label: Ranked Compounds
+    value_key: ranked_points
+  - id: excluded_null_y
+    label: Excluded (Null Endpoint)
+    value_key: excluded_null_y
+  - id: risk_mode_label
+    label: Risk Mode
+    value_key: risk_mode_label
+  - id: endpoint_context
+    label: Endpoint Context
+    value_key: endpoint_context
+
+visualizations:
+  - id: uc2_heatmap
+    type: heatmap_matrix
+    title: Toxicity Heatmap
+    subtitle: Compounds on Y-axis and grouped endpoints on top
+    data_key: toxicity_matrix
+
+table:
+  id: uc2_table
+  title: Ranked compounds by endpoint risk
+  subtitle: Ranking under selected endpoint context
+  row_click_field: cpd
+  empty_message: No compounds available for the selected endpoint context.
+  columns:
+    - id: rank
+      label: Rank
+      type: number
+    - id: cpd
+      label: Compound ID
+      type: compound_link
+    - id: compoundname
+      label: Name
+      type: text
+    - id: compoundclass
+      label: Class
+      type: text
+    - id: y_value
+      label: Prediction Value
+      type: number
+    - id: endpoint_used
+      label: Endpoint Used
+      type: text
+    - id: gene_count
+      label: Gene Count
+      type: number
+    - id: pathway_count
+      label: Pathway Annotations
+      type: number

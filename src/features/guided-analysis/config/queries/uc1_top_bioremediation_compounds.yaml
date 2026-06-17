@@ -1,0 +1,176 @@
+# Guided query definition for UC-1, focused on compounds with the highest KO-based functional coverage.
+id: uc1_top_bioremediation_compounds
+category: compound_analysis
+title: Top Bioremediation Compounds
+question: Which compounds show the broadest functional annotation coverage in the current scope?
+description: Rank compounds by KO coverage and inspect linked gene and pathway context.
+dataset: compound_summary
+executor: uc_ranked_metric
+
+use_case_description:
+  scientific_question: >
+    Which compounds show broader functional annotation coverage based on KEGG
+    Orthology associations in the current filtered scope?
+  description: >
+    This ranking view orders compounds by the number of distinct KO identifiers
+    linked to each compound, helping you identify which compounds concentrate
+    broader functional coverage within the current filter scope. It is useful
+    for exploratory prioritization before moving into deeper gene, pathway, or
+    compound-level inspection.
+  visual_elements:
+    - label: Summary Cards
+      description: >
+        The cards quantify how many compounds remain in scope and identify the
+        active ranking metric used to interpret the results.
+    - label: Ranking Bar Chart
+      description: >
+        The bar chart highlights the highest-ranked compounds by KO count.
+        Taller bars indicate broader annotation-derived functional coverage in
+        the current scope.
+    - label: Ranking Table
+      description: >
+        The table reports ranked compounds together with compound class,
+        KO count, gene count, and pathway annotations to support direct
+        comparison and downstream drill-down.
+  interpretation_guidelines:
+    - >
+      Higher-ranked compounds indicate broader annotation coverage in terms of
+      distinct KO associations and can be used as exploratory starting points
+      for prioritization.
+    - >
+      Differences between compounds should be interpreted relative to the
+      current filters because annotation breadth depends on the selected
+      compound subset and numeric thresholds.
+    - >
+      Compounds with high KO coverage may also concentrate broader pathway or
+      gene context, which can justify more detailed follow-up in downstream
+      compound pages or pathway analyses.
+    - >
+      This ranking is intended for hypothesis generation and should not be
+      interpreted as evidence of confirmed remediation efficacy or biological
+      superiority.
+  limitations:
+    - >
+      KO count measures annotation breadth, not experimentally validated
+      biodegradation performance, pathway activity, or environmental fitness.
+    - >
+      Higher ranks may reflect differences in curation density, database
+      coverage, or cross-reference availability rather than true functional
+      advantage for a compound.
+    - >
+      The ranking does not capture pathway directionality, condition-specific
+      gene expression, or kinetic evidence, so downstream validation remains
+      necessary.
+  color_scheme: primary
+
+methods_modal:
+  button_label: View Methods
+  title: "UC-1: Compounds with Higher Functional Annotation Coverage"
+  introduction: This analysis ranks compounds by annotation-derived bioremediation potential within the selected data scope.
+  steps:
+    - title: Analytical Objective
+      description: Identify compounds with broader functional annotation coverage to support exploratory prioritization.
+    - title: Input Data
+      description: The analysis uses integrated compound annotations, including identifiers, class labels, and functional count fields.
+      bullets:
+        - ko_count = number of distinct KEGG Orthology identifiers associated with a compound.
+        - gene_count = number of distinct gene annotations associated with a compound.
+        - pathway_count = number of distinct metabolic pathways linked to a compound.
+    - title: Filtering Strategy
+      description: The selected filters define the analytical scope by compound identity, class membership, and numeric annotation ranges.
+    - title: Metric Definition
+      description: The primary metric is ko_count, interpreted as the breadth of functional annotation coverage in the active scope.
+    - title: Ranking or Aggregation Procedure
+      description: Compounds are ordered by ko_count in descending order, with deterministic tie handling for reproducible comparisons.
+    - title: Output Representation
+      description: Outputs include summary indicators, a ranked horizontal bar chart, and a tabular ranking for detailed inspection.
+    - title: Interpretation Scope and Limitations
+      description: Higher ranks may indicate broader annotation-derived bioremediation potential, but do not establish confirmed remediation efficacy.
+  footer_note: Outputs are intended for exploratory and hypothesis-generating use, with downstream validation required.
+
+defaults:
+  page_size: 10
+  sort:
+    field: ko_count
+    order: desc
+
+executor_config:
+  metric_field: ko_count
+  sort_field: ko_count
+  sort_order: desc
+
+filters:
+  - id: search
+    type: search
+    label: Search Compound
+    placeholder: e.g. Ammonia or C00014
+  - id: compoundclass
+    type: select
+    label: Compound Class
+    provider:
+      type: meta_endpoint
+      endpoint: /api/meta/compound-classes
+  - id: ko_count
+    type: number_range
+    label: KO Count
+    min: 0
+    min_placeholder: e.g. 10
+    max_placeholder: e.g. 300
+  - id: gene_count
+    type: number_range
+    label: Gene Count
+    min: 0
+    min_placeholder: e.g. 10
+    max_placeholder: e.g. 250
+  - id: pathway_count
+    type: number_range
+    label: Pathway Annotations
+    min: 0
+    min_placeholder: e.g. 5
+    max_placeholder: e.g. 25
+
+summary_cards:
+  - id: compounds_in_scope
+    label: Compounds in Scope
+    value_key: compounds_in_scope
+    hint: Compounds matching the current filters
+  - id: ranked_metric
+    label: Ranked Metric
+    value_key: ranked_metric_label
+    hint: Distinct KEGG ortholog annotations used for ranking
+
+visualizations:
+  - id: uc1_bar
+    type: horizontal_bar
+    title: Top Bioremediation Compounds (KO Count)
+    subtitle: Top 10 by ko_count (desc)
+    data_key: bar_items
+
+table:
+  id: uc1_table
+  title: Ranked compounds by KO count
+  subtitle: Top-ranked compounds with strongest functional diversity
+  row_click_field: cpd
+  empty_message: No ranking data available.
+  columns:
+    - id: rank
+      label: Rank
+      type: number
+    - id: cpd
+      label: Compound ID
+      type: compound_link
+    - id: compoundname
+      label: Name
+      type: text
+    - id: compoundclass
+      label: Class
+      type: text
+    - id: ko_count
+      label: KO Count
+      type: number
+    - id: gene_count
+      label: Gene Count
+      type: number
+    - id: pathway_count
+      label: Pathway Annotations
+      type: number

@@ -1,0 +1,420 @@
+# BioRemPP Integrated Database Schema Configuration
+# Formal specification aligned to docs/database-schemas/biorempp-integrated-database.md
+
+schema_id: "biorempp"
+title: "BioRemPP Integrated Database"
+version: "1.1.0"
+last_updated: "April 2026"
+color: "success"
+
+overview:
+  description: >
+    The BioRemPP Database uses a flat, denormalized schema optimized for
+    analytical queries and data integration workflows. The current v1.1.0
+    release consists of a single 11-column table linking environmental
+    pollutant compounds to associated genes, enzymatic functions, KEGG
+    reactions, and regulatory annotations.
+  design_rationale:
+    - title: "Simplicity"
+      description: "A single tidy table supports direct import into R, Python, and spreadsheet environments."
+    - title: "Analytical optimization"
+      description: "Denormalized rows make filtering, grouping, and aggregation straightforward for exploratory analysis."
+    - title: "Interoperability"
+      description: "Semicolon-delimited UTF-8 CSV keeps the release easy to load across bioinformatics pipelines."
+    - title: "FAIR compliance"
+      description: "Controlled vocabularies for compounds, KOs, agencies, EC numbers, and reactions improve findability and reuse."
+
+schema_definition:
+  format: "CSV (Comma-Separated Values)"
+  rows: 123762
+  columns: 11
+  encoding: "UTF-8"
+  delimiter: "Semicolon (;)"
+  text_qualifier: 'Double quote (")'
+  header: true
+  completeness: "Core identifiers are fully populated; unresolved EC and reaction enrichments are preserved as `NA` sentinels."
+
+columns:
+  - name: "cpd"
+    type: "Character"
+    nullable: false
+    controlled_vocabulary: true
+    pattern: "C##### (capital C followed by exactly 5 digits)"
+    regex: "^C\\d{5}$"
+    example: "C06790"
+    description: "KEGG Compound identifier"
+    purpose: "Uniquely identifies each environmental pollutant compound in the integrated release."
+    uniqueness: "Not unique - one compound may appear in many rows across KO, agency, and reaction combinations."
+    cardinality: 384
+    cross_references:
+      - name: "KEGG Compound"
+        url_pattern: "https://www.kegg.jp/entry/{value}"
+      - name: "PubChem"
+      - name: "ChEBI"
+
+  - name: "compoundclass"
+    type: "Character"
+    nullable: false
+    controlled_vocabulary: true
+    pattern: "Standardized chemical class label"
+    example: "Aromatic"
+    description: "Chemical structural classification"
+    purpose: "Supports class-level browsing, filtering, and aggregate interpretation of pollutant groups."
+    uniqueness: "Not unique - compounds can contribute rows under repeated or multi-class annotations."
+    cardinality: 12
+    notes:
+      - "A single compound may appear under more than one class when multiple class annotations are retained."
+    valid_values:
+      - class: "Aromatic"
+        compounds: 123
+        description: "Benzene ring-containing compounds"
+      - class: "Chlorinated"
+        compounds: 117
+        description: "Halogenated with chlorine substituents"
+      - class: "Nitrogen-containing"
+        compounds: 115
+        description: "Nitrogen functional groups"
+      - class: "Polyaromatic"
+        compounds: 98
+        description: "Multiple fused aromatic rings (PAHs)"
+      - class: "Aliphatic"
+        compounds: 94
+        description: "Straight-chain or branched hydrocarbons"
+      - class: "Metal"
+        compounds: 29
+        description: "Metal and metal-containing compounds"
+      - class: "Inorganic"
+        compounds: 26
+        description: "Inorganic compounds (ammonia, sulfates, nitrates)"
+      - class: "Sulfur-containing"
+        compounds: 20
+        description: "Sulfur functional groups"
+      - class: "Organophosphorus"
+        compounds: 13
+        description: "Phosphorus-containing organic compounds"
+      - class: "Organometallic"
+        compounds: 9
+        description: "Direct metal-carbon bonds"
+      - class: "Halogenated"
+        compounds: 8
+        description: "Halogenated compounds (bromo/fluoro)"
+      - class: "Organosulfur"
+        compounds: 1
+        description: "Organic sulfur compounds"
+
+  - name: "ko"
+    type: "Character"
+    nullable: false
+    controlled_vocabulary: true
+    pattern: "K##### (capital K followed by exactly 5 digits)"
+    regex: "^K\\d{5}$"
+    example: "K07408"
+    description: "KEGG Orthology identifier"
+    purpose: "Represents the ortholog group used to connect compounds to genes, pathways, EC numbers, and reactions."
+    uniqueness: "Not unique - the same KO can recur across compounds, agencies, EC annotations, and reactions."
+    cardinality: 1543
+    cross_references:
+      - name: "KEGG Orthology"
+        url_pattern: "https://www.kegg.jp/entry/{value}"
+      - name: "KEGG Pathway maps"
+
+  - name: "ec"
+    type: "Character"
+    nullable: true
+    controlled_vocabulary: true
+    pattern: "EC number or sentinel `NA`"
+    example: "1.14.14.1"
+    description: "Enzyme Commission number"
+    purpose: "Adds enzyme-level biochemical specificity to KO-linked compound relationships."
+    uniqueness: "Not unique - one EC number can support many rows and some rows carry unresolved EC values."
+    cardinality: 994
+    notes:
+      - "Semantically nullable; unresolved values are serialized as `NA` in the distributed CSV."
+      - "Missing count in the formal specification: 961 rows (99.22% complete)."
+    cross_references:
+      - name: "EC / IUBMB nomenclature"
+
+  - name: "reaction"
+    type: "Character"
+    nullable: true
+    controlled_vocabulary: true
+    pattern: "R##### (capital R followed by exactly 5 digits) or sentinel `NA`"
+    regex: "^R\\d{5}$"
+    example: "R02340"
+    description: "KEGG Reaction identifier"
+    purpose: "Links KO and EC annotations to reaction-level biochemical transformations curated in KEGG."
+    uniqueness: "Not unique - reaction identifiers recur across compounds and KOs, and unresolved rows use `NA`."
+    cardinality: 1939
+    notes:
+      - "Semantically nullable; unresolved values are serialized as `NA` in the distributed CSV."
+      - "Missing count in the formal specification: 2,223 rows (98.20% complete)."
+    cross_references:
+      - name: "KEGG Reaction"
+        url_pattern: "https://www.kegg.jp/entry/{value}"
+
+  - name: "reaction_description"
+    type: "Character"
+    nullable: true
+    controlled_vocabulary: false
+    pattern: "KEGG reaction description text or sentinel `NA`"
+    example: "alkane 1-monooxygenase; ..."
+    description: "KEGG reaction description"
+    purpose: "Provides human-readable biochemical interpretation for the linked KEGG reaction identifier."
+    uniqueness: "Not unique - the same reaction description can support many rows, and unresolved rows use `NA`."
+    cardinality: 1939
+    notes:
+      - "Coverage mirrors the `reaction` column and uses `NA` when no textual reaction interpretation is resolved."
+      - "Missing count in the formal specification: 2,223 rows (98.20% complete)."
+
+  - name: "referenceAG"
+    type: "Character"
+    nullable: false
+    controlled_vocabulary: true
+    pattern: "Agency code (uppercase)"
+    example: "EPA"
+    description: "Environmental regulatory agency code"
+    purpose: "Indicates which regulatory framework flags the compound as environmentally relevant."
+    uniqueness: "Not unique - agencies recur across many compounds."
+    cardinality: 9
+    valid_values:
+      - code: "ATSDR"
+        full_name: "Agency for Toxic Substances and Disease Registry"
+        jurisdiction: "USA"
+        compounds: 191
+      - code: "IARC2B"
+        full_name: "IARC Group 2B (Possibly carcinogenic)"
+        jurisdiction: "International"
+        compounds: 130
+      - code: "PSL"
+        full_name: "Priority Substances List"
+        jurisdiction: "Canada"
+        compounds: 99
+      - code: "EPC"
+        full_name: "Environmental Priority Chemicals"
+        jurisdiction: "Europe"
+        compounds: 91
+      - code: "WFD"
+        full_name: "Water Framework Directive"
+        jurisdiction: "EU"
+        compounds: 84
+      - code: "EPA"
+        full_name: "U.S. Environmental Protection Agency"
+        jurisdiction: "USA"
+        compounds: 83
+      - code: "IARC1"
+        full_name: "IARC Group 1 (Carcinogenic to humans)"
+        jurisdiction: "International"
+        compounds: 56
+      - code: "CONAMA"
+        full_name: "Conselho Nacional do Meio Ambiente"
+        jurisdiction: "Brazil"
+        compounds: 43
+      - code: "IARC2A"
+        full_name: "IARC Group 2A (Probably carcinogenic)"
+        jurisdiction: "International"
+        compounds: 29
+
+  - name: "compoundname"
+    type: "Character"
+    nullable: false
+    controlled_vocabulary: false
+    pattern: "KEGG standard compound name"
+    example: "Trichloroethene"
+    description: "Human-readable compound name"
+    purpose: "Supports readable inspection, search, and downstream reporting for each KEGG compound entry."
+    uniqueness: "Quasi-unique - 383 non-missing names are distributed across 384 compounds."
+    cardinality: 383
+    notes:
+      - "One compound identifier in the release does not have a populated display name."
+      - "Names follow KEGG standard nomenclature."
+
+  - name: "genesymbol"
+    type: "Character"
+    nullable: false
+    controlled_vocabulary: false
+    pattern: "Standard gene symbol or curated organism-specific abbreviation"
+    example: "CYP2E1"
+    description: "Standard gene abbreviation"
+    purpose: "Keeps KO-linked biological functions readable at the gene-symbol level."
+    uniqueness: "Not unique - the same symbol can support many compounds, agencies, EC numbers, and reactions."
+    cardinality: 1517
+    notes:
+      - "Values can represent human-style symbols or organism-specific microbial abbreviations."
+
+  - name: "genename"
+    type: "Character"
+    nullable: false
+    controlled_vocabulary: false
+    pattern: "Free-text KEGG functional description"
+    example: "cytochrome P450 family 2..."
+    description: "Expanded gene or function description"
+    purpose: "Provides a more interpretable functional label than the compact gene symbol alone."
+    uniqueness: "Not unique - multiple rows share the same functional description."
+    cardinality: 1422
+    notes:
+      - "Gene names come from KEGG Orthology release 117.0+ annotations."
+
+  - name: "enzyme_activity"
+    type: "Character"
+    nullable: false
+    controlled_vocabulary: true
+    pattern: "Curated enzyme-family term"
+    example: "monooxygenase"
+    description: "Simplified enzyme activity family"
+    purpose: "Groups rows into interpretable enzyme activity families for summaries and exploratory navigation."
+    uniqueness: "Not unique - many genes and reactions can map to the same activity family."
+    cardinality: 206
+    top_families:
+      - name: "cytochrome P450"
+        row_count: 17729
+        compounds: 35
+      - name: "dioxygenase"
+        row_count: 11414
+        compounds: 88
+      - name: "hydrolase"
+        row_count: 7818
+        compounds: 26
+      - name: "dehydrogenase"
+        row_count: 7029
+        compounds: 106
+      - name: "reductase"
+        row_count: 6314
+        compounds: 53
+      - name: "demethylase"
+        row_count: 6273
+        compounds: 6
+      - name: "oxidase"
+        row_count: 5852
+        compounds: 28
+      - name: "transglutaminase"
+        row_count: 5824
+        compounds: 2
+      - name: "monooxygenase"
+        row_count: 4438
+        compounds: 74
+      - name: "S-transferase"
+        row_count: 3922
+        compounds: 13
+
+constraints:
+  primary_key: null
+  primary_key_note: "The distributed source CSV is a flat denormalized export without an explicit primary key column."
+  conceptual_key:
+    - "cpd"
+    - "compoundclass"
+    - "ko"
+    - "ec"
+    - "reaction"
+    - "reaction_description"
+    - "referenceAG"
+    - "compoundname"
+    - "genesymbol"
+    - "genename"
+    - "enzyme_activity"
+  duplicate_rows: "No exact duplicate full rows were observed in the v1.1.0 source export, but shorter compound-KO-agency combinations repeat heavily after EC/reaction expansion."
+  foreign_keys:
+    - column: "cpd"
+      references: "KEGG Compound database"
+    - column: "ko"
+      references: "KEGG Orthology database"
+    - column: "reaction"
+      references: "KEGG Reaction database"
+  cardinality_relationships:
+    - name: "Compound-to-KO"
+      type: "Many-to-Many"
+      description: "One compound can connect to many KOs and one KO can recur across multiple compounds."
+      example: "Ammonia (C00014) -> 334 unique KO groups"
+    - name: "KO-to-EC/Reaction"
+      type: "One-to-Many"
+      description: "A single KO can expand into multiple EC and KEGG reaction combinations in the enriched v1.1.0 release."
+      example: "Expanded KEGG link matching introduces cartesian EC/reaction coverage when multiple biochemical mappings exist."
+    - name: "Compound-to-Agency"
+      type: "Many-to-Many"
+      description: "Compounds can be listed by multiple regulatory agencies, and each agency contributes many compounds."
+      example: "Row counts per agency exceed the unique compound count because one compound can be listed by several agencies."
+
+data_quality:
+  completeness:
+    status: "High with explicit nullable enrichments"
+    description: "Eight core columns are fully populated. `ec` is 99.22% complete (961 unresolved rows) and `reaction` / `reaction_description` are 98.20% complete (2,223 unresolved rows each), preserved as `NA` sentinels in the CSV."
+  consistency:
+    - "All `cpd` values match ^C\\d{5}$."
+    - "All `ko` values match ^K\\d{5}$."
+    - "`ec` values resolve to EC notation or the sentinel `NA`."
+    - "`reaction` values resolve to KEGG reaction IDs or the sentinel `NA`."
+    - "`reaction_description` mirrors reaction coverage and uses `NA` when textual reaction content is unavailable."
+  accuracy:
+    - column: "cpd, compoundname"
+      source: "KEGG Compound database (Release 117.0+)"
+    - column: "ko, genesymbol, genename"
+      source: "KEGG Orthology database (Release 117.0+)"
+    - column: "ec, reaction, reaction_description"
+      source: "KEGG Reaction database (Release 117.0+)"
+    - column: "compoundclass"
+      source: "KEGG Compound + ChEBI classification"
+    - column: "referenceAG"
+      source: "Manual compilation from agency databases"
+    - column: "enzyme_activity"
+      source: "Automated extraction via curated enzyme lexicon"
+  source: "BioRemPP integrated source CSV specification aligned to the v1.1.0 bundled release."
+  validation_date: "KEGG Release 117.0+/02-18 (retrieved 2026-02-17)"
+
+version_history:
+  - version: "v1.0.0"
+    date: "December 2025"
+    rows: 10869
+    changes: "Initial release with 8 columns and baseline compound-KO-agency integration."
+  - version: "v1.1.0"
+    date: "April 2026"
+    rows: 123762
+    changes: "Added `ec`, `reaction`, and `reaction_description`; expanded KEGG link matching with synthetic EC/reaction cartesian coverage."
+
+usage_examples:
+  r: |
+    library(readr)
+    db <- read_delim("data/raw/biorempp_database_v1.1.0.csv", delim = ";")
+
+    # Shape
+    dim(db)  # [1] 123762     11
+
+    # Unique compounds
+    length(unique(db$cpd))  # 384
+
+    # Compounds per agency
+    db |>
+      dplyr::group_by(referenceAG) |>
+      dplyr::summarise(n_cpd = dplyr::n_distinct(cpd)) |>
+      dplyr::arrange(desc(n_cpd))
+  python: |
+    import pandas as pd
+
+    df = pd.read_csv("data/raw/biorempp_database_v1.1.0.csv", sep=";", dtype=str)
+    print(df.shape)  # (123762, 11)
+    print(df.columns.tolist())
+    # ['cpd', 'compoundclass', 'ko', 'ec', 'reaction',
+    #  'reaction_description', 'referenceAG', 'compoundname',
+    #  'genesymbol', 'genename', 'enzyme_activity']
+
+    # Unique compounds
+    print(df["cpd"].nunique())  # 384
+
+    # Compounds per class
+    print(df.groupby("compoundclass")["cpd"].nunique().sort_values(ascending=False))
+  common_queries:
+    - description: "Count unresolved EC and reaction enrichments"
+      code: |
+        SELECT
+          SUM(CASE WHEN ec = 'NA' THEN 1 ELSE 0 END) AS unresolved_ec_rows,
+          SUM(CASE WHEN reaction = 'NA' THEN 1 ELSE 0 END) AS unresolved_reaction_rows,
+          SUM(CASE WHEN reaction_description = 'NA' THEN 1 ELSE 0 END) AS unresolved_reaction_description_rows
+        FROM biorempp;
+    - description: "Inspect enriched annotations for one compound"
+      code: |
+        SELECT cpd, compoundname, ko, ec, reaction, reaction_description, referenceAG
+        FROM biorempp
+        WHERE cpd = 'C06790'
+        LIMIT 10;
+
+contact:
+  github_issues: "https://github.com/BioRemPP/biorempp_db/issues"
+  email: "biorempp@gmail.com"

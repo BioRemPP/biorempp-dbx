@@ -1,0 +1,137 @@
+# Reproducible static query recipes for UC-3, mirroring the risk-versus-potential scatter use case.
+button_label: View Queries
+title: UC-3 Query Recipes (Risk vs Bioremediation Potential)
+introduction: Reproduce the UC-3 scatter base points and dynamic P75 thresholds
+  on compound_summary.
+recipes:
+  - id: sqlite_query
+    label: SQLite Query
+    description: Compute valid points (non-null risk), P75 thresholds, and quadrant
+      assignment.
+    language: sql
+    runtime: sqlite
+    code: >
+      WITH scope AS (
+        SELECT
+          cpd,
+          compoundname,
+          compoundclass,
+          gene_count,
+          pathway_count,
+          toxicity_risk_mean AS y_value
+        FROM compound_summary
+        WHERE toxicity_risk_mean IS NOT NULL
+      ),
+
+      ranked AS (
+        SELECT
+          *,
+          ROW_NUMBER() OVER (ORDER BY gene_count) AS rn_x,
+          ROW_NUMBER() OVER (ORDER BY y_value) AS rn_y,
+          COUNT(*) OVER () AS n
+        FROM scope
+      ),
+
+      thresholds AS (
+        SELECT
+          MAX(CASE WHEN rn_x = CAST((n - 1) * 0.75 AS INT) + 1 THEN gene_count END) AS x_threshold,
+          MAX(CASE WHEN rn_y = CAST((n - 1) * 0.75 AS INT) + 1 THEN y_value END) AS y_threshold
+        FROM ranked
+      )
+
+      SELECT
+        r.cpd,
+        r.compoundname,
+        r.compoundclass,
+        r.gene_count,
+        r.pathway_count,
+        r.y_value,
+        t.x_threshold,
+        t.y_threshold,
+        CASE
+          WHEN r.gene_count >= t.x_threshold AND r.y_value >= t.y_threshold THEN 'top_right'
+          WHEN r.gene_count <  t.x_threshold AND r.y_value >= t.y_threshold THEN 'top_left'
+          WHEN r.gene_count >= t.x_threshold AND r.y_value <  t.y_threshold THEN 'bottom_right'
+          ELSE 'bottom_left'
+        END AS quadrant
+      FROM ranked r
+
+      CROSS JOIN thresholds t
+
+      ORDER BY r.cpd ASC;
+  - id: python_sqlite
+    label: Python + SQLite
+    description: Python sqlite3 script to run UC-3 base point extraction with thresholds.
+    language: python
+    runtime: sqlite
+    code: >-
+      import json
+
+      import sqlite3
+
+
+      db_path = "data/biorempp.sqlite"
+
+      query = """
+
+      WITH scope AS (
+        SELECT
+          cpd,
+          compoundname,
+          compoundclass,
+          gene_count,
+          pathway_count,
+          toxicity_risk_mean AS y_value
+        FROM compound_summary
+        WHERE toxicity_risk_mean IS NOT NULL
+      ),
+
+      ranked AS (
+        SELECT
+          *,
+          ROW_NUMBER() OVER (ORDER BY gene_count) AS rn_x,
+          ROW_NUMBER() OVER (ORDER BY y_value) AS rn_y,
+          COUNT(*) OVER () AS n
+        FROM scope
+      ),
+
+      thresholds AS (
+        SELECT
+          MAX(CASE WHEN rn_x = CAST((n - 1) * 0.75 AS INT) + 1 THEN gene_count END) AS x_threshold,
+          MAX(CASE WHEN rn_y = CAST((n - 1) * 0.75 AS INT) + 1 THEN y_value END) AS y_threshold
+        FROM ranked
+      )
+
+      SELECT
+        r.cpd,
+        r.compoundname,
+        r.compoundclass,
+        r.gene_count,
+        r.pathway_count,
+        r.y_value,
+        t.x_threshold,
+        t.y_threshold,
+        CASE
+          WHEN r.gene_count >= t.x_threshold AND r.y_value >= t.y_threshold THEN 'top_right'
+          WHEN r.gene_count <  t.x_threshold AND r.y_value >= t.y_threshold THEN 'top_left'
+          WHEN r.gene_count >= t.x_threshold AND r.y_value <  t.y_threshold THEN 'bottom_right'
+          ELSE 'bottom_left'
+        END AS quadrant
+      FROM ranked r
+
+      CROSS JOIN thresholds t
+
+      ORDER BY r.cpd ASC;
+
+      """
+
+
+      with sqlite3.connect(db_path) as conn:
+        conn.row_factory = sqlite3.Row
+        rows = [dict(row) for row in conn.execute(query).fetchall()]
+
+      print(json.dumps({"rows": rows}, ensure_ascii=False, sort_keys=True))
+notes:
+  - Thresholds are percentile-based and context-dependent in the app.
+  - This recipe is intended for exploratory reproducibility, not causal
+    inference.

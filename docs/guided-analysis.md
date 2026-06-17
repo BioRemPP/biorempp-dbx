@@ -1,0 +1,88 @@
+# Guided Analysis (Declarative + SQL-first)
+
+## Overview
+
+Guided Analysis now runs from declarative YAML files compiled into server-side JSON and executed by a backend engine over SQLite.
+
+- Config source: `src/features/guided-analysis/config/`
+- Shared schema: `server/guided/catalog-schema.mjs`
+- Compiled output: `server/generated/guided/catalog.json` (generated, not versioned)
+- Compiler: `scripts/compile-guided-config.mjs`
+- Runtime API:
+  - `GET /api/guided/catalog`
+  - `GET /api/guided/queries/:id/options`
+  - `POST /api/guided/queries/:id/execute`
+
+## Add a New Use Case
+
+1. Create a query file in `src/features/guided-analysis/config/queries/uc-*.yaml`.
+2. Add its `id` to `src/features/guided-analysis/config/catalog.yaml` under `query_order`.
+3. Reuse an existing executor by setting `executor` in YAML:
+   - `uc_ranked_metric`
+   - `uc_gene_connectivity_ranking`
+   - `uc_gene_toxic_compounds_endpoint`
+   - `uc_pathways_toxic_compounds`
+   - `uc_risk_potential_scatter`
+4. If needed, add a new executor in `server/guided/engine.mjs` and register it in `EXECUTOR_REGISTRY`.
+5. Choose visualization types supported by frontend registry:
+   - `horizontal_bar`
+   - `scatter_quadrant`
+   - `boxplot`
+   - `heatmap_matrix` (prepared for future UCs)
+6. Run:
+   - `npm run compile:guided`
+   - `npm run typecheck`
+   - `npm run build`
+
+`npm run compile:guided` validates `catalog.yaml`, each query YAML, and the compiled JSON payload against the shared schema before writing output.
+
+## Use Case Description Block (Required)
+
+Each query YAML must define a `use_case_description` block consumed by the UI accordion:
+
+- `scientific_question` (required string)
+- `description` (required string)
+- `visual_elements` (optional array of `{ label, description }`)
+- `interpretation_guidelines` (required non-empty array of substantive statements)
+- `limitations` (required non-empty array of scope or evidence caveats)
+- `color_scheme` (optional string)
+
+Editorial guidance for `interpretation`:
+
+- Prefer exploratory/inferential language (e.g., hypothesis generation, analytical indication).
+- Avoid causal or confirmatory claims without experimental support.
+- Keep statements concise, explicit, and scoped to the current filtered context.
+
+## Methods Modal Block (Required)
+
+Each query YAML must define a `methods_modal` block used by the `View Methods` modal in Guided Analysis:
+
+- `button_label` (required string)
+- `title` (required string)
+- `introduction` (required string)
+- `steps` (required array with at least one item)
+- each step: `title` (required), `description` (required), `bullets` (optional `string[]`)
+- `footer_note` (optional string)
+
+This content is declarative and static per use case (not execution-dependent).
+
+## Filter Safety Model
+
+YAML is declarative only. SQL is never built from arbitrary YAML fragments.
+
+- Dataset-level filter whitelist is enforced in backend engine.
+- Unknown filter ids are rejected.
+- Operators are typed by filter type (`select`, `number_range`, `toggle`, etc.).
+
+## Validation Model
+
+Guided config is validated in two stages using the same shared schema:
+
+- compile-time validation of `catalog.yaml` and `queries/*.yaml`
+- runtime validation of `server/generated/guided/catalog.json` before the loader serves it
+
+## Notes
+
+- Guided execution is backend-first and read-only.
+- Existing APIs outside Guided remain unchanged.
+- The frontend shell is query-agnostic and driven by catalog + execution contract.
