@@ -2,7 +2,7 @@
 
 **Compound-Centric Bioremediation Analysis — Local Web Application**
 
-[![Documentation](https://img.shields.io/badge/docs-Read%20the%20Docs-blue)](https://bioremppdbx.readthedocs.io/en/stable/guided-analysis/)
+[![Documentation](https://img.shields.io/badge/docs-Read%20the%20Docs-blue)](https://biorempp-dbx.readthedocs.io/en/stable/guided-analysis/)
 [![Docker](https://img.shields.io/badge/docker-ready-brightgreen)](https://github.com/BioRemPP/biorempp-dbx)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Database: CC BY 4.0](https://img.shields.io/badge/Database-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
@@ -86,7 +86,7 @@ Eight curated analytical use cases with reproducible outputs:
 
 Regulatory frameworks: IARC, EPA, ATSDR, WFD, PSL, EPC, CONAMA.
 
-> Details: [Database Schemas](https://bioremppdbx.readthedocs.io/en/stable/database-schemas/)
+> Details: [Database Schemas](https://biorempp-dbx.readthedocs.io/en/stable/database-schemas/)
 
 ---
 
@@ -94,12 +94,12 @@ Regulatory frameworks: IARC, EPA, ATSDR, WFD, PSL, EPC, CONAMA.
 
 | Section | Description |
 |---------|-------------|
-| [Getting Started](https://bioremppdbx.readthedocs.io/en/stable/getting-started/) | Installation, Docker setup, data ingestion |
-| [User Guide](https://bioremppdbx.readthedocs.io/en/stable/user-guide/) | Feature walkthrough and results interpretation |
-| [Guided Analysis](https://bioremppdbx.readthedocs.io/en/stable/guided-analysis/) | Use case catalog and analytical methodology |
-| [Database Schemas](https://bioremppdbx.readthedocs.io/en/stable/database-schemas/) | Source schemas and field definitions |
-| [Configuration](https://bioremppdbx.readthedocs.io/en/stable/configuration/) | Docker Compose profiles, Nginx, environment variables |
-| [API Reference](https://bioremppdbx.readthedocs.io/en/stable/api-reference/) | TypeScript source reference (TypeDoc) |
+| [Getting Started](https://biorempp-dbx.readthedocs.io/en/stable/getting-started/) | Installation, Docker setup, data ingestion |
+| [User Guide](https://biorempp-dbx.readthedocs.io/en/stable/user-guide/) | Feature walkthrough and results interpretation |
+| [Guided Analysis](https://biorempp-dbx.readthedocs.io/en/stable/guided-analysis/) | Use case catalog and analytical methodology |
+| [Database Schemas](https://biorempp-dbx.readthedocs.io/en/stable/database-schemas/) | Source schemas and field definitions |
+| [Configuration](https://biorempp-dbx.readthedocs.io/en/stable/configuration/) | Docker Compose profiles, Nginx, environment variables |
+| [API Reference](https://biorempp-dbx.readthedocs.io/en/stable/api-reference/) | TypeScript source reference (TypeDoc) |
 
 ---
 
@@ -113,7 +113,7 @@ When using BioRemPP Database Explorer, please cite both the web service and the 
 **Database:**
 > Lima Silva, D. F., & Fassarella Agnez-Lima, L. (2025–2026). BioRemPP Database: A Curated Compound-Centric Resource for Bioremediation Potential Profiling (1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.18905195
 
-> Full citation guidelines: [How to Cite](https://bioremppdbx.readthedocs.io/en/stable/about/how-to-cite/)
+> Full citation guidelines: [How to Cite](https://biorempp-dbx.readthedocs.io/en/stable/about/how-to-cite/)
 
 ---
 
@@ -123,7 +123,7 @@ When using BioRemPP Database Explorer, please cite both the web service and the 
 - **Database Content:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - **Third-party:** KEGG (academic license), HADEG (open access), ToxCSM (open access)
 
-> Details: [License](https://bioremppdbx.readthedocs.io/en/stable/about/license/)
+> Details: [License](https://biorempp-dbx.readthedocs.io/en/stable/about/license/)
 
 ---
 
@@ -131,16 +131,16 @@ When using BioRemPP Database Explorer, please cite both the web service and the 
 
 BioRemPP Database Explorer is a research tool for hypothesis generation. Results represent **genetic and functional potential**, not confirmed biological activity. Not intended for clinical, regulatory, or remediation decisions without experimental validation.
 
-> [Limitations and Scope](https://bioremppdbx.readthedocs.io/en/stable/methods/limitations/)
+> [Limitations and Scope](https://biorempp-dbx.readthedocs.io/en/stable/methods/limitations/)
 
 ---
 
 ## Support
 
-- **Documentation:** [bioremppdbx.readthedocs.io](https://bioremppdbx.readthedocs.io/en/stable/guided-analysis/)
+- **Documentation:** [biorempp-dbx.readthedocs.io](https://biorempp-dbx.readthedocs.io/en/stable/guided-analysis/)
 - **Issues:** [GitHub Issues](https://github.com/BioRemPP/biorempp-dbx/issues)
 - **Email:** biorempp@gmail.com
 
 ---
 
-**BioRemPP Database Explorer** | [Documentation](https://bioremppdbx.readthedocs.io/en/stable/guided-analysis/) | [GitHub](https://github.com/BioRemPP/biorempp-dbx)
+**BioRemPP Database Explorer** | [Documentation](https://biorempp-dbx.readthedocs.io/en/stable/guided-analysis/) | [GitHub](https://github.com/BioRemPP/biorempp-dbx)
