@@ -6,7 +6,7 @@
 
 # Interface: PathwayEcClassDistributionDatum
 
-Defined in: [src/features/pathways/types.ts:79](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L79)
+Defined in: [src/features/pathways/types.ts:79](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L79)
 
 Bar chart datum summarizing pathway support by EC class.
 
@@ -16,7 +16,7 @@ Bar chart datum summarizing pathway support by EC class.
 
 > **count**: `number`
 
-Defined in: [src/features/pathways/types.ts:83](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L83)
+Defined in: [src/features/pathways/types.ts:83](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L83)
 
 Number of supporting rows contributing to the bar height.
 
@@ -26,6 +26,6 @@ Number of supporting rows contributing to the bar height.
 
 > **ec\_class**: `string`
 
-Defined in: [src/features/pathways/types.ts:81](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L81)
+Defined in: [src/features/pathways/types.ts:81](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L81)
 
 Top-level EC class label.

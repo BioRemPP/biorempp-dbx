@@ -81,13 +81,13 @@ integration:
 # Related documentation links
 related_docs:
   - title: "Data Sources"
-    url: "https://biorempp-web.readthedocs.io/en/stable/"
+    url: "https://bioremppdbx.readthedocs.io/en/stable/scientific-overview/"
   - title: "Mapping Strategy"
-    url: "https://biorempp-web.readthedocs.io/en/stable/"
+    url: "https://bioremppdbx.readthedocs.io/en/stable/guided-analysis/"
   - title: "GitHub Repository"
-    url: "https://github.com/BioRemPP/biorempp_web"
+    url: "https://github.com/BioRemPP/biorempp-dbx"
 
 # Contact info
 contact:
-  github_issues: "https://github.com/BioRemPP/biorempp_db/issues"
+  github_issues: "https://github.com/BioRemPP/biorempp-dbx/issues"
   email: "biorempp@gmail.com"

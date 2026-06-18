@@ -6,7 +6,7 @@
 
 # Interface: GuidedExecutionMeta
 
-Defined in: [src/features/guided-analysis/types.ts:541](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L541)
+Defined in: [src/features/guided-analysis/types.ts:541](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L541)
 
 Execution metadata returned by guided query execution endpoints.
 
@@ -16,7 +16,7 @@ Execution metadata returned by guided query execution endpoints.
 
 > **dataset**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:545](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L545)
+Defined in: [src/features/guided-analysis/types.ts:545](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L545)
 
 Dataset identifier used by the backend executor.
 
@@ -26,7 +26,7 @@ Dataset identifier used by the backend executor.
 
 > `optional` **excluded\_null\_y?**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:559](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L559)
+Defined in: [src/features/guided-analysis/types.ts:559](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L559)
 
 Number of rows excluded because no y-axis value was available.
 
@@ -36,7 +36,7 @@ Number of rows excluded because no y-axis value was available.
 
 > **execution\_ms**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:549](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L549)
+Defined in: [src/features/guided-analysis/types.ts:549](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L549)
 
 Total execution time reported by the backend, in milliseconds.
 
@@ -46,7 +46,7 @@ Total execution time reported by the backend, in milliseconds.
 
 > `optional` **focus\_cluster?**: `boolean`
 
-Defined in: [src/features/guided-analysis/types.ts:577](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L577)
+Defined in: [src/features/guided-analysis/types.ts:577](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L577)
 
 Whether the backend focused the result on a detected cluster.
 
@@ -56,7 +56,7 @@ Whether the backend focused the result on a detected cluster.
 
 > `optional` **gene\_p95?**: `number` \| `null`
 
-Defined in: [src/features/guided-analysis/types.ts:579](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L579)
+Defined in: [src/features/guided-analysis/types.ts:579](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L579)
 
 Ninety-fifth percentile of gene counts when reported by the backend.
 
@@ -66,7 +66,7 @@ Ninety-fifth percentile of gene counts when reported by the backend.
 
 > **page**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:551](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L551)
+Defined in: [src/features/guided-analysis/types.ts:551](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L551)
 
 One-based page number returned for the current result set.
 
@@ -76,7 +76,7 @@ One-based page number returned for the current result set.
 
 > **pageSize**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:553](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L553)
+Defined in: [src/features/guided-analysis/types.ts:553](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L553)
 
 Maximum number of rows returned per page.
 
@@ -86,7 +86,7 @@ Maximum number of rows returned per page.
 
 > `optional` **points\_count?**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:561](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L561)
+Defined in: [src/features/guided-analysis/types.ts:561](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L561)
 
 Number of plotted points returned by scatter-style visualizations.
 
@@ -96,7 +96,7 @@ Number of plotted points returned by scatter-style visualizations.
 
 > `optional` **quadrant\_counts?**: [`GuidedQuadrantCounts`](GuidedQuadrantCounts.md)
 
-Defined in: [src/features/guided-analysis/types.ts:563](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L563)
+Defined in: [src/features/guided-analysis/types.ts:563](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L563)
 
 Quadrant counts returned when the visualization uses quadrant analysis.
 
@@ -106,7 +106,7 @@ Quadrant counts returned when the visualization uses quadrant analysis.
 
 > **query\_id**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:543](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L543)
+Defined in: [src/features/guided-analysis/types.ts:543](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L543)
 
 Guided query identifier that produced the result.
 
@@ -116,7 +116,7 @@ Guided query identifier that produced the result.
 
 > `optional` **threshold\_basis?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:573](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L573)
+Defined in: [src/features/guided-analysis/types.ts:573](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L573)
 
 Backend explanation for how thresholds were chosen.
 
@@ -126,7 +126,7 @@ Backend explanation for how thresholds were chosen.
 
 > **total**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:555](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L555)
+Defined in: [src/features/guided-analysis/types.ts:555](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L555)
 
 Total number of rows available for the current filter scope.
 
@@ -136,7 +136,7 @@ Total number of rows available for the current filter scope.
 
 > **totalPages**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:557](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L557)
+Defined in: [src/features/guided-analysis/types.ts:557](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L557)
 
 Total number of available pages for the current filter scope.
 
@@ -146,7 +146,7 @@ Total number of available pages for the current filter scope.
 
 > **version**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:547](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L547)
+Defined in: [src/features/guided-analysis/types.ts:547](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L547)
 
 Result version string returned by the backend.
 
@@ -156,7 +156,7 @@ Result version string returned by the backend.
 
 > `optional` **x\_scale?**: `"log10p1"` \| `"linear"`
 
-Defined in: [src/features/guided-analysis/types.ts:575](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L575)
+Defined in: [src/features/guided-analysis/types.ts:575](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L575)
 
 Scale mode applied to the x axis when relevant.
 
@@ -166,7 +166,7 @@ Scale mode applied to the x axis when relevant.
 
 > `optional` **x\_threshold?**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:569](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L569)
+Defined in: [src/features/guided-analysis/types.ts:569](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L569)
 
 Threshold applied to the x axis when relevant.
 
@@ -176,7 +176,7 @@ Threshold applied to the x axis when relevant.
 
 > `optional` **y\_metric\_key?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:565](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L565)
+Defined in: [src/features/guided-analysis/types.ts:565](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L565)
 
 Backend field key used for the selected y-axis metric.
 
@@ -186,7 +186,7 @@ Backend field key used for the selected y-axis metric.
 
 > `optional` **y\_metric\_label?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:567](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L567)
+Defined in: [src/features/guided-analysis/types.ts:567](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L567)
 
 Human-readable label for the selected y-axis metric.
 
@@ -196,6 +196,6 @@ Human-readable label for the selected y-axis metric.
 
 > `optional` **y\_threshold?**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:571](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L571)
+Defined in: [src/features/guided-analysis/types.ts:571](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L571)
 
 Threshold applied to the y axis when relevant.

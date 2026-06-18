@@ -6,7 +6,7 @@
 
 # Interface: GuidedVisualizationDefinition
 
-Defined in: [src/features/guided-analysis/types.ts:107](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L107)
+Defined in: [src/features/guided-analysis/types.ts:107](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L107)
 
 Visualization definition declared by a guided query.
 
@@ -16,7 +16,7 @@ Visualization definition declared by a guided query.
 
 > **data\_key**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:117](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L117)
+Defined in: [src/features/guided-analysis/types.ts:117](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L117)
 
 Key used to resolve the visualization data from execution results.
 
@@ -26,7 +26,7 @@ Key used to resolve the visualization data from execution results.
 
 > **id**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:109](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L109)
+Defined in: [src/features/guided-analysis/types.ts:109](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L109)
 
 Stable visualization identifier.
 
@@ -36,7 +36,7 @@ Stable visualization identifier.
 
 > `optional` **subtitle?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:115](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L115)
+Defined in: [src/features/guided-analysis/types.ts:115](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L115)
 
 Optional subtitle shown below the chart title.
 
@@ -46,7 +46,7 @@ Optional subtitle shown below the chart title.
 
 > **title**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:113](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L113)
+Defined in: [src/features/guided-analysis/types.ts:113](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L113)
 
 Primary chart title shown in the UI.
 
@@ -56,6 +56,6 @@ Primary chart title shown in the UI.
 
 > **type**: [`GuidedVisualizationType`](../type-aliases/GuidedVisualizationType.md)
 
-Defined in: [src/features/guided-analysis/types.ts:111](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L111)
+Defined in: [src/features/guided-analysis/types.ts:111](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L111)
 
 Visualization renderer used by the client.

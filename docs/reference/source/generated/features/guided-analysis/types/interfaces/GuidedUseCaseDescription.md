@@ -6,7 +6,7 @@
 
 # Interface: GuidedUseCaseDescription
 
-Defined in: [src/features/guided-analysis/types.ts:163](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L163)
+Defined in: [src/features/guided-analysis/types.ts:163](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L163)
 
 Narrative use-case description attached to a guided query definition.
 
@@ -16,7 +16,7 @@ Narrative use-case description attached to a guided query definition.
 
 > `optional` **color\_scheme?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:175](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L175)
+Defined in: [src/features/guided-analysis/types.ts:175](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L175)
 
 Optional semantic color family used by the descriptive panel.
 
@@ -26,7 +26,7 @@ Optional semantic color family used by the descriptive panel.
 
 > **description**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:167](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L167)
+Defined in: [src/features/guided-analysis/types.ts:167](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L167)
 
 High-level description of the use case.
 
@@ -36,7 +36,7 @@ High-level description of the use case.
 
 > **interpretation\_guidelines**: `string`[]
 
-Defined in: [src/features/guided-analysis/types.ts:171](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L171)
+Defined in: [src/features/guided-analysis/types.ts:171](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L171)
 
 Interpretation bullets shown to the user when reading the use-case guidance.
 
@@ -46,7 +46,7 @@ Interpretation bullets shown to the user when reading the use-case guidance.
 
 > **limitations**: `string`[]
 
-Defined in: [src/features/guided-analysis/types.ts:173](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L173)
+Defined in: [src/features/guided-analysis/types.ts:173](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L173)
 
 Stated limitations that bound interpretation of the use case.
 
@@ -56,7 +56,7 @@ Stated limitations that bound interpretation of the use case.
 
 > **scientific\_question**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:165](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L165)
+Defined in: [src/features/guided-analysis/types.ts:165](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L165)
 
 Scientific question that the guided query helps answer.
 
@@ -66,6 +66,6 @@ Scientific question that the guided query helps answer.
 
 > `optional` **visual\_elements?**: [`GuidedUseCaseVisualElement`](GuidedUseCaseVisualElement.md)[]
 
-Defined in: [src/features/guided-analysis/types.ts:169](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L169)
+Defined in: [src/features/guided-analysis/types.ts:169](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L169)
 
 Optional visual element descriptors shown alongside the use case.

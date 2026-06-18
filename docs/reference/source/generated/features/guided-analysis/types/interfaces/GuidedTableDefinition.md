@@ -6,7 +6,7 @@
 
 # Interface: GuidedTableDefinition
 
-Defined in: [src/features/guided-analysis/types.ts:135](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L135)
+Defined in: [src/features/guided-analysis/types.ts:135](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L135)
 
 Table definition declared by a guided query.
 
@@ -20,7 +20,7 @@ Table definition declared by a guided query.
 
 > **columns**: [`GuidedTableColumnDefinition`](GuidedTableColumnDefinition.md)[]
 
-Defined in: [src/features/guided-analysis/types.ts:147](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L147)
+Defined in: [src/features/guided-analysis/types.ts:147](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L147)
 
 Ordered column definitions used to render rows.
 
@@ -30,7 +30,7 @@ Ordered column definitions used to render rows.
 
 > `optional` **empty\_message?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:145](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L145)
+Defined in: [src/features/guided-analysis/types.ts:145](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L145)
 
 Message shown when the table has no rows.
 
@@ -40,7 +40,7 @@ Message shown when the table has no rows.
 
 > **id**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:137](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L137)
+Defined in: [src/features/guided-analysis/types.ts:137](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L137)
 
 Stable table identifier.
 
@@ -50,7 +50,7 @@ Stable table identifier.
 
 > `optional` **row\_click\_field?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:143](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L143)
+Defined in: [src/features/guided-analysis/types.ts:143](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L143)
 
 Row field used to build drill-down navigation on click.
 
@@ -60,7 +60,7 @@ Row field used to build drill-down navigation on click.
 
 > `optional` **subtitle?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:141](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L141)
+Defined in: [src/features/guided-analysis/types.ts:141](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L141)
 
 Optional subtitle shown below the title.
 
@@ -70,6 +70,6 @@ Optional subtitle shown below the title.
 
 > **title**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:139](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L139)
+Defined in: [src/features/guided-analysis/types.ts:139](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L139)
 
 Primary table title shown in the UI.

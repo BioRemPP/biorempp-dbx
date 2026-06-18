@@ -43,6 +43,6 @@ resource_card:
     available modules, database schemas, configuration references, and usage
     guidance for reproducible bioremediation research workflows.
   button_label: View Database Docs
-  url: https://bioremppdbx.readthedocs.io/en/stable/
+  url: https://bioremppdbx.readthedocs.io/en/stable/guided-analysis/
   icon: server
   image_src: /BIOREMPP_LOGO.png

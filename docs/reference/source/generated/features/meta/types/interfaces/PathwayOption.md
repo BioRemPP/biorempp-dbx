@@ -6,7 +6,7 @@
 
 # Interface: PathwayOption
 
-Defined in: [src/features/meta/types.ts:9](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/meta/types.ts#L9)
+Defined in: [src/features/meta/types.ts:9](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/meta/types.ts#L9)
 
 Pathway option exposed by grouped metadata selector endpoints.
 
@@ -16,7 +16,7 @@ Pathway option exposed by grouped metadata selector endpoints.
 
 > **pathway**: `string`
 
-Defined in: [src/features/meta/types.ts:11](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/meta/types.ts#L11)
+Defined in: [src/features/meta/types.ts:11](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/meta/types.ts#L11)
 
 Pathway name or identifier returned to the client.
 
@@ -26,6 +26,6 @@ Pathway name or identifier returned to the client.
 
 > **source**: `string`
 
-Defined in: [src/features/meta/types.ts:13](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/meta/types.ts#L13)
+Defined in: [src/features/meta/types.ts:13](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/meta/types.ts#L13)
 
 Source catalog that owns the pathway value.

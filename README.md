@@ -2,8 +2,8 @@
 
 **Compound-Centric Bioremediation Analysis — Local Web Application**
 
-[![Documentation](https://img.shields.io/badge/docs-Read%20the%20Docs-blue)](https://bioremppdbx.readthedocs.io/en/stable/)
-[![Docker](https://img.shields.io/badge/docker-ready-brightgreen)](https://github.com/DougFelipe/biorempp_database_explorer)
+[![Documentation](https://img.shields.io/badge/docs-Read%20the%20Docs-blue)](https://bioremppdbx.readthedocs.io/en/stable/guided-analysis/)
+[![Docker](https://img.shields.io/badge/docker-ready-brightgreen)](https://github.com/BioRemPP/biorempp-dbx)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Database: CC BY 4.0](https://img.shields.io/badge/Database-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
@@ -137,10 +137,10 @@ BioRemPP Database Explorer is a research tool for hypothesis generation. Results
 
 ## Support
 
-- **Documentation:** [bioremppdbx.readthedocs.io](https://bioremppdbx.readthedocs.io/en/stable/)
-- **Issues:** [GitHub Issues](https://github.com/DougFelipe/biorempp_database_explorer/issues)
+- **Documentation:** [bioremppdbx.readthedocs.io](https://bioremppdbx.readthedocs.io/en/stable/guided-analysis/)
+- **Issues:** [GitHub Issues](https://github.com/BioRemPP/biorempp-dbx/issues)
 - **Email:** biorempp@gmail.com
 
 ---
 
-**BioRemPP Database Explorer** | [Documentation](https://bioremppdbx.readthedocs.io/en/stable/) | [GitHub](https://github.com/DougFelipe/biorempp_database_explorer)
+**BioRemPP Database Explorer** | [Documentation](https://bioremppdbx.readthedocs.io/en/stable/guided-analysis/) | [GitHub](https://github.com/BioRemPP/biorempp-dbx)

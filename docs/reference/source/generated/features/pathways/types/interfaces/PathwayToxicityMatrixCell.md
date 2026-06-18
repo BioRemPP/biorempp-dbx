@@ -6,7 +6,7 @@
 
 # Interface: PathwayToxicityMatrixCell
 
-Defined in: [src/features/pathways/types.ts:99](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L99)
+Defined in: [src/features/pathways/types.ts:99](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L99)
 
 Matrix cell representing one compound-endpoint toxicity value.
 
@@ -16,7 +16,7 @@ Matrix cell representing one compound-endpoint toxicity value.
 
 > **cpd**: `string`
 
-Defined in: [src/features/pathways/types.ts:101](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L101)
+Defined in: [src/features/pathways/types.ts:101](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L101)
 
 Compound identifier associated with the current cell.
 
@@ -26,7 +26,7 @@ Compound identifier associated with the current cell.
 
 > **endpoint**: `string`
 
-Defined in: [src/features/pathways/types.ts:103](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L103)
+Defined in: [src/features/pathways/types.ts:103](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L103)
 
 Toxicity endpoint identifier associated with the current cell.
 
@@ -36,7 +36,7 @@ Toxicity endpoint identifier associated with the current cell.
 
 > **label**: `string` \| `null`
 
-Defined in: [src/features/pathways/types.ts:105](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L105)
+Defined in: [src/features/pathways/types.ts:105](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L105)
 
 Optional human-readable endpoint label.
 
@@ -46,7 +46,7 @@ Optional human-readable endpoint label.
 
 > **risk\_bucket**: [`ToxicityRiskBucket`](../../../toxicity/types/type-aliases/ToxicityRiskBucket.md)
 
-Defined in: [src/features/pathways/types.ts:109](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L109)
+Defined in: [src/features/pathways/types.ts:109](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L109)
 
 Backend-derived categorical risk bucket for the numeric value.
 
@@ -56,6 +56,6 @@ Backend-derived categorical risk bucket for the numeric value.
 
 > **value**: `number` \| `null`
 
-Defined in: [src/features/pathways/types.ts:107](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L107)
+Defined in: [src/features/pathways/types.ts:107](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L107)
 
 Numeric toxicity value returned for the compound-endpoint pair.

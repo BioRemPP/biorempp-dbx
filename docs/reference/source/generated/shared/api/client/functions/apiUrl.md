@@ -8,7 +8,7 @@
 
 > **apiUrl**(`path`): `string`
 
-Defined in: [src/shared/api/client.ts:37](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/shared/api/client.ts#L37)
+Defined in: [src/shared/api/client.ts:37](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/shared/api/client.ts#L37)
 
 Resolves an application or API-relative path under the configured client base path.
 

@@ -6,7 +6,7 @@
 
 # Interface: GuidedFilterProvider
 
-Defined in: [src/features/guided-analysis/types.ts:47](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L47)
+Defined in: [src/features/guided-analysis/types.ts:47](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L47)
 
 Data provider configuration used to populate guided filter options.
 
@@ -16,7 +16,7 @@ Data provider configuration used to populate guided filter options.
 
 > `optional` **endpoint?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:51](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L51)
+Defined in: [src/features/guided-analysis/types.ts:51](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L51)
 
 Metadata endpoint used when `type` resolves options remotely.
 
@@ -26,7 +26,7 @@ Metadata endpoint used when `type` resolves options remotely.
 
 > `optional` **include\_mean\_option?**: `boolean`
 
-Defined in: [src/features/guided-analysis/types.ts:55](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L55)
+Defined in: [src/features/guided-analysis/types.ts:55](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L55)
 
 Whether the provider exposes a synthetic mean option.
 
@@ -36,7 +36,7 @@ Whether the provider exposes a synthetic mean option.
 
 > `optional` **mean\_option\_label?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:57](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L57)
+Defined in: [src/features/guided-analysis/types.ts:57](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L57)
 
 Label used for the synthetic mean option when enabled.
 
@@ -46,7 +46,7 @@ Label used for the synthetic mean option when enabled.
 
 > `optional` **options?**: [`GuidedFilterProviderOption`](GuidedFilterProviderOption.md)[]
 
-Defined in: [src/features/guided-analysis/types.ts:59](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L59)
+Defined in: [src/features/guided-analysis/types.ts:59](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L59)
 
 Inline static options when `type` is `static`.
 
@@ -56,7 +56,7 @@ Inline static options when `type` is `static`.
 
 > `optional` **source?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:53](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L53)
+Defined in: [src/features/guided-analysis/types.ts:53](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L53)
 
 Optional source discriminator forwarded to metadata endpoints.
 
@@ -66,6 +66,6 @@ Optional source discriminator forwarded to metadata endpoints.
 
 > **type**: [`GuidedProviderType`](../type-aliases/GuidedProviderType.md)
 
-Defined in: [src/features/guided-analysis/types.ts:49](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L49)
+Defined in: [src/features/guided-analysis/types.ts:49](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L49)
 
 Provider strategy used to resolve the option list.

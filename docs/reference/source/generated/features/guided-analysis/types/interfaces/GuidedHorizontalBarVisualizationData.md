@@ -6,7 +6,7 @@
 
 # Interface: GuidedHorizontalBarVisualizationData
 
-Defined in: [src/features/guided-analysis/types.ts:352](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L352)
+Defined in: [src/features/guided-analysis/types.ts:352](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L352)
 
 Horizontal bar visualization payload returned by guided query execution.
 
@@ -16,7 +16,7 @@ Horizontal bar visualization payload returned by guided query execution.
 
 > **empty\_message**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:356](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L356)
+Defined in: [src/features/guided-analysis/types.ts:356](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L356)
 
 Message shown when the chart has no items.
 
@@ -26,6 +26,6 @@ Message shown when the chart has no items.
 
 > **items**: `HorizontalBarItem`[]
 
-Defined in: [src/features/guided-analysis/types.ts:354](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L354)
+Defined in: [src/features/guided-analysis/types.ts:354](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L354)
 
 Chart items rendered by the horizontal bar component.

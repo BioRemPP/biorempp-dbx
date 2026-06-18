@@ -8,7 +8,7 @@
 
 > **getCompoundOverview**(`cpd`, `options?`): `Promise`\<[`CompoundOverviewResponse`](../../types/interfaces/CompoundOverviewResponse.md)\>
 
-Defined in: [src/features/compounds/api.ts:83](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/api.ts#L83)
+Defined in: [src/features/compounds/api.ts:83](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/api.ts#L83)
 
 Fetches the quantitative overview payload for a compound detail page.
 

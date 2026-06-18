@@ -6,7 +6,7 @@
 
 # Interface: PathwayCoverageMatrix
 
-Defined in: [src/features/compounds/types.ts:113](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L113)
+Defined in: [src/features/compounds/types.ts:113](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L113)
 
 Coverage matrix returned by compound overview endpoints.
 
@@ -16,7 +16,7 @@ Coverage matrix returned by compound overview endpoints.
 
 > **cells**: [`PathwayCoverageCell`](PathwayCoverageCell.md)[]
 
-Defined in: [src/features/compounds/types.ts:119](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L119)
+Defined in: [src/features/compounds/types.ts:119](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L119)
 
 Sparse matrix cells combining source and pathway values.
 
@@ -26,7 +26,7 @@ Sparse matrix cells combining source and pathway values.
 
 > **pathways**: `string`[]
 
-Defined in: [src/features/compounds/types.ts:117](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L117)
+Defined in: [src/features/compounds/types.ts:117](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L117)
 
 Ordered pathway labels used by the matrix.
 
@@ -36,6 +36,6 @@ Ordered pathway labels used by the matrix.
 
 > **sources**: `string`[]
 
-Defined in: [src/features/compounds/types.ts:115](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L115)
+Defined in: [src/features/compounds/types.ts:115](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L115)
 
 Ordered source labels used by the matrix.

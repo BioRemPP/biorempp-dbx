@@ -6,7 +6,7 @@
 
 # Interface: GuidedHeatmapMatrixCompound
 
-Defined in: [src/features/guided-analysis/types.ts:412](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L412)
+Defined in: [src/features/guided-analysis/types.ts:412](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L412)
 
 Compound header entry used by guided heatmap matrix visualizations.
 
@@ -16,7 +16,7 @@ Compound header entry used by guided heatmap matrix visualizations.
 
 > `optional` **compoundclass?**: `string` \| `null`
 
-Defined in: [src/features/guided-analysis/types.ts:418](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L418)
+Defined in: [src/features/guided-analysis/types.ts:418](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L418)
 
 Compound class label when available.
 
@@ -26,7 +26,7 @@ Compound class label when available.
 
 > **compoundname**: `string` \| `null`
 
-Defined in: [src/features/guided-analysis/types.ts:416](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L416)
+Defined in: [src/features/guided-analysis/types.ts:416](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L416)
 
 Compound display name when available.
 
@@ -36,7 +36,7 @@ Compound display name when available.
 
 > **cpd**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:414](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L414)
+Defined in: [src/features/guided-analysis/types.ts:414](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L414)
 
 Compound identifier used as the matrix column key.
 
@@ -46,7 +46,7 @@ Compound identifier used as the matrix column key.
 
 > `optional` **endpoint\_used?**: `string` \| `null`
 
-Defined in: [src/features/guided-analysis/types.ts:422](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L422)
+Defined in: [src/features/guided-analysis/types.ts:422](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L422)
 
 Endpoint actually used to compute the secondary value when relevant.
 
@@ -56,6 +56,6 @@ Endpoint actually used to compute the secondary value when relevant.
 
 > `optional` **y\_value?**: `number` \| `null`
 
-Defined in: [src/features/guided-analysis/types.ts:420](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L420)
+Defined in: [src/features/guided-analysis/types.ts:420](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L420)
 
 Optional secondary numeric value associated with the compound.

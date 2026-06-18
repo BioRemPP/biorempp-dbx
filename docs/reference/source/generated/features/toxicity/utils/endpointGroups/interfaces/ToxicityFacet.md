@@ -6,7 +6,7 @@
 
 # Interface: ToxicityFacet
 
-Defined in: [src/features/toxicity/utils/endpointGroups.ts:40](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/utils/endpointGroups.ts#L40)
+Defined in: [src/features/toxicity/utils/endpointGroups.ts:40](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/utils/endpointGroups.ts#L40)
 
 Grouped toxicity facet returned to views that render endpoint sections.
 
@@ -16,7 +16,7 @@ Grouped toxicity facet returned to views that render endpoint sections.
 
 > **endpoints**: [`ToxicityFacetEndpoint`](ToxicityFacetEndpoint.md)[]
 
-Defined in: [src/features/toxicity/utils/endpointGroups.ts:52](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/utils/endpointGroups.ts#L52)
+Defined in: [src/features/toxicity/utils/endpointGroups.ts:52](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/utils/endpointGroups.ts#L52)
 
 Fully normalized endpoint rows for the facet.
 
@@ -26,7 +26,7 @@ Fully normalized endpoint rows for the facet.
 
 > **key**: [`ToxicityEndpointGroupKey`](../type-aliases/ToxicityEndpointGroupKey.md)
 
-Defined in: [src/features/toxicity/utils/endpointGroups.ts:42](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/utils/endpointGroups.ts#L42)
+Defined in: [src/features/toxicity/utils/endpointGroups.ts:42](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/utils/endpointGroups.ts#L42)
 
 Stable group key used by the UI and navigation state.
 
@@ -36,7 +36,7 @@ Stable group key used by the UI and navigation state.
 
 > **orderedEndpoints**: `string`[]
 
-Defined in: [src/features/toxicity/utils/endpointGroups.ts:46](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/utils/endpointGroups.ts#L46)
+Defined in: [src/features/toxicity/utils/endpointGroups.ts:46](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/utils/endpointGroups.ts#L46)
 
 Ordered endpoint identifiers contained in the facet.
 
@@ -46,7 +46,7 @@ Ordered endpoint identifiers contained in the facet.
 
 > **prediction**: `Record`\<`string`, `number` \| `null`\>
 
-Defined in: [src/features/toxicity/utils/endpointGroups.ts:48](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/utils/endpointGroups.ts#L48)
+Defined in: [src/features/toxicity/utils/endpointGroups.ts:48](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/utils/endpointGroups.ts#L48)
 
 Numeric endpoint values keyed by endpoint identifier.
 
@@ -56,7 +56,7 @@ Numeric endpoint values keyed by endpoint identifier.
 
 > **risk**: `Record`\<`string`, [`ToxicityHeatmapDatum`](../../../types/interfaces/ToxicityHeatmapDatum.md)\[`"risk_bucket"`\]\>
 
-Defined in: [src/features/toxicity/utils/endpointGroups.ts:50](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/utils/endpointGroups.ts#L50)
+Defined in: [src/features/toxicity/utils/endpointGroups.ts:50](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/utils/endpointGroups.ts#L50)
 
 Risk buckets keyed by endpoint identifier.
 
@@ -66,6 +66,6 @@ Risk buckets keyed by endpoint identifier.
 
 > **title**: `string`
 
-Defined in: [src/features/toxicity/utils/endpointGroups.ts:44](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/utils/endpointGroups.ts#L44)
+Defined in: [src/features/toxicity/utils/endpointGroups.ts:44](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/utils/endpointGroups.ts#L44)
 
 Human-readable group title.

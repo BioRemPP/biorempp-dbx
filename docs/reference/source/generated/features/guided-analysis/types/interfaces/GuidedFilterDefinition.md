@@ -6,7 +6,7 @@
 
 # Interface: GuidedFilterDefinition
 
-Defined in: [src/features/guided-analysis/types.ts:65](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L65)
+Defined in: [src/features/guided-analysis/types.ts:65](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L65)
 
 Filter definition declared by a guided query.
 
@@ -16,7 +16,7 @@ Filter definition declared by a guided query.
 
 > `optional` **depends\_on?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:79](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L79)
+Defined in: [src/features/guided-analysis/types.ts:79](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L79)
 
 Upstream filter identifier required before this filter becomes available.
 
@@ -26,7 +26,7 @@ Upstream filter identifier required before this filter becomes available.
 
 > **id**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:67](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L67)
+Defined in: [src/features/guided-analysis/types.ts:67](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L67)
 
 Stable filter identifier used in request payloads.
 
@@ -36,7 +36,7 @@ Stable filter identifier used in request payloads.
 
 > **label**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:71](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L71)
+Defined in: [src/features/guided-analysis/types.ts:71](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L71)
 
 Human-readable label shown in the filter panel.
 
@@ -46,7 +46,7 @@ Human-readable label shown in the filter panel.
 
 > `optional` **max?**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:83](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L83)
+Defined in: [src/features/guided-analysis/types.ts:83](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L83)
 
 Inclusive numeric maximum for range filters.
 
@@ -56,7 +56,7 @@ Inclusive numeric maximum for range filters.
 
 > `optional` **max\_placeholder?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:77](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L77)
+Defined in: [src/features/guided-analysis/types.ts:77](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L77)
 
 Placeholder text for the maximum input of range controls.
 
@@ -66,7 +66,7 @@ Placeholder text for the maximum input of range controls.
 
 > `optional` **min?**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:81](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L81)
+Defined in: [src/features/guided-analysis/types.ts:81](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L81)
 
 Inclusive numeric minimum for range filters.
 
@@ -76,7 +76,7 @@ Inclusive numeric minimum for range filters.
 
 > `optional` **min\_placeholder?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:75](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L75)
+Defined in: [src/features/guided-analysis/types.ts:75](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L75)
 
 Placeholder text for the minimum input of range controls.
 
@@ -86,7 +86,7 @@ Placeholder text for the minimum input of range controls.
 
 > `optional` **placeholder?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:73](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L73)
+Defined in: [src/features/guided-analysis/types.ts:73](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L73)
 
 Placeholder text for search-like controls.
 
@@ -96,7 +96,7 @@ Placeholder text for search-like controls.
 
 > `optional` **provider?**: [`GuidedFilterProvider`](GuidedFilterProvider.md)
 
-Defined in: [src/features/guided-analysis/types.ts:87](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L87)
+Defined in: [src/features/guided-analysis/types.ts:87](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L87)
 
 Option provider definition used by select-like controls.
 
@@ -106,7 +106,7 @@ Option provider definition used by select-like controls.
 
 > `optional` **step?**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:85](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L85)
+Defined in: [src/features/guided-analysis/types.ts:85](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L85)
 
 Numeric step used by range filters.
 
@@ -116,6 +116,6 @@ Numeric step used by range filters.
 
 > **type**: [`GuidedFilterType`](../type-aliases/GuidedFilterType.md)
 
-Defined in: [src/features/guided-analysis/types.ts:69](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L69)
+Defined in: [src/features/guided-analysis/types.ts:69](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L69)
 
 UI control type used to render the filter.

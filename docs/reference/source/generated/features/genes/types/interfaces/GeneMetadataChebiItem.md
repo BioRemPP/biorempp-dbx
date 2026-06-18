@@ -6,7 +6,7 @@
 
 # Interface: GeneMetadataChebiItem
 
-Defined in: [src/features/genes/types.ts:127](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L127)
+Defined in: [src/features/genes/types.ts:127](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L127)
 
 ChEBI cross-reference item included in gene metadata.
 
@@ -16,7 +16,7 @@ ChEBI cross-reference item included in gene metadata.
 
 > **compound\_name**: `string` \| `null`
 
-Defined in: [src/features/genes/types.ts:131](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L131)
+Defined in: [src/features/genes/types.ts:131](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L131)
 
 Compound name associated with the ChEBI identifier when available.
 
@@ -26,6 +26,6 @@ Compound name associated with the ChEBI identifier when available.
 
 > **id**: `string`
 
-Defined in: [src/features/genes/types.ts:129](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L129)
+Defined in: [src/features/genes/types.ts:129](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L129)
 
 ChEBI identifier.

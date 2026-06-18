@@ -6,7 +6,7 @@
 
 # Interface: CompoundGeneCardRow
 
-Defined in: [src/features/compounds/types.ts:285](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L285)
+Defined in: [src/features/compounds/types.ts:285](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L285)
 
 Gene association row returned by compound detail endpoints.
 
@@ -16,7 +16,7 @@ Gene association row returned by compound detail endpoints.
 
 > **cpd**: `string`
 
-Defined in: [src/features/compounds/types.ts:287](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L287)
+Defined in: [src/features/compounds/types.ts:287](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L287)
 
 Compound identifier requested by the client.
 
@@ -26,7 +26,7 @@ Compound identifier requested by the client.
 
 > **ec**: `string`
 
-Defined in: [src/features/compounds/types.ts:297](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L297)
+Defined in: [src/features/compounds/types.ts:297](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L297)
 
 EC number associated with the gene relation.
 
@@ -36,7 +36,7 @@ EC number associated with the gene relation.
 
 > **enzyme\_activity**: `string`
 
-Defined in: [src/features/compounds/types.ts:295](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L295)
+Defined in: [src/features/compounds/types.ts:295](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L295)
 
 Enzyme activity label associated with the gene relation.
 
@@ -46,7 +46,7 @@ Enzyme activity label associated with the gene relation.
 
 > **genename**: `string`
 
-Defined in: [src/features/compounds/types.ts:293](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L293)
+Defined in: [src/features/compounds/types.ts:293](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L293)
 
 Gene name linked to the compound.
 
@@ -56,7 +56,7 @@ Gene name linked to the compound.
 
 > **genesymbol**: `string`
 
-Defined in: [src/features/compounds/types.ts:291](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L291)
+Defined in: [src/features/compounds/types.ts:291](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L291)
 
 Gene symbol linked to the compound.
 
@@ -66,7 +66,7 @@ Gene symbol linked to the compound.
 
 > **ko**: `string`
 
-Defined in: [src/features/compounds/types.ts:289](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L289)
+Defined in: [src/features/compounds/types.ts:289](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L289)
 
 KO identifier linked to the gene association.
 
@@ -76,7 +76,7 @@ KO identifier linked to the gene association.
 
 > **reaction\_descriptions**: `string`[]
 
-Defined in: [src/features/compounds/types.ts:299](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L299)
+Defined in: [src/features/compounds/types.ts:299](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L299)
 
 Reaction descriptions linked to the association row.
 
@@ -86,7 +86,7 @@ Reaction descriptions linked to the association row.
 
 > **reaction\_descriptions\_total**: `number`
 
-Defined in: [src/features/compounds/types.ts:301](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L301)
+Defined in: [src/features/compounds/types.ts:301](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L301)
 
 Total number of reaction descriptions before client-side truncation.
 
@@ -96,7 +96,7 @@ Total number of reaction descriptions before client-side truncation.
 
 > **supporting\_rows**: `number`
 
-Defined in: [src/features/compounds/types.ts:303](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L303)
+Defined in: [src/features/compounds/types.ts:303](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L303)
 
 Number of supporting rows contributing to the association.
 
@@ -106,6 +106,6 @@ Number of supporting rows contributing to the association.
 
 > **updated\_at**: `string`
 
-Defined in: [src/features/compounds/types.ts:305](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L305)
+Defined in: [src/features/compounds/types.ts:305](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L305)
 
 ISO-like timestamp indicating when the row was last refreshed.

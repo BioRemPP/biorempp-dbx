@@ -8,6 +8,6 @@
 
 > **ToxicityEndpointGroupKey** = `"ecotoxicity"` \| `"genotoxicity_carcinogenicity"` \| `"nuclear_receptors"` \| `"stress_response"` \| `"organ_irritation"` \| `"other"`
 
-Defined in: [src/features/toxicity/utils/endpointGroups.ts:11](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/utils/endpointGroups.ts#L11)
+Defined in: [src/features/toxicity/utils/endpointGroups.ts:11](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/utils/endpointGroups.ts#L11)
 
 Stable group keys used to classify toxicity endpoints in explorer and detail views.

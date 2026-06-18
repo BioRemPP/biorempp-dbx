@@ -6,7 +6,7 @@
 
 # Interface: CompoundMetadataSource
 
-Defined in: [src/features/compounds/types.ts:163](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L163)
+Defined in: [src/features/compounds/types.ts:163](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L163)
 
 Data source descriptor included in compound metadata responses.
 
@@ -16,7 +16,7 @@ Data source descriptor included in compound metadata responses.
 
 > **color**: `string`
 
-Defined in: [src/features/compounds/types.ts:169](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L169)
+Defined in: [src/features/compounds/types.ts:169](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L169)
 
 UI color token associated with the source badge.
 
@@ -26,7 +26,7 @@ UI color token associated with the source badge.
 
 > **name**: `string`
 
-Defined in: [src/features/compounds/types.ts:165](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L165)
+Defined in: [src/features/compounds/types.ts:165](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L165)
 
 Source system name displayed to the user.
 
@@ -36,6 +36,6 @@ Source system name displayed to the user.
 
 > **role**: `string`
 
-Defined in: [src/features/compounds/types.ts:167](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L167)
+Defined in: [src/features/compounds/types.ts:167](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L167)
 
 Source responsibility within the metadata panel.

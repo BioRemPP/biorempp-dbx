@@ -223,7 +223,7 @@ Contact the BioRemPP team if:
 5. Browser console output (`F12` → Console tab) if any errors are visible
 6. Screenshot of the issue if relevant
 
-**Contact:** [biorempp@gmail.com](mailto:biorempp@gmail.com) or [GitHub Issues](https://github.com/DougFelipe/biorempp_database_explorer/issues)
+**Contact:** [biorempp@gmail.com](mailto:biorempp@gmail.com) or [GitHub Issues](https://github.com/BioRemPP/biorempp-dbx/issues)
 
 ---
 

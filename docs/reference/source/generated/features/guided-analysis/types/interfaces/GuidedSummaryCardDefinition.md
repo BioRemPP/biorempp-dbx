@@ -6,7 +6,7 @@
 
 # Interface: GuidedSummaryCardDefinition
 
-Defined in: [src/features/guided-analysis/types.ts:93](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L93)
+Defined in: [src/features/guided-analysis/types.ts:93](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L93)
 
 Summary card definition declared by a guided query.
 
@@ -16,7 +16,7 @@ Summary card definition declared by a guided query.
 
 > `optional` **hint?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:101](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L101)
+Defined in: [src/features/guided-analysis/types.ts:101](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L101)
 
 Optional explanatory hint shown alongside the summary card.
 
@@ -26,7 +26,7 @@ Optional explanatory hint shown alongside the summary card.
 
 > **id**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:95](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L95)
+Defined in: [src/features/guided-analysis/types.ts:95](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L95)
 
 Stable summary card identifier.
 
@@ -36,7 +36,7 @@ Stable summary card identifier.
 
 > **label**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:97](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L97)
+Defined in: [src/features/guided-analysis/types.ts:97](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L97)
 
 Display label shown above the summary value.
 
@@ -46,6 +46,6 @@ Display label shown above the summary value.
 
 > **value\_key**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:99](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L99)
+Defined in: [src/features/guided-analysis/types.ts:99](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L99)
 
 Key used to resolve the summary value from execution results.

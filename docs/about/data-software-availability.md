@@ -31,7 +31,7 @@ The BioRemPP Database Explorer source code is publicly available on GitHub:
 
 | Resource | Repository | License |
 |----------|-----------|---------|
-| **Database Explorer** | [github.com/DougFelipe/biorempp_database_explorer](https://github.com/DougFelipe/biorempp_database_explorer) | Apache License 2.0 |
+| **Database Explorer** | [github.com/BioRemPP/biorempp-dbx](https://github.com/BioRemPP/biorempp-dbx) | Apache License 2.0 |
 | **BioRemPP Web Service** | [github.com/BioRemPP/biorempp_web](https://github.com/BioRemPP/biorempp_web) | Apache License 2.0 |
 
 ---

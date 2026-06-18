@@ -6,7 +6,7 @@
 
 # Interface: GeneDetailOverviewSummary
 
-Defined in: [src/features/genes/types.ts:57](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L57)
+Defined in: [src/features/genes/types.ts:57](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L57)
 
 Summary metrics focused on the gene overview visualization payload.
 
@@ -16,7 +16,7 @@ Summary metrics focused on the gene overview visualization payload.
 
 > **endpoint\_count**: `number`
 
-Defined in: [src/features/genes/types.ts:65](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L65)
+Defined in: [src/features/genes/types.ts:65](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L65)
 
 Number of toxicity endpoints represented in the overview matrix.
 
@@ -26,7 +26,7 @@ Number of toxicity endpoints represented in the overview matrix.
 
 > **excluded\_no\_toxicity**: `number`
 
-Defined in: [src/features/genes/types.ts:63](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L63)
+Defined in: [src/features/genes/types.ts:63](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L63)
 
 Number of linked compounds excluded because no toxicity data was available.
 
@@ -36,7 +36,7 @@ Number of linked compounds excluded because no toxicity data was available.
 
 > **linked\_compounds\_total**: `number`
 
-Defined in: [src/features/genes/types.ts:59](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L59)
+Defined in: [src/features/genes/types.ts:59](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L59)
 
 Total number of compounds linked to the gene.
 
@@ -46,7 +46,7 @@ Total number of compounds linked to the gene.
 
 > **toxicity\_compounds**: `number`
 
-Defined in: [src/features/genes/types.ts:61](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L61)
+Defined in: [src/features/genes/types.ts:61](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L61)
 
 Number of linked compounds that have toxicity data.
 
@@ -56,6 +56,6 @@ Number of linked compounds that have toxicity data.
 
 > **toxicity\_coverage\_pct**: `number` \| `null`
 
-Defined in: [src/features/genes/types.ts:67](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L67)
+Defined in: [src/features/genes/types.ts:67](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L67)
 
 Percentage of linked compounds with toxicity coverage.

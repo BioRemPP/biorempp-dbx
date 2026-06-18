@@ -25,7 +25,7 @@ resource_card:
   title: Database Documentation
   description: Card description
   button_label: View Database Docs
-  url: https://YOUR-READTHEDOCS-PROJECT.readthedocs.io/en/stable/
+  url: https://bioremppdbx.readthedocs.io/en/stable/guided-analysis/
   icon: server
 `;
 
@@ -35,7 +35,7 @@ describe('documentationCatalog', () => {
     expect(DOCUMENTATION_CATALOG.framework.bullets).toHaveLength(3);
     expect(DOCUMENTATION_CATALOG.resource_card.title).toBe('Database Documentation');
     expect(DOCUMENTATION_CATALOG.resource_card.url).toBe(
-      'https://YOUR-READTHEDOCS-PROJECT.readthedocs.io/en/stable/'
+      'https://bioremppdbx.readthedocs.io/en/stable/guided-analysis/'
     );
     expect(DOCUMENTATION_CATALOG.framework.bullets[1]).toMatchObject({
       label: 'Web Service',
@@ -50,7 +50,7 @@ describe('documentationCatalog', () => {
   it('rejects invalid external URLs', () => {
     expect(() =>
       parseDocumentationCatalog(VALID_DOCUMENTATION_YAML.replace(
-        'https://YOUR-READTHEDOCS-PROJECT.readthedocs.io/en/stable/',
+        'https://bioremppdbx.readthedocs.io/en/stable/guided-analysis/',
         'ftp://invalid'
       ))
     ).toThrow(/resource_card.url/);

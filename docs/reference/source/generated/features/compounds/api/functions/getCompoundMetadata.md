@@ -8,7 +8,7 @@
 
 > **getCompoundMetadata**(`cpd`): `Promise`\<[`CompoundMetadata`](../../types/interfaces/CompoundMetadata.md)\>
 
-Defined in: [src/features/compounds/api.ts:67](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/api.ts#L67)
+Defined in: [src/features/compounds/api.ts:67](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/api.ts#L67)
 
 Fetches metadata for a single compound detail page.
 

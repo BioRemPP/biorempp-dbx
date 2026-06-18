@@ -6,7 +6,7 @@
 
 # Interface: CompoundPathwayCardRow
 
-Defined in: [src/features/compounds/types.ts:311](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L311)
+Defined in: [src/features/compounds/types.ts:311](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L311)
 
 Pathway association row returned by compound detail endpoints.
 
@@ -16,7 +16,7 @@ Pathway association row returned by compound detail endpoints.
 
 > **cpd**: `string`
 
-Defined in: [src/features/compounds/types.ts:313](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L313)
+Defined in: [src/features/compounds/types.ts:313](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L313)
 
 Compound identifier requested by the client.
 
@@ -26,7 +26,7 @@ Compound identifier requested by the client.
 
 > **pathway**: `string`
 
-Defined in: [src/features/compounds/types.ts:317](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L317)
+Defined in: [src/features/compounds/types.ts:317](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L317)
 
 Pathway name linked to the compound.
 
@@ -36,7 +36,7 @@ Pathway name linked to the compound.
 
 > **source**: `string`
 
-Defined in: [src/features/compounds/types.ts:315](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L315)
+Defined in: [src/features/compounds/types.ts:315](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L315)
 
 Source catalog that contributed the pathway association.
 
@@ -46,7 +46,7 @@ Source catalog that contributed the pathway association.
 
 > **supporting\_rows**: `number`
 
-Defined in: [src/features/compounds/types.ts:319](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L319)
+Defined in: [src/features/compounds/types.ts:319](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L319)
 
 Number of supporting rows contributing to the association.
 
@@ -56,6 +56,6 @@ Number of supporting rows contributing to the association.
 
 > **updated\_at**: `string`
 
-Defined in: [src/features/compounds/types.ts:321](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L321)
+Defined in: [src/features/compounds/types.ts:321](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L321)
 
 ISO-like timestamp indicating when the row was last refreshed.

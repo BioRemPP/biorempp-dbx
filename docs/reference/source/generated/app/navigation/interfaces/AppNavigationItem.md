@@ -6,7 +6,7 @@
 
 # Interface: AppNavigationItem
 
-Defined in: [src/app/navigation.ts:12](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/app/navigation.ts#L12)
+Defined in: [src/app/navigation.ts:12](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/app/navigation.ts#L12)
 
 One primary navigation entry rendered by the app shell.
 
@@ -16,7 +16,7 @@ One primary navigation entry rendered by the app shell.
 
 > **id**: `string`
 
-Defined in: [src/app/navigation.ts:14](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/app/navigation.ts#L14)
+Defined in: [src/app/navigation.ts:14](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/app/navigation.ts#L14)
 
 Stable identifier used as the React key and semantic navigation id.
 
@@ -26,7 +26,7 @@ Stable identifier used as the React key and semantic navigation id.
 
 > **label**: `string`
 
-Defined in: [src/app/navigation.ts:16](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/app/navigation.ts#L16)
+Defined in: [src/app/navigation.ts:16](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/app/navigation.ts#L16)
 
 User-facing label shown in the primary navigation bar.
 
@@ -36,6 +36,6 @@ User-facing label shown in the primary navigation bar.
 
 > **view**: [`View`](../../routes/type-aliases/View.md)
 
-Defined in: [src/app/navigation.ts:18](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/app/navigation.ts#L18)
+Defined in: [src/app/navigation.ts:18](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/app/navigation.ts#L18)
 
 Top-level view activated when the navigation item is selected.

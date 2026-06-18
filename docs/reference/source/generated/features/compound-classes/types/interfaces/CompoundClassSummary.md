@@ -6,7 +6,7 @@
 
 # Interface: CompoundClassSummary
 
-Defined in: [src/features/compound-classes/types.ts:16](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compound-classes/types.ts#L16)
+Defined in: [src/features/compound-classes/types.ts:16](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compound-classes/types.ts#L16)
 
 Summary row returned by compound class explorer endpoints.
 
@@ -16,7 +16,7 @@ Summary row returned by compound class explorer endpoints.
 
 > **compound\_count**: `number`
 
-Defined in: [src/features/compound-classes/types.ts:20](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compound-classes/types.ts#L20)
+Defined in: [src/features/compound-classes/types.ts:20](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compound-classes/types.ts#L20)
 
 Number of compounds assigned to the class.
 
@@ -26,7 +26,7 @@ Number of compounds assigned to the class.
 
 > **compoundclass**: `string`
 
-Defined in: [src/features/compound-classes/types.ts:18](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compound-classes/types.ts#L18)
+Defined in: [src/features/compound-classes/types.ts:18](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compound-classes/types.ts#L18)
 
 Compound class label used as the canonical route key.
 
@@ -36,7 +36,7 @@ Compound class label used as the canonical route key.
 
 > **gene\_count**: `number`
 
-Defined in: [src/features/compound-classes/types.ts:24](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compound-classes/types.ts#L24)
+Defined in: [src/features/compound-classes/types.ts:24](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compound-classes/types.ts#L24)
 
 Number of distinct genes linked to the class.
 
@@ -46,7 +46,7 @@ Number of distinct genes linked to the class.
 
 > **ko\_count**: `number`
 
-Defined in: [src/features/compound-classes/types.ts:22](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compound-classes/types.ts#L22)
+Defined in: [src/features/compound-classes/types.ts:22](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compound-classes/types.ts#L22)
 
 Number of distinct KO identifiers linked to the class.
 
@@ -56,7 +56,7 @@ Number of distinct KO identifiers linked to the class.
 
 > **pathway\_count**: `number`
 
-Defined in: [src/features/compound-classes/types.ts:26](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compound-classes/types.ts#L26)
+Defined in: [src/features/compound-classes/types.ts:26](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compound-classes/types.ts#L26)
 
 Number of distinct pathways linked to the class.
 
@@ -66,6 +66,6 @@ Number of distinct pathways linked to the class.
 
 > **updated\_at**: `string` \| `null`
 
-Defined in: [src/features/compound-classes/types.ts:28](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compound-classes/types.ts#L28)
+Defined in: [src/features/compound-classes/types.ts:28](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compound-classes/types.ts#L28)
 
 ISO-like timestamp indicating when the aggregate row was last refreshed.

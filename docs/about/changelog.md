@@ -77,7 +77,7 @@ associated article is published.
 
 ### Support
 
-- GitHub Issues: [BioRemPP Database Explorer Issues](https://github.com/DougFelipe/biorempp_database_explorer/issues)
+- GitHub Issues: [BioRemPP Database Explorer Issues](https://github.com/BioRemPP/biorempp-dbx/issues)
 - Email: biorempp@gmail.com
 
 ### Contributing

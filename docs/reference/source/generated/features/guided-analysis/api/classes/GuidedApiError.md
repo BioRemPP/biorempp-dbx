@@ -6,7 +6,7 @@
 
 # Class: GuidedApiError
 
-Defined in: [src/features/guided-analysis/api.ts:20](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/api.ts#L20)
+Defined in: [src/features/guided-analysis/api.ts:20](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/api.ts#L20)
 
 Structured error thrown by guided analysis API wrappers.
 
@@ -20,7 +20,7 @@ Structured error thrown by guided analysis API wrappers.
 
 > **new GuidedApiError**(`message`, `status`, `retryAfterSeconds?`): `GuidedApiError`
 
-Defined in: [src/features/guided-analysis/api.ts:26](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/api.ts#L26)
+Defined in: [src/features/guided-analysis/api.ts:26](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/api.ts#L26)
 
 #### Parameters
 
@@ -74,7 +74,7 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1076
 
 > `optional` **retryAfterSeconds?**: `number`
 
-Defined in: [src/features/guided-analysis/api.ts:24](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/api.ts#L24)
+Defined in: [src/features/guided-analysis/api.ts:24](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/api.ts#L24)
 
 Retry-after hint when the backend reports a rate-limit cooldown.
 
@@ -96,7 +96,7 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1078
 
 > **status**: `number`
 
-Defined in: [src/features/guided-analysis/api.ts:22](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/api.ts#L22)
+Defined in: [src/features/guided-analysis/api.ts:22](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/api.ts#L22)
 
 HTTP status returned by the backend.
 

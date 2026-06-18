@@ -8,6 +8,6 @@
 
 > **Route** = \{ `kind`: `"view"`; `view`: [`View`](View.md); \} \| \{ `kind`: `"not_found"`; \} \| \{ `kind`: `"databaseSchema"`; `schemaId`: `DatabaseSchemaId`; \} \| \{ `cpd`: `string`; `kind`: `"compound"`; \} \| \{ `kind`: `"gene"`; `ko`: `string`; \} \| \{ `compoundclass`: `string`; `kind`: `"compoundClass"`; \} \| \{ `kind`: `"pathway"`; `pathway`: `string`; `source?`: `string`; \}
 
-Defined in: [src/app/routes.ts:34](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/app/routes.ts#L34)
+Defined in: [src/app/routes.ts:34](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/app/routes.ts#L34)
 
 Parsed route variants used by the app shell to decide which page or detail view to render.

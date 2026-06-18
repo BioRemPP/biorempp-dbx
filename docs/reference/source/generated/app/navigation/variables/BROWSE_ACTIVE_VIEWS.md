@@ -8,6 +8,6 @@
 
 > `const` **BROWSE\_ACTIVE\_VIEWS**: `Set`\<[`View`](../../routes/type-aliases/View.md)\>
 
-Defined in: [src/app/navigation.ts:48](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/app/navigation.ts#L48)
+Defined in: [src/app/navigation.ts:48](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/app/navigation.ts#L48)
 
 Set of views considered "active" when the Browse dropdown trigger should be highlighted.

@@ -6,7 +6,7 @@
 
 # Interface: KoBarDatum
 
-Defined in: [src/features/compounds/types.ts:73](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L73)
+Defined in: [src/features/compounds/types.ts:73](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L73)
 
 Bar chart datum representing KO support for a compound.
 
@@ -16,7 +16,7 @@ Bar chart datum representing KO support for a compound.
 
 > **count**: `number`
 
-Defined in: [src/features/compounds/types.ts:77](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L77)
+Defined in: [src/features/compounds/types.ts:77](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L77)
 
 Total supporting rows contributing to the bar.
 
@@ -26,7 +26,7 @@ Total supporting rows contributing to the bar.
 
 > **ko**: `string`
 
-Defined in: [src/features/compounds/types.ts:75](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L75)
+Defined in: [src/features/compounds/types.ts:75](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L75)
 
 KO identifier shown on the chart.
 
@@ -36,7 +36,7 @@ KO identifier shown on the chart.
 
 > **relation\_count\_hadeg**: `number`
 
-Defined in: [src/features/compounds/types.ts:79](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L79)
+Defined in: [src/features/compounds/types.ts:79](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L79)
 
 Supporting rows coming from HADEG relations.
 
@@ -46,6 +46,6 @@ Supporting rows coming from HADEG relations.
 
 > **relation\_count\_kegg**: `number`
 
-Defined in: [src/features/compounds/types.ts:81](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L81)
+Defined in: [src/features/compounds/types.ts:81](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L81)
 
 Supporting rows coming from KEGG relations.

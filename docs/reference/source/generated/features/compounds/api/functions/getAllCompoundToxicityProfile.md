@@ -8,7 +8,7 @@
 
 > **getAllCompoundToxicityProfile**(`cpd`, `pageSize?`): `Promise`\<[`ToxicityEndpoint`](../../../toxicity/types/interfaces/ToxicityEndpoint.md)[]\>
 
-Defined in: [src/features/compounds/api.ts:179](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/api.ts#L179)
+Defined in: [src/features/compounds/api.ts:179](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/api.ts#L179)
 
 Fetches all endpoint-level toxicity rows for a compound detail page.
 

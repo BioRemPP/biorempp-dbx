@@ -60,7 +60,7 @@ Feel free to reach out via email for collaboration, technical support, or genera
 
 For bug reports, feature requests, or technical issues related to the Database Explorer:
 
-**GitHub Issues:** [https://github.com/DougFelipe/biorempp_database_explorer/issues](https://github.com/DougFelipe/biorempp_database_explorer/issues)
+**GitHub Issues:** [https://github.com/BioRemPP/biorempp-dbx/issues](https://github.com/BioRemPP/biorempp-dbx/issues)
 
 When reporting issues, please include:
 

@@ -6,7 +6,7 @@
 
 # Interface: GuidedHeatmapMatrixCell
 
-Defined in: [src/features/guided-analysis/types.ts:442](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L442)
+Defined in: [src/features/guided-analysis/types.ts:442](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L442)
 
 Sparse cell used by guided heatmap matrix visualizations.
 
@@ -16,7 +16,7 @@ Sparse cell used by guided heatmap matrix visualizations.
 
 > `optional` **cpd?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:446](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L446)
+Defined in: [src/features/guided-analysis/types.ts:446](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L446)
 
 Optional compound identifier when the matrix is compound-oriented.
 
@@ -26,7 +26,7 @@ Optional compound identifier when the matrix is compound-oriented.
 
 > **endpoint**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:448](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L448)
+Defined in: [src/features/guided-analysis/types.ts:448](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L448)
 
 Toxicity endpoint identifier associated with the cell.
 
@@ -36,7 +36,7 @@ Toxicity endpoint identifier associated with the cell.
 
 > **label**: `string` \| `null`
 
-Defined in: [src/features/guided-analysis/types.ts:450](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L450)
+Defined in: [src/features/guided-analysis/types.ts:450](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L450)
 
 Optional human-readable endpoint label.
 
@@ -46,7 +46,7 @@ Optional human-readable endpoint label.
 
 > **risk\_bucket**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:454](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L454)
+Defined in: [src/features/guided-analysis/types.ts:454](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L454)
 
 Backend-derived categorical risk bucket string.
 
@@ -56,7 +56,7 @@ Backend-derived categorical risk bucket string.
 
 > `optional` **row\_id?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:444](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L444)
+Defined in: [src/features/guided-analysis/types.ts:444](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L444)
 
 Optional row identifier when the matrix uses explicit rows.
 
@@ -66,6 +66,6 @@ Optional row identifier when the matrix uses explicit rows.
 
 > **value**: `number` \| `null`
 
-Defined in: [src/features/guided-analysis/types.ts:452](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L452)
+Defined in: [src/features/guided-analysis/types.ts:452](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L452)
 
 Numeric toxicity value associated with the cell.

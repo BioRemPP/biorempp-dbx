@@ -6,7 +6,7 @@
 
 # Interface: GeneSummary
 
-Defined in: [src/features/genes/types.ts:11](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L11)
+Defined in: [src/features/genes/types.ts:11](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L11)
 
 Summary row returned by gene explorer endpoints.
 
@@ -16,7 +16,7 @@ Summary row returned by gene explorer endpoints.
 
 > **compound\_count**: `number`
 
-Defined in: [src/features/genes/types.ts:19](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L19)
+Defined in: [src/features/genes/types.ts:19](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L19)
 
 Number of linked compounds.
 
@@ -26,7 +26,7 @@ Number of linked compounds.
 
 > **enzyme\_activities**: `string`[]
 
-Defined in: [src/features/genes/types.ts:23](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L23)
+Defined in: [src/features/genes/types.ts:23](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L23)
 
 Distinct enzyme activity labels linked to the gene.
 
@@ -36,7 +36,7 @@ Distinct enzyme activity labels linked to the gene.
 
 > **genename**: `string` \| `null`
 
-Defined in: [src/features/genes/types.ts:17](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L17)
+Defined in: [src/features/genes/types.ts:17](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L17)
 
 Preferred gene name when available.
 
@@ -46,7 +46,7 @@ Preferred gene name when available.
 
 > **genesymbol**: `string` \| `null`
 
-Defined in: [src/features/genes/types.ts:15](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L15)
+Defined in: [src/features/genes/types.ts:15](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L15)
 
 Preferred gene symbol when available.
 
@@ -56,7 +56,7 @@ Preferred gene symbol when available.
 
 > **ko**: `string`
 
-Defined in: [src/features/genes/types.ts:13](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L13)
+Defined in: [src/features/genes/types.ts:13](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L13)
 
 KO identifier used as the canonical gene route key.
 
@@ -66,7 +66,7 @@ KO identifier used as the canonical gene route key.
 
 > **pathway\_count**: `number`
 
-Defined in: [src/features/genes/types.ts:21](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L21)
+Defined in: [src/features/genes/types.ts:21](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L21)
 
 Number of linked pathways.
 
@@ -76,6 +76,6 @@ Number of linked pathways.
 
 > **updated\_at**: `string`
 
-Defined in: [src/features/genes/types.ts:25](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/types.ts#L25)
+Defined in: [src/features/genes/types.ts:25](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/types.ts#L25)
 
 ISO-like timestamp indicating when the row was last refreshed.

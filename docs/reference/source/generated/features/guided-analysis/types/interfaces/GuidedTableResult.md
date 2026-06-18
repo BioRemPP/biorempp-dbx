@@ -6,7 +6,7 @@
 
 # Interface: GuidedTableResult
 
-Defined in: [src/features/guided-analysis/types.ts:525](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L525)
+Defined in: [src/features/guided-analysis/types.ts:525](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L525)
 
 Paginated table result returned by guided query execution.
 
@@ -20,7 +20,7 @@ Paginated table result returned by guided query execution.
 
 > **columns**: [`GuidedTableColumnDefinition`](GuidedTableColumnDefinition.md)[]
 
-Defined in: [src/features/guided-analysis/types.ts:147](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L147)
+Defined in: [src/features/guided-analysis/types.ts:147](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L147)
 
 Ordered column definitions used to render rows.
 
@@ -34,7 +34,7 @@ Ordered column definitions used to render rows.
 
 > `optional` **empty\_message?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:145](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L145)
+Defined in: [src/features/guided-analysis/types.ts:145](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L145)
 
 Message shown when the table has no rows.
 
@@ -48,7 +48,7 @@ Message shown when the table has no rows.
 
 > **id**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:137](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L137)
+Defined in: [src/features/guided-analysis/types.ts:137](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L137)
 
 Stable table identifier.
 
@@ -62,7 +62,7 @@ Stable table identifier.
 
 > **page**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:529](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L529)
+Defined in: [src/features/guided-analysis/types.ts:529](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L529)
 
 One-based page number returned for the current result set.
 
@@ -72,7 +72,7 @@ One-based page number returned for the current result set.
 
 > **pageSize**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:531](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L531)
+Defined in: [src/features/guided-analysis/types.ts:531](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L531)
 
 Maximum number of rows returned per page.
 
@@ -82,7 +82,7 @@ Maximum number of rows returned per page.
 
 > `optional` **row\_click\_field?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:143](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L143)
+Defined in: [src/features/guided-analysis/types.ts:143](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L143)
 
 Row field used to build drill-down navigation on click.
 
@@ -96,7 +96,7 @@ Row field used to build drill-down navigation on click.
 
 > **rows**: `Record`\<`string`, `unknown`\>[]
 
-Defined in: [src/features/guided-analysis/types.ts:527](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L527)
+Defined in: [src/features/guided-analysis/types.ts:527](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L527)
 
 Table rows keyed by column identifiers and backend field names.
 
@@ -106,7 +106,7 @@ Table rows keyed by column identifiers and backend field names.
 
 > `optional` **subtitle?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:141](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L141)
+Defined in: [src/features/guided-analysis/types.ts:141](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L141)
 
 Optional subtitle shown below the title.
 
@@ -120,7 +120,7 @@ Optional subtitle shown below the title.
 
 > **title**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:139](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L139)
+Defined in: [src/features/guided-analysis/types.ts:139](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L139)
 
 Primary table title shown in the UI.
 
@@ -134,7 +134,7 @@ Primary table title shown in the UI.
 
 > **total**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:533](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L533)
+Defined in: [src/features/guided-analysis/types.ts:533](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L533)
 
 Total number of rows available for the current filter scope.
 
@@ -144,6 +144,6 @@ Total number of rows available for the current filter scope.
 
 > **totalPages**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:535](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L535)
+Defined in: [src/features/guided-analysis/types.ts:535](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L535)
 
 Total number of available pages for the current filter scope.

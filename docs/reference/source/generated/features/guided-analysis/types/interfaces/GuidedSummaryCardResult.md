@@ -6,7 +6,7 @@
 
 # Interface: GuidedSummaryCardResult
 
-Defined in: [src/features/guided-analysis/types.ts:493](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L493)
+Defined in: [src/features/guided-analysis/types.ts:493](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L493)
 
 Resolved summary card value returned by guided query execution.
 
@@ -16,7 +16,7 @@ Resolved summary card value returned by guided query execution.
 
 > **hint**: `string` \| `null`
 
-Defined in: [src/features/guided-analysis/types.ts:501](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L501)
+Defined in: [src/features/guided-analysis/types.ts:501](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L501)
 
 Optional explanatory hint shown alongside the value.
 
@@ -26,7 +26,7 @@ Optional explanatory hint shown alongside the value.
 
 > **id**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:495](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L495)
+Defined in: [src/features/guided-analysis/types.ts:495](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L495)
 
 Summary card identifier matching the query definition.
 
@@ -36,7 +36,7 @@ Summary card identifier matching the query definition.
 
 > **label**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:497](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L497)
+Defined in: [src/features/guided-analysis/types.ts:497](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L497)
 
 Display label shown above the resolved value.
 
@@ -46,6 +46,6 @@ Display label shown above the resolved value.
 
 > **value**: `string` \| `number` \| `null`
 
-Defined in: [src/features/guided-analysis/types.ts:499](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L499)
+Defined in: [src/features/guided-analysis/types.ts:499](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L499)
 
 Resolved summary value.

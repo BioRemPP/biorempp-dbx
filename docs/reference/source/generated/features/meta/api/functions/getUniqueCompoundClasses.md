@@ -8,7 +8,7 @@
 
 > **getUniqueCompoundClasses**(): `Promise`\<`string`[]\>
 
-Defined in: [src/features/meta/api.ts:56](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/meta/api.ts#L56)
+Defined in: [src/features/meta/api.ts:56](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/meta/api.ts#L56)
 
 Fetches the unique compound class values used by metadata-driven filters.
 

@@ -6,7 +6,7 @@
 
 # Interface: GuidedExecutionResponse
 
-Defined in: [src/features/guided-analysis/types.ts:585](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L585)
+Defined in: [src/features/guided-analysis/types.ts:585](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L585)
 
 Full guided query execution payload returned by the backend.
 
@@ -16,7 +16,7 @@ Full guided query execution payload returned by the backend.
 
 > **filters\_applied**: `Record`\<`string`, `unknown`\>
 
-Defined in: [src/features/guided-analysis/types.ts:595](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L595)
+Defined in: [src/features/guided-analysis/types.ts:595](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L595)
 
 Normalized filters applied by the backend.
 
@@ -26,7 +26,7 @@ Normalized filters applied by the backend.
 
 > **meta**: [`GuidedExecutionMeta`](GuidedExecutionMeta.md)
 
-Defined in: [src/features/guided-analysis/types.ts:587](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L587)
+Defined in: [src/features/guided-analysis/types.ts:587](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L587)
 
 Execution metadata for pagination, thresholds, and timing.
 
@@ -36,7 +36,7 @@ Execution metadata for pagination, thresholds, and timing.
 
 > **summary\_cards**: [`GuidedSummaryCardResult`](GuidedSummaryCardResult.md)[]
 
-Defined in: [src/features/guided-analysis/types.ts:589](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L589)
+Defined in: [src/features/guided-analysis/types.ts:589](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L589)
 
 Resolved summary cards for the current execution.
 
@@ -46,7 +46,7 @@ Resolved summary cards for the current execution.
 
 > **table**: [`GuidedTableResult`](GuidedTableResult.md) \| `null`
 
-Defined in: [src/features/guided-analysis/types.ts:593](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L593)
+Defined in: [src/features/guided-analysis/types.ts:593](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L593)
 
 Paginated table result when the query defines a table.
 
@@ -56,6 +56,6 @@ Paginated table result when the query defines a table.
 
 > **visualizations**: [`GuidedVisualizationResult`](GuidedVisualizationResult.md)[]
 
-Defined in: [src/features/guided-analysis/types.ts:591](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L591)
+Defined in: [src/features/guided-analysis/types.ts:591](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L591)
 
 Resolved visualizations for the current execution.

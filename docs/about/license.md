@@ -123,7 +123,7 @@ The authors and contributors shall not be held liable for any claims, damages, o
 For licensing questions, service inquiries, or institutional support:
 
 - **Email:** biorempp@gmail.com
-- **GitHub:** https://github.com/DougFelipe/biorempp_database_explorer
+- **GitHub:** https://github.com/BioRemPP/biorempp-dbx
 
 ---
 

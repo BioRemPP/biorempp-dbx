@@ -8,7 +8,7 @@
 
 > **getGeneAssociatedCompounds**(`ko`, `pagination?`): `Promise`\<[`PaginatedResponse`](../../../../shared/types/interfaces/PaginatedResponse.md)\<[`GeneAssociatedCompoundRow`](../../types/interfaces/GeneAssociatedCompoundRow.md)\>\>
 
-Defined in: [src/features/genes/api.ts:83](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/genes/api.ts#L83)
+Defined in: [src/features/genes/api.ts:83](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/genes/api.ts#L83)
 
 Fetches compounds associated with a gene detail page.
 

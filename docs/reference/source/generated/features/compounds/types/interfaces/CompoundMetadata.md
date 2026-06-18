@@ -6,7 +6,7 @@
 
 # Interface: CompoundMetadata
 
-Defined in: [src/features/compounds/types.ts:175](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L175)
+Defined in: [src/features/compounds/types.ts:175](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L175)
 
 Metadata payload returned by compound detail endpoints.
 
@@ -16,7 +16,7 @@ Metadata payload returned by compound detail endpoints.
 
 > **chemical\_information**: `object`
 
-Defined in: [src/features/compounds/types.ts:211](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L211)
+Defined in: [src/features/compounds/types.ts:211](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L211)
 
 Chemical identifiers and names exposed by the metadata panel.
 
@@ -50,7 +50,7 @@ Compound SMILES string when available.
 
 > **cross\_references**: `object`
 
-Defined in: [src/features/compounds/types.ts:233](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L233)
+Defined in: [src/features/compounds/types.ts:233](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L233)
 
 External identifiers and counts used for cross-reference display.
 
@@ -84,7 +84,7 @@ Number of distinct linked reactions.
 
 > **data\_quality**: `object`
 
-Defined in: [src/features/compounds/types.ts:244](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L244)
+Defined in: [src/features/compounds/types.ts:244](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L244)
 
 Backend-reported data quality signals for the current compound.
 
@@ -118,7 +118,7 @@ Whether linked KO identifiers passed backend format validation.
 
 > **data\_sources**: [`CompoundMetadataSource`](CompoundMetadataSource.md)[]
 
-Defined in: [src/features/compounds/types.ts:222](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L222)
+Defined in: [src/features/compounds/types.ts:222](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L222)
 
 Data source badges shown in the metadata UI.
 
@@ -128,7 +128,7 @@ Data source badges shown in the metadata UI.
 
 > **functional\_annotation**: `object`
 
-Defined in: [src/features/compounds/types.ts:196](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L196)
+Defined in: [src/features/compounds/types.ts:196](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L196)
 
 Functional annotations derived from linked genes, reactions, and pathways.
 
@@ -174,7 +174,7 @@ Number of distinct linked reactions.
 
 > **identifiers**: `object`
 
-Defined in: [src/features/compounds/types.ts:177](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L177)
+Defined in: [src/features/compounds/types.ts:177](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L177)
 
 Identifier and cross-reference fields shown in the metadata panel.
 
@@ -232,7 +232,7 @@ Compound SMILES string when available.
 
 > **provenance**: `object`
 
-Defined in: [src/features/compounds/types.ts:224](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L224)
+Defined in: [src/features/compounds/types.ts:224](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L224)
 
 Provenance fields describing the dataset build that produced the payload.
 

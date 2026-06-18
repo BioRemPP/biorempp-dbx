@@ -8,7 +8,7 @@
 
 > **parseRoute**(`pathname`): [`Route`](../type-aliases/Route.md)
 
-Defined in: [src/app/routes.ts:96](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/app/routes.ts#L96)
+Defined in: [src/app/routes.ts:96](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/app/routes.ts#L96)
 
 Parses a browser pathname into a typed application route.
 

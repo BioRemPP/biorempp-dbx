@@ -6,7 +6,7 @@
 
 # Interface: ToxicityEndpoint
 
-Defined in: [src/features/toxicity/types.ts:28](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L28)
+Defined in: [src/features/toxicity/types.ts:28](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L28)
 
 Row returned by compound toxicity profile endpoints.
 
@@ -16,7 +16,7 @@ Row returned by compound toxicity profile endpoints.
 
 > **compoundclass**: `string` \| `null`
 
-Defined in: [src/features/toxicity/types.ts:34](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L34)
+Defined in: [src/features/toxicity/types.ts:34](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L34)
 
 Compound class label when available.
 
@@ -26,7 +26,7 @@ Compound class label when available.
 
 > **compoundname**: `string` \| `null`
 
-Defined in: [src/features/toxicity/types.ts:32](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L32)
+Defined in: [src/features/toxicity/types.ts:32](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L32)
 
 Compound display name when available.
 
@@ -36,7 +36,7 @@ Compound display name when available.
 
 > **cpd**: `string`
 
-Defined in: [src/features/toxicity/types.ts:30](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L30)
+Defined in: [src/features/toxicity/types.ts:30](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L30)
 
 Compound identifier linked to the endpoint measurement.
 
@@ -46,7 +46,7 @@ Compound identifier linked to the endpoint measurement.
 
 > **endpoint**: `string`
 
-Defined in: [src/features/toxicity/types.ts:36](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L36)
+Defined in: [src/features/toxicity/types.ts:36](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L36)
 
 Toxicity endpoint identifier.
 
@@ -56,7 +56,7 @@ Toxicity endpoint identifier.
 
 > **label**: `string` \| `null`
 
-Defined in: [src/features/toxicity/types.ts:38](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L38)
+Defined in: [src/features/toxicity/types.ts:38](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L38)
 
 Optional human-readable endpoint label.
 
@@ -66,7 +66,7 @@ Optional human-readable endpoint label.
 
 > **updated\_at**: `string`
 
-Defined in: [src/features/toxicity/types.ts:42](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L42)
+Defined in: [src/features/toxicity/types.ts:42](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L42)
 
 ISO-like timestamp indicating when the underlying row was last updated.
 
@@ -76,6 +76,6 @@ ISO-like timestamp indicating when the underlying row was last updated.
 
 > **value**: `number` \| `null`
 
-Defined in: [src/features/toxicity/types.ts:40](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L40)
+Defined in: [src/features/toxicity/types.ts:40](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L40)
 
 Numeric endpoint value reported by the backend.

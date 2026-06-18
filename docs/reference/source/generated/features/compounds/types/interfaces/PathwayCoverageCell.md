@@ -6,7 +6,7 @@
 
 # Interface: PathwayCoverageCell
 
-Defined in: [src/features/compounds/types.ts:99](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L99)
+Defined in: [src/features/compounds/types.ts:99](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L99)
 
 Cell used to render compound pathway coverage matrices.
 
@@ -16,7 +16,7 @@ Cell used to render compound pathway coverage matrices.
 
 > **pathway**: `string`
 
-Defined in: [src/features/compounds/types.ts:103](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L103)
+Defined in: [src/features/compounds/types.ts:103](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L103)
 
 Pathway name represented by the matrix row or column.
 
@@ -26,7 +26,7 @@ Pathway name represented by the matrix row or column.
 
 > **present**: `number`
 
-Defined in: [src/features/compounds/types.ts:105](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L105)
+Defined in: [src/features/compounds/types.ts:105](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L105)
 
 Presence flag used by the UI to mark whether the pathway is linked.
 
@@ -36,7 +36,7 @@ Presence flag used by the UI to mark whether the pathway is linked.
 
 > **source**: `string`
 
-Defined in: [src/features/compounds/types.ts:101](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L101)
+Defined in: [src/features/compounds/types.ts:101](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L101)
 
 Source catalog represented by the matrix row or column.
 
@@ -46,6 +46,6 @@ Source catalog represented by the matrix row or column.
 
 > **weight**: `number`
 
-Defined in: [src/features/compounds/types.ts:107](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L107)
+Defined in: [src/features/compounds/types.ts:107](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L107)
 
 Backend-derived weight used to rank or emphasize coverage.

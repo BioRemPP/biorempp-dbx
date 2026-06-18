@@ -11,7 +11,7 @@ Use this page to cite the BioRemPP Database Explorer and the BioRemPP Database c
 ```text
 Lima Silva, D. F., & Fassarella Agnez-Lima, L. (2026). BioRemPP Database Explorer:
 A Compound-Centric Interface for Integrated Bioremediation and Environmental Risk Analysis
-[Software]. GitHub. https://github.com/DougFelipe/biorempp_database_explorer
+[Software]. GitHub. https://github.com/BioRemPP/biorempp-dbx
 ```
 
 ---

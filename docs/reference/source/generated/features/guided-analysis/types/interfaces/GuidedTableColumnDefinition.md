@@ -6,7 +6,7 @@
 
 # Interface: GuidedTableColumnDefinition
 
-Defined in: [src/features/guided-analysis/types.ts:123](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L123)
+Defined in: [src/features/guided-analysis/types.ts:123](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L123)
 
 Column definition used by guided result tables.
 
@@ -16,7 +16,7 @@ Column definition used by guided result tables.
 
 > **id**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:125](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L125)
+Defined in: [src/features/guided-analysis/types.ts:125](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L125)
 
 Stable column identifier and row lookup key.
 
@@ -26,7 +26,7 @@ Stable column identifier and row lookup key.
 
 > **label**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:127](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L127)
+Defined in: [src/features/guided-analysis/types.ts:127](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L127)
 
 Header label shown to the user.
 
@@ -36,6 +36,6 @@ Header label shown to the user.
 
 > **type**: [`GuidedTableColumnType`](../type-aliases/GuidedTableColumnType.md)
 
-Defined in: [src/features/guided-analysis/types.ts:129](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L129)
+Defined in: [src/features/guided-analysis/types.ts:129](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L129)
 
 Renderer type used for the column values.

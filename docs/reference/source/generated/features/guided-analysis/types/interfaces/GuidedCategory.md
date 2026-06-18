@@ -6,7 +6,7 @@
 
 # Interface: GuidedCategory
 
-Defined in: [src/features/guided-analysis/types.ts:27](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L27)
+Defined in: [src/features/guided-analysis/types.ts:27](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L27)
 
 Category entry used to group guided analysis queries.
 
@@ -16,7 +16,7 @@ Category entry used to group guided analysis queries.
 
 > **id**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:29](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L29)
+Defined in: [src/features/guided-analysis/types.ts:29](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L29)
 
 Stable category identifier used by the catalog.
 
@@ -26,6 +26,6 @@ Stable category identifier used by the catalog.
 
 > **label**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:31](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L31)
+Defined in: [src/features/guided-analysis/types.ts:31](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L31)
 
 Display label shown to users.

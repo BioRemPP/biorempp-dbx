@@ -6,7 +6,7 @@
 
 # Interface: GuidedHeatmapMatrixVisualizationData
 
-Defined in: [src/features/guided-analysis/types.ts:460](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L460)
+Defined in: [src/features/guided-analysis/types.ts:460](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L460)
 
 Heatmap matrix payload returned by guided query execution.
 
@@ -16,7 +16,7 @@ Heatmap matrix payload returned by guided query execution.
 
 > **cells**: [`GuidedHeatmapMatrixCell`](GuidedHeatmapMatrixCell.md)[]
 
-Defined in: [src/features/guided-analysis/types.ts:472](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L472)
+Defined in: [src/features/guided-analysis/types.ts:472](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L472)
 
 Sparse matrix cells containing toxicity values.
 
@@ -26,7 +26,7 @@ Sparse matrix cells containing toxicity values.
 
 > **compounds**: [`GuidedHeatmapMatrixCompound`](GuidedHeatmapMatrixCompound.md)[]
 
-Defined in: [src/features/guided-analysis/types.ts:468](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L468)
+Defined in: [src/features/guided-analysis/types.ts:468](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L468)
 
 Ordered compound headers used to render matrix columns.
 
@@ -36,7 +36,7 @@ Ordered compound headers used to render matrix columns.
 
 > **endpoints**: `string`[]
 
-Defined in: [src/features/guided-analysis/types.ts:470](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L470)
+Defined in: [src/features/guided-analysis/types.ts:470](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L470)
 
 Ordered toxicity endpoints used to render matrix rows or sub-rows.
 
@@ -46,7 +46,7 @@ Ordered toxicity endpoints used to render matrix rows or sub-rows.
 
 > `optional` **row\_label?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:464](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L464)
+Defined in: [src/features/guided-analysis/types.ts:464](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L464)
 
 Singular label used for matrix rows when present.
 
@@ -56,7 +56,7 @@ Singular label used for matrix rows when present.
 
 > `optional` **row\_label\_plural?**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:466](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L466)
+Defined in: [src/features/guided-analysis/types.ts:466](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L466)
 
 Plural label used for matrix rows when present.
 
@@ -66,7 +66,7 @@ Plural label used for matrix rows when present.
 
 > `optional` **rows?**: [`GuidedHeatmapMatrixRow`](GuidedHeatmapMatrixRow.md)[]
 
-Defined in: [src/features/guided-analysis/types.ts:462](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L462)
+Defined in: [src/features/guided-analysis/types.ts:462](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L462)
 
 Optional explicit row descriptors used by the matrix.
 
@@ -76,7 +76,7 @@ Optional explicit row descriptors used by the matrix.
 
 > `optional` **total\_compounds\_in\_scope?**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:476](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L476)
+Defined in: [src/features/guided-analysis/types.ts:476](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L476)
 
 Total number of compounds available before client-side slicing.
 
@@ -86,6 +86,6 @@ Total number of compounds available before client-side slicing.
 
 > `optional` **total\_rows\_in\_scope?**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:474](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L474)
+Defined in: [src/features/guided-analysis/types.ts:474](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L474)
 
 Total number of rows available before client-side slicing.

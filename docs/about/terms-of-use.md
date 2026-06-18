@@ -130,7 +130,7 @@ We reserve the right to modify these Terms of Use at any time. Changes will be p
 For questions, clarifications, or institutional support requests regarding these Terms of Use:
 
 - **Email:** [biorempp@gmail.com](mailto:biorempp@gmail.com)
-- **GitHub Repository:** [github.com/DougFelipe/biorempp_database_explorer](https://github.com/DougFelipe/biorempp_database_explorer)
+- **GitHub Repository:** [github.com/BioRemPP/biorempp-dbx](https://github.com/BioRemPP/biorempp-dbx)
 - **Response Time:** Up to 5 business days
 
 ---

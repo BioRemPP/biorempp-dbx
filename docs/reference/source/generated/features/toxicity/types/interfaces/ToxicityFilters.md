@@ -6,7 +6,7 @@
 
 # Interface: ToxicityFilters
 
-Defined in: [src/features/toxicity/types.ts:48](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L48)
+Defined in: [src/features/toxicity/types.ts:48](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L48)
 
 Filter parameters accepted by toxicity explorer endpoints.
 
@@ -16,7 +16,7 @@ Filter parameters accepted by toxicity explorer endpoints.
 
 > `optional` **compoundclass?**: `string`
 
-Defined in: [src/features/toxicity/types.ts:54](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L54)
+Defined in: [src/features/toxicity/types.ts:54](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L54)
 
 Compound class filter applied to linked compounds.
 
@@ -26,7 +26,7 @@ Compound class filter applied to linked compounds.
 
 > `optional` **endpoint?**: `string`
 
-Defined in: [src/features/toxicity/types.ts:50](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L50)
+Defined in: [src/features/toxicity/types.ts:50](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L50)
 
 Exact endpoint identifier filter.
 
@@ -36,7 +36,7 @@ Exact endpoint identifier filter.
 
 > `optional` **label?**: `string`
 
-Defined in: [src/features/toxicity/types.ts:52](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L52)
+Defined in: [src/features/toxicity/types.ts:52](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L52)
 
 Exact endpoint label filter.
 
@@ -46,7 +46,7 @@ Exact endpoint label filter.
 
 > `optional` **search?**: `string`
 
-Defined in: [src/features/toxicity/types.ts:60](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L60)
+Defined in: [src/features/toxicity/types.ts:60](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L60)
 
 Free-text search term forwarded to the backend.
 
@@ -56,7 +56,7 @@ Free-text search term forwarded to the backend.
 
 > `optional` **value\_max?**: `number`
 
-Defined in: [src/features/toxicity/types.ts:58](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L58)
+Defined in: [src/features/toxicity/types.ts:58](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L58)
 
 Inclusive upper bound for numeric toxicity values.
 
@@ -66,6 +66,6 @@ Inclusive upper bound for numeric toxicity values.
 
 > `optional` **value\_min?**: `number`
 
-Defined in: [src/features/toxicity/types.ts:56](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/toxicity/types.ts#L56)
+Defined in: [src/features/toxicity/types.ts:56](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/toxicity/types.ts#L56)
 
 Inclusive lower bound for numeric toxicity values.

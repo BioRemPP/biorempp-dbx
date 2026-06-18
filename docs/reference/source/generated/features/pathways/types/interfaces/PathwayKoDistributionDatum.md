@@ -6,7 +6,7 @@
 
 # Interface: PathwayKoDistributionDatum
 
-Defined in: [src/features/pathways/types.ts:59](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L59)
+Defined in: [src/features/pathways/types.ts:59](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L59)
 
 Bar chart datum representing compound support for a KO term inside a pathway.
 
@@ -16,7 +16,7 @@ Bar chart datum representing compound support for a KO term inside a pathway.
 
 > **count**: `number`
 
-Defined in: [src/features/pathways/types.ts:63](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L63)
+Defined in: [src/features/pathways/types.ts:63](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L63)
 
 Number of supporting rows contributing to the bar height.
 
@@ -26,6 +26,6 @@ Number of supporting rows contributing to the bar height.
 
 > **ko**: `string`
 
-Defined in: [src/features/pathways/types.ts:61](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L61)
+Defined in: [src/features/pathways/types.ts:61](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L61)
 
 KO identifier associated with the bar.

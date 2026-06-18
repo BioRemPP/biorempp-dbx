@@ -6,7 +6,7 @@
 
 # Interface: PaginatedResponse\<T\>
 
-Defined in: [src/shared/types.ts:21](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/shared/types.ts#L21)
+Defined in: [src/shared/types.ts:21](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/shared/types.ts#L21)
 
 Standard paginated response shape returned by explorer-style endpoints.
 
@@ -24,7 +24,7 @@ Row payload type contained in the `data` array.
 
 > **data**: `T`[]
 
-Defined in: [src/shared/types.ts:23](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/shared/types.ts#L23)
+Defined in: [src/shared/types.ts:23](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/shared/types.ts#L23)
 
 Page rows returned by the backend for the current request.
 
@@ -34,7 +34,7 @@ Page rows returned by the backend for the current request.
 
 > **page**: `number`
 
-Defined in: [src/shared/types.ts:27](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/shared/types.ts#L27)
+Defined in: [src/shared/types.ts:27](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/shared/types.ts#L27)
 
 One-based page number returned in the response.
 
@@ -44,7 +44,7 @@ One-based page number returned in the response.
 
 > **pageSize**: `number`
 
-Defined in: [src/shared/types.ts:29](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/shared/types.ts#L29)
+Defined in: [src/shared/types.ts:29](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/shared/types.ts#L29)
 
 Maximum number of records returned per page.
 
@@ -54,7 +54,7 @@ Maximum number of records returned per page.
 
 > **total**: `number`
 
-Defined in: [src/shared/types.ts:25](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/shared/types.ts#L25)
+Defined in: [src/shared/types.ts:25](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/shared/types.ts#L25)
 
 Total number of records available for the current filter scope.
 
@@ -64,6 +64,6 @@ Total number of records available for the current filter scope.
 
 > **totalPages**: `number`
 
-Defined in: [src/shared/types.ts:31](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/shared/types.ts#L31)
+Defined in: [src/shared/types.ts:31](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/shared/types.ts#L31)
 
 Total number of available pages for the current filter scope.

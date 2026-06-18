@@ -6,7 +6,7 @@
 
 # Interface: PathwayToxicityMatrixCompound
 
-Defined in: [src/features/pathways/types.ts:89](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L89)
+Defined in: [src/features/pathways/types.ts:89](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L89)
 
 Compound header entry used by the pathway toxicity matrix.
 
@@ -16,7 +16,7 @@ Compound header entry used by the pathway toxicity matrix.
 
 > **compoundname**: `string` \| `null`
 
-Defined in: [src/features/pathways/types.ts:93](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L93)
+Defined in: [src/features/pathways/types.ts:93](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L93)
 
 Optional display name shown for the compound column.
 
@@ -26,6 +26,6 @@ Optional display name shown for the compound column.
 
 > **cpd**: `string`
 
-Defined in: [src/features/pathways/types.ts:91](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L91)
+Defined in: [src/features/pathways/types.ts:91](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L91)
 
 Compound identifier used as the matrix column key.

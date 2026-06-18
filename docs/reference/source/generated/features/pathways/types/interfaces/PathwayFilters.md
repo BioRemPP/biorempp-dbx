@@ -6,7 +6,7 @@
 
 # Interface: PathwayFilters
 
-Defined in: [src/features/pathways/types.ts:27](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L27)
+Defined in: [src/features/pathways/types.ts:27](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L27)
 
 Filter parameters accepted by pathway explorer endpoints.
 
@@ -16,7 +16,7 @@ Filter parameters accepted by pathway explorer endpoints.
 
 > `optional` **search?**: `string`
 
-Defined in: [src/features/pathways/types.ts:31](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L31)
+Defined in: [src/features/pathways/types.ts:31](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L31)
 
 Free-text search term forwarded to the backend.
 
@@ -26,6 +26,6 @@ Free-text search term forwarded to the backend.
 
 > `optional` **source?**: `string`
 
-Defined in: [src/features/pathways/types.ts:29](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/pathways/types.ts#L29)
+Defined in: [src/features/pathways/types.ts:29](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/pathways/types.ts#L29)
 
 Source filter applied to the pathway catalog.

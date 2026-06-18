@@ -6,7 +6,7 @@
 
 # Interface: CompoundOverviewSummary
 
-Defined in: [src/features/compounds/types.ts:49](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L49)
+Defined in: [src/features/compounds/types.ts:49](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L49)
 
 Reduced summary embedded in compound overview payloads.
 
@@ -16,7 +16,7 @@ Reduced summary embedded in compound overview payloads.
 
 > **compoundclass**: `string` \| `null`
 
-Defined in: [src/features/compounds/types.ts:55](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L55)
+Defined in: [src/features/compounds/types.ts:55](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L55)
 
 Compound class label when available.
 
@@ -26,7 +26,7 @@ Compound class label when available.
 
 > **compoundname**: `string` \| `null`
 
-Defined in: [src/features/compounds/types.ts:53](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L53)
+Defined in: [src/features/compounds/types.ts:53](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L53)
 
 Preferred compound name when available.
 
@@ -36,7 +36,7 @@ Preferred compound name when available.
 
 > **cpd**: `string`
 
-Defined in: [src/features/compounds/types.ts:51](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L51)
+Defined in: [src/features/compounds/types.ts:51](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L51)
 
 Compound identifier requested by the client.
 
@@ -46,7 +46,7 @@ Compound identifier requested by the client.
 
 > **gene\_count**: `number`
 
-Defined in: [src/features/compounds/types.ts:61](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L61)
+Defined in: [src/features/compounds/types.ts:61](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L61)
 
 Number of genes linked to the compound.
 
@@ -56,7 +56,7 @@ Number of genes linked to the compound.
 
 > **high\_risk\_endpoint\_count**: `number`
 
-Defined in: [src/features/compounds/types.ts:67](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L67)
+Defined in: [src/features/compounds/types.ts:67](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L67)
 
 Number of linked endpoints currently classified as high risk.
 
@@ -66,7 +66,7 @@ Number of linked endpoints currently classified as high risk.
 
 > **ko\_count**: `number`
 
-Defined in: [src/features/compounds/types.ts:59](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L59)
+Defined in: [src/features/compounds/types.ts:59](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L59)
 
 Number of KO identifiers linked to the compound.
 
@@ -76,7 +76,7 @@ Number of KO identifiers linked to the compound.
 
 > **pathway\_count**: `number`
 
-Defined in: [src/features/compounds/types.ts:63](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L63)
+Defined in: [src/features/compounds/types.ts:63](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L63)
 
 Number of pathways linked to the compound.
 
@@ -86,7 +86,7 @@ Number of pathways linked to the compound.
 
 > **reference\_count**: `number`
 
-Defined in: [src/features/compounds/types.ts:57](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L57)
+Defined in: [src/features/compounds/types.ts:57](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L57)
 
 Number of reference records linked to the compound.
 
@@ -96,6 +96,6 @@ Number of reference records linked to the compound.
 
 > **toxicity\_risk\_mean**: `number` \| `null`
 
-Defined in: [src/features/compounds/types.ts:65](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/compounds/types.ts#L65)
+Defined in: [src/features/compounds/types.ts:65](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/compounds/types.ts#L65)
 
 Mean toxicity risk score across supported endpoints.

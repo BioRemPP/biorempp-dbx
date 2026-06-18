@@ -6,7 +6,7 @@
 
 # Interface: GuidedQuadrantCounts
 
-Defined in: [src/features/guided-analysis/types.ts:285](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L285)
+Defined in: [src/features/guided-analysis/types.ts:285](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L285)
 
 Quadrant counts returned by scatter-based guided visualizations.
 
@@ -16,7 +16,7 @@ Quadrant counts returned by scatter-based guided visualizations.
 
 > **bottom\_left**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:293](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L293)
+Defined in: [src/features/guided-analysis/types.ts:293](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L293)
 
 Number of points in the bottom-left quadrant.
 
@@ -26,7 +26,7 @@ Number of points in the bottom-left quadrant.
 
 > **bottom\_right**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:291](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L291)
+Defined in: [src/features/guided-analysis/types.ts:291](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L291)
 
 Number of points in the bottom-right quadrant.
 
@@ -36,7 +36,7 @@ Number of points in the bottom-right quadrant.
 
 > **top\_left**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:289](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L289)
+Defined in: [src/features/guided-analysis/types.ts:289](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L289)
 
 Number of points in the top-left quadrant.
 
@@ -46,6 +46,6 @@ Number of points in the top-left quadrant.
 
 > **top\_right**: `number`
 
-Defined in: [src/features/guided-analysis/types.ts:287](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L287)
+Defined in: [src/features/guided-analysis/types.ts:287](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L287)
 
 Number of points in the top-right quadrant.

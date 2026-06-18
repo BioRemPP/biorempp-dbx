@@ -6,7 +6,7 @@
 
 # Interface: GuidedMethodsStep
 
-Defined in: [src/features/guided-analysis/types.ts:181](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L181)
+Defined in: [src/features/guided-analysis/types.ts:181](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L181)
 
 Single step included in a guided methods modal.
 
@@ -16,7 +16,7 @@ Single step included in a guided methods modal.
 
 > `optional` **bullets?**: `string`[]
 
-Defined in: [src/features/guided-analysis/types.ts:187](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L187)
+Defined in: [src/features/guided-analysis/types.ts:187](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L187)
 
 Optional bullet list expanding the step description.
 
@@ -26,7 +26,7 @@ Optional bullet list expanding the step description.
 
 > **description**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:185](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L185)
+Defined in: [src/features/guided-analysis/types.ts:185](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L185)
 
 Step description shown in the modal body.
 
@@ -36,6 +36,6 @@ Step description shown in the modal body.
 
 > **title**: `string`
 
-Defined in: [src/features/guided-analysis/types.ts:183](https://github.com/DougFelipe/biorempp_database_explorer/blob/3d236acc3c26bfd97f236e50fefcf62d027af605/src/features/guided-analysis/types.ts#L183)
+Defined in: [src/features/guided-analysis/types.ts:183](https://github.com/BioRemPP/biorempp-dbx/blob/c3b74e6bc15e0a279c454f33ff1a13cf6bfbc134/src/features/guided-analysis/types.ts#L183)
 
 Step title shown in the modal.
